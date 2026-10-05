@@ -1,0 +1,18 @@
+.project-card {
+  padding: 20px;
+  border: 1px solid #e3ebf3;
+  border-radius: 18px;
+  background: #fff;
+  transition: .22s ease;
+}
+.project-card:hover { transform: translateY(-5px); border-color: #9de8ef; }
+.project-art {
+  height: 110px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  font-size: 45px;
+  background: linear-gradient(135deg, #effcff, #f6f0ff 65%, #fff8db);
+}
+.project-card h3 { margin: 15px 0 7px; font-size: 17px; color: #101828; }
+.project-card p { margin: 0; color: #687386; font-size: 12px; line-height: 1.6; }

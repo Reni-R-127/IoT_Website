@@ -1,0 +1,10 @@
+.testimonial-card {
+  padding: 25px;
+  border-radius: 18px;
+  border: 1px solid #e3ebf3;
+  background: #fff;
+}
+.testimonial-card > svg { color: #1599d6; }
+.testimonial-card p { min-height: 66px; margin: 16px 0; color: #4d5b70; font-size: 13px; line-height: 1.7; }
+.testimonial-card strong { display: block; color: #101828; font-size: 13px; }
+.testimonial-card span { display: block; margin-top: 3px; color: #8995a6; font-size: 11px; }
