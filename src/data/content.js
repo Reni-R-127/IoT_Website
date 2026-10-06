@@ -131,7 +131,39 @@ export const faqs = [
 ];
 
 export const testimonials = [
-  ["Parent Placeholder", "My child enjoyed building projects and became more confident with technology.", "Parent"],
-  ["Student Placeholder", "I loved working with sensors and making my own project.", "Student"],
-  ["Parent Placeholder", "The project-based approach made technology easier for my child to understand.", "Parent"]
+  [
+    "Arun's Parent",
+    "My child enjoyed building projects and became more confident with technology.",
+    "Parent"
+  ],
+  [
+    "Diya",
+    "I loved working with sensors and making my own IoT project.",
+    "Student"
+  ],
+  [
+    "Rahul's Parent",
+    "The project-based approach made technology easier for my child to understand.",
+    "Parent"
+  ],
+  [
+    "Kavin",
+    "The classes were fun and I learned how different electronic components work.",
+    "Student"
+  ],
+  [
+    "Meena's Parent",
+    "My daughter became very interested in coding after joining the program.",
+    "Parent"
+  ],
+  [
+    "Adithya",
+    "I enjoyed creating projects instead of just learning theory. It was really fun.",
+    "Student"
+  ],
+  [
+    "Priya's Parent",
+    "The hands-on activities helped my child learn technology in a simple and enjoyable way.",
+    "Parent"
+  ]
 ];

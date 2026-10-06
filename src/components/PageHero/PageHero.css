@@ -13,7 +13,7 @@
 
   overflow: hidden;
 
-  background: linear-gradient(135deg, #EAF4FF, #F3EAFF 62%, #FFF8D6);
+  background: linear-gradient(135deg, #eaf4ff, #f3eaff 62%, #fff8d6);
 }
 .page-hero-content {
   position: relative;
@@ -22,15 +22,15 @@
   text-align: center;
 }
 .page-hero-content span {
-  color: #4D96FF;
-  font-size: 11px;
+  color: #4d96ff;
+  font-size: 15px;
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: 0.12em;
 }
 .page-hero h1 {
   margin: 10px 0;
-  color: #24324A;
+  color: #24324a;
   font-size: clamp(36px, 6vw, 58px);
   line-height: 1;
   letter-spacing: -0.045em;
@@ -39,7 +39,7 @@
   margin: 0 auto;
   max-width: 650px;
   color: #667085;
-  font-size: 15px;
+  font-size: 18px;
   line-height: 1.75;
 }
 .page-hero-shape {
@@ -91,6 +91,9 @@
   }
 }
 
-
-.shape-one { animation: kidsFloat 5s ease-in-out infinite; }
-.shape-two { animation: kidsFloatReverse 6s ease-in-out infinite; }
+.shape-one {
+  animation: kidsFloat 5s ease-in-out infinite;
+}
+.shape-two {
+  animation: kidsFloatReverse 6s ease-in-out infinite;
+}

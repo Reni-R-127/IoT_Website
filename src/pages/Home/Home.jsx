@@ -35,7 +35,13 @@ export default function Home() {
       <main>
         <section className="home-hero">
           <div className="hero-content" data-animate="fade-left">
-            <span className="hero-kicker" data-animate="fade-down" data-delay="1">Kids • STEM • Technology</span>
+            <span
+              className="hero-kicker"
+              data-animate="fade-down"
+              data-delay="1"
+            >
+              Kids • STEM • Technology
+            </span>
             <h1 data-animate="fade-up" data-delay="2">
               Where Kids <em>Learn, Build</em> & Create with Technology
             </h1>
@@ -109,7 +115,12 @@ export default function Home() {
 
         <section className="home-highlights">
           {highlights.map(([title, text, Icon], index) => (
-            <div className="highlight-card" key={title} data-animate="pop" data-delay={(index % 8) + 1}>
+            <div
+              className="highlight-card"
+              key={title}
+              data-animate="pop"
+              data-delay={(index % 8) + 1}
+            >
               <Icon />
               <div>
                 <h3>{title}</h3>
@@ -127,7 +138,12 @@ export default function Home() {
           />
           <div className="learning-steps">
             {["Learn", "Explore", "Build", "Create"].map((item, i) => (
-              <div key={item} className="learning-step" data-animate="fade-up" data-delay={i + 1}>
+              <div
+                key={item}
+                className="learning-step"
+                data-animate="fade-up"
+                data-delay={i + 1}
+              >
                 <span>0{i + 1}</span>
                 <h3>{item}</h3>
                 <p>
@@ -207,10 +223,16 @@ export default function Home() {
             title="What learners say"
             text="Placeholder testimonials are structured for easy replacement later."
           />
-          <div className="testimonial-grid">
-            {testimonials.map((item, index) => (
-              <TestimonialCard key={item[0] + item[1]} item={item} index={index} />
-            ))}
+          <div className="testimonials-wrapper">
+            <div className="testimonials-track">
+              {testimonials.map((item, index) => (
+                <TestimonialCard key={`review-${index}`} item={item} />
+              ))}
+
+              {testimonials.map((item, index) => (
+                <TestimonialCard key={`review-copy-${index}`} item={item} />
+              ))}
+            </div>
           </div>
         </section>
 

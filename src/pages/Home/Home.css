@@ -14,7 +14,7 @@
 
 .hero-kicker {
   color: #4D96FF;
-  font-size: 11px;
+  font-size: 15px;
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: 0.12em;
@@ -35,7 +35,7 @@
   max-width: 630px;
   margin: 0;
   color: #667085;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.8;
 }
 .hero-actions {
@@ -259,13 +259,13 @@
 }
 .highlight-card h3 {
   margin: 0 0 4px;
-  font-size: 13px;
+  font-size: 15px;
   color: #24324A;
 }
 .highlight-card p {
   margin: 0;
   color: #667085;
-  font-size: 11px;
+  font-size: 15px;
   line-height: 1.5;
 }
 
@@ -293,7 +293,7 @@
   gap: 5px;
   color: #4D96FF;
   text-decoration: none;
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 900;
 }
 .learning-steps {
@@ -320,7 +320,7 @@
 .learning-step p {
   margin: 0;
   color: #667085;
-  font-size: 12px;
+  font-size: 15px;
   line-height: 1.6;
 }
 .project-grid {
@@ -338,7 +338,7 @@
 }
 .eyebrow {
   color: #4D96FF;
-  font-size: 11px;
+  font-size: 15px;
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: 0.12em;
@@ -352,7 +352,7 @@
 .trust-copy p {
   margin: 0;
   color: #667085;
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.7;
 }
 .trust-grid {

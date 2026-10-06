@@ -28,7 +28,7 @@
   border-radius: 999px;
   color: #6a48b7;
   background: #F3EAFF;
-  font-size: 10px;
+  font-size: 15px;
   font-weight: 900;
 }
 .course-card h3 {
@@ -40,7 +40,7 @@
   min-height: 66px;
   margin: 0;
   color: #667085;
-  font-size: 13px;
+  font-size: 15px;
   line-height: 1.65;
 }
 .course-meta {
@@ -55,13 +55,13 @@
   background: #f8fafc;
   color: #667085;
   text-align: center;
-  font-size: 10px;
+  font-size: 15px;
 }
 .course-meta b {
   display: block;
   margin-bottom: 3px;
   color: #24324A;
-  font-size: 9px;
+  font-size: 15px;
   text-transform: uppercase;
 }
 .course-actions {
@@ -77,7 +77,7 @@
   gap: 5px;
   border-radius: 9px;
   text-decoration: none;
-  font-size: 11px;
+  font-size: 15px;
   font-weight: 900;
 }
 .course-details {
@@ -85,8 +85,8 @@
   background: #EAF4FF;
 }
 .course-enroll {
-  color:  #EAF4FF;
-  background: #4D96FF;
+  color: #24324A;
+  background: #FFD93D;
 }
 @media (max-width: 450px) {
   .course-meta { grid-template-columns: 1fr; }
