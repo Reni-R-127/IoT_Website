@@ -197,12 +197,85 @@
 
 .footer-links-contact {
   display: flex;
-
   flex-direction: column;
-
   align-items: flex-start;
-
   gap: 13px;
+}
+
+.footer-links-contact a {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 9px;
+
+  color: #C5D2E0;
+
+  font-size: 14px;
+  line-height: 1.5;
+
+  text-decoration: none;
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.footer-links-contact a:hover {
+  color: #FFD93D;
+  transform: translateX(3px);
+}
+
+.footer-links-contact svg {
+  flex-shrink: 0;
+
+  margin-top: 2px;
+
+  color: #4D96FF;
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.footer-links-contact a:hover svg {
+  color: #FFD93D;
+
+  transform: scale(1.08);
+}
+
+.footer-location {
+  max-width: 280px;
+}
+
+.footer-location span {
+  line-height: 1.55;
+}
+
+.footer-links-contact a span {
+  display: block;
+}
+
+.contact-map {
+  width: 100%;
+  max-width: 250px;
+
+  margin-top: 2px;
+
+  overflow: hidden;
+
+  border-radius: 14px;
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.contact-map iframe {
+   display: block;
+
+  width: 100%;
+  height: 180px;
+
+  border: 0;
 }
 
 .footer-links-contact span {
@@ -293,8 +366,8 @@
 }
 
 .socials a:nth-child(1):hover {
-  background: #E1306C;
-  border-color: #E1306C;
+  background: #d8678d;
+  border-color: #d8678d;
 }
 
 .socials a:nth-child(2):hover {

@@ -2,9 +2,17 @@ export const siteConfig = {
   companyName: "IoT Web",
   phone: "+91 89254 50473",
   email: "teamprojenius@gmail.com",
-  location: "Madurai, Tamil Nadu 625003",
+
+  location:
+    "Madurai, Tamil Nadu 625003",
+
+  locationUrl:
+    "https://maps.app.goo.gl/o4vV94YG8qt6AdMi9?g_st=ac",
+
   workingHours: "Mon - Sat, 10:00 AM - 7:00 PM",
-  whatsappText: "Hello, I am interested in your Kids IoT courses.",
+
+  whatsappText:
+    "Hello, I am interested in your Kids IoT courses.",
 };
 
 // WhatsApp number: country code + phone number

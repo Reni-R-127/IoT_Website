@@ -29,8 +29,10 @@ body {
 
   color: #24324a;
   background: #fff;
-  overflow-x: hidden;
   overscroll-behavior-y: none;
+}
+body{
+  overflow-x: hidden;
 }
 
 #root {

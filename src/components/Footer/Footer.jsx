@@ -16,17 +16,16 @@ import logo from "../../assets/logo.png";
 import "./Footer.css";
 
 const socialLinks = {
-  instagram: "https://www.instagram.com/YOUR_INSTAGRAM",
-  facebook: "https://www.facebook.com/YOUR_FACEBOOK",
-  youtube: "https://www.youtube.com/@YOUR_YOUTUBE",
-  linkedin: "https://www.linkedin.com/company/YOUR_LINKEDIN",
+  instagram: "https://www.instagram.com/projenius_?stkn=OXEwaXF4Z3g4d3Zw",
+  facebook: "https://www.facebook.com/share/1DMJDDqupb/",
+  youtube: "https://youtube.com/@projenius-8?si=CXkflyhkB26A7jmT",
+  linkedin: "https://www.linkedin.com/company/projenius/",
 };
 
 export default function Footer() {
   return (
     <footer className="footer">
       <div className="footer-grid">
-
         {/* ABOUT */}
         <div className="footer-about">
           <Link to="/" className="footer-brand">
@@ -85,34 +84,57 @@ export default function Footer() {
         </div>
 
         {/* CONTACT */}
+        {/* CONTACT */}
         <div className="footer-column footer-contact">
           <h4>Contact</h4>
 
           <div className="footer-links-contact">
-
-            <span>
+            {/* PHONE */}
+            <a
+              href={`tel:${siteConfig.phone}`}
+              aria-label={`Call ${siteConfig.phone}`}
+            >
               <Phone size={17} />
-              {siteConfig.phone}
-            </span>
+              <span>{siteConfig.phone}</span>
+            </a>
 
-            <span>
+            {/* EMAIL */}
+            <a
+              href={`mailto:${siteConfig.email}`}
+              aria-label={`Email ${siteConfig.email}`}
+            >
               <Mail size={17} />
-              {siteConfig.email}
-            </span>
+              <span>{siteConfig.email}</span>
+            </a>
 
-            <span>
+            {/* LOCATION TEXT */}
+            <a
+              href={siteConfig.locationUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Open ProJenius location in Google Maps"
+              className="footer-location"
+            >
               <MapPin size={17} />
-              {siteConfig.location}
-            </span>
+              <span>{siteConfig.location}</span>
+            </a>
 
+            {/* MAP */}
+            <div className="contact-map">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3930.2279330775555!2d78.08984892445203!3d9.914965290186133!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b00cf7452485a8b%3A0x63e13154ff8741dd!2sVelmurugan%20Nagar%2C%20Namachivaya%20Nagar%2C%20Madakkulam%2C%20Madurai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1791291106605!5m2!1sen!2sin"
+                title="ProJenius Location"
+                loading="lazy"
+                allowFullScreen
+                referrerPolicy="strict-origin-when-cross-origin"
+              />
+            </div>
           </div>
 
-          <h4 className="social-title">
-            Social Media
-          </h4>
+          {/* SOCIAL MEDIA */}
+          <h4 className="social-title">Social Media</h4>
 
           <div className="socials">
-
             <a
               href={socialLinks.instagram}
               target="_blank"
@@ -148,27 +170,20 @@ export default function Footer() {
             >
               <Linkedin size={19} />
             </a>
-
           </div>
         </div>
       </div>
 
       {/* BOTTOM */}
       <div className="footer-bottom">
-        <span>
-          © 2026 {siteConfig.companyName}. All Rights Reserved.
-        </span>
+        <span>© 2026 {siteConfig.companyName}. All Rights Reserved.</span>
 
         <span>
-          <Link to="/privacy">
-            Privacy Policy
-          </Link>
+          <Link to="/privacy">Privacy Policy</Link>
 
           <b>|</b>
 
-          <Link to="/terms">
-            Terms & Conditions
-          </Link>
+          <Link to="/terms">Terms & Conditions</Link>
         </span>
       </div>
     </footer>
