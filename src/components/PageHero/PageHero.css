@@ -13,7 +13,7 @@
 
   overflow: hidden;
 
-  background: linear-gradient(135deg, #effcff, #f2edff 62%, #fff8d9);
+  background: linear-gradient(135deg, #EAF4FF, #F3EAFF 62%, #FFF8D6);
 }
 .page-hero-content {
   position: relative;
@@ -22,7 +22,7 @@
   text-align: center;
 }
 .page-hero-content span {
-  color: #1599d6;
+  color: #4D96FF;
   font-size: 11px;
   font-weight: 900;
   text-transform: uppercase;
@@ -30,7 +30,7 @@
 }
 .page-hero h1 {
   margin: 10px 0;
-  color: #101828;
+  color: #24324A;
   font-size: clamp(36px, 6vw, 58px);
   line-height: 1;
   letter-spacing: -0.045em;
@@ -38,7 +38,7 @@
 .page-hero p {
   margin: 0 auto;
   max-width: 650px;
-  color: #687386;
+  color: #667085;
   font-size: 15px;
   line-height: 1.75;
 }
@@ -90,3 +90,7 @@
     line-height: 1.65;
   }
 }
+
+
+.shape-one { animation: kidsFloat 5s ease-in-out infinite; }
+.shape-two { animation: kidsFloatReverse 6s ease-in-out infinite; }

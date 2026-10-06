@@ -2,7 +2,7 @@
   margin-top: 80px;
   padding: 58px 0 20px;
   color: #dfeaf5;
-  background: #081522;
+  background: #24324A;
 }
 
 .footer-grid {
@@ -28,15 +28,15 @@
   display: grid;
   place-items: center;
   border-radius: 10px;
-  color: #081522;
-  background: #43e8dd;
+  color: #24324A;
+  background: #6BCB77;
 }
 
 .footer p {
   max-width: 330px;
   margin: 16px 0 20px;
   line-height: 1.7;
-  color: #9db0c3;
+  color: #91A1B5;
   font-size: 14px;
 }
 
@@ -53,13 +53,13 @@
 
 .footer-links a,
 .footer-links span {
-  color: #9db0c3;
+  color: #91A1B5;
   font-size: 13px;
   text-decoration: none;
 }
 
 .footer-links a:hover {
-  color: #43e8dd;
+  color: #6BCB77;
 }
 
 .footer-whatsapp {
@@ -69,7 +69,7 @@
   padding: 10px 13px;
   border-radius: 9px;
   color: #07131b;
-  background: #43e8dd;
+  background: #6BCB77;
   text-decoration: none;
   font-weight: 800;
   font-size: 12px;
@@ -107,7 +107,7 @@
 }
 
 .footer-bottom a {
-  color: #9db0c3;
+  color: #91A1B5;
   text-decoration: none;
 }
 
@@ -138,18 +138,18 @@
   display: inline-flex;
   align-items: center;
   gap: 7px;
-  color: #687386;
+  color: #667085;
   font-size: 12px;
   text-decoration: none;
 }
 
 .footer-links-contact svg {
   flex-shrink: 0;
-  color: #1599d6;
+  color: #4D96FF;
 }
 
 .footer-links-contact a {
-  color: #1599d6;
+  color: #4D96FF;
   font-weight: 700;
   transition: 0.2s ease;
 }

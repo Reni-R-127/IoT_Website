@@ -1,6 +1,6 @@
 .project-card {
   padding: 20px;
-  border: 1px solid #e3ebf3;
+  border: 1px solid #DDE7F2;
   border-radius: 18px;
   background: #fff;
   transition: .22s ease;
@@ -12,7 +12,24 @@
   place-items: center;
   border-radius: 14px;
   font-size: 45px;
-  background: linear-gradient(135deg, #effcff, #f6f0ff 65%, #fff8db);
+  background: linear-gradient(135deg, #EAF4FF, #F3EAFF 65%, #FFF8D6);
 }
-.project-card h3 { margin: 15px 0 7px; font-size: 17px; color: #101828; }
-.project-card p { margin: 0; color: #687386; font-size: 12px; line-height: 1.6; }
+.project-card h3 { margin: 15px 0 7px; font-size: 17px; color: #24324A; }
+.project-card p { margin: 0; color: #667085; font-size: 12px; line-height: 1.6; }
+
+
+.project-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-7px);
+}
+
+.project-art {
+  transition: transform 0.35s ease;
+}
+
+.project-card:hover .project-art {
+  transform: scale(1.08) rotate(-3deg);
+}

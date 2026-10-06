@@ -1,10 +1,27 @@
 .testimonial-card {
   padding: 25px;
   border-radius: 18px;
-  border: 1px solid #e3ebf3;
+  border: 1px solid #DDE7F2;
   background: #fff;
 }
-.testimonial-card > svg { color: #1599d6; }
-.testimonial-card p { min-height: 66px; margin: 16px 0; color: #4d5b70; font-size: 13px; line-height: 1.7; }
-.testimonial-card strong { display: block; color: #101828; font-size: 13px; }
-.testimonial-card span { display: block; margin-top: 3px; color: #8995a6; font-size: 11px; }
+.testimonial-card > svg { color: #4D96FF; }
+.testimonial-card p { min-height: 66px; margin: 16px 0; color: #526077; font-size: 13px; line-height: 1.7; }
+.testimonial-card strong { display: block; color: #24324A; font-size: 13px; }
+.testimonial-card span { display: block; margin-top: 3px; color: #7A8799; font-size: 11px; }
+
+
+.testimonial-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-6px);
+}
+
+.testimonial-card svg {
+  transition: transform 0.3s ease;
+}
+
+.testimonial-card:hover svg {
+  transform: rotate(-8deg) scale(1.08);
+}

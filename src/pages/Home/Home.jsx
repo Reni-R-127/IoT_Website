@@ -34,17 +34,17 @@ export default function Home() {
     <>
       <main>
         <section className="home-hero">
-          <div className="hero-content">
-            <span className="hero-kicker">Kids • STEM • Technology</span>
-            <h1>
+          <div className="hero-content" data-animate="fade-left">
+            <span className="hero-kicker" data-animate="fade-down" data-delay="1">Kids • STEM • Technology</span>
+            <h1 data-animate="fade-up" data-delay="2">
               Where Kids <em>Learn, Build</em> & Create with Technology
             </h1>
-            <p>
+            <p data-animate="fade-up" data-delay="3">
               Give your child hands-on experience with IoT, electronics, coding,
               robotics and emerging technologies through fun and practical
               projects.
             </p>
-            <div className="hero-actions">
+            <div className="hero-actions" data-animate="fade-up" data-delay="4">
               <Link to="/courses" className="primary-btn">
                 Explore Courses <ArrowRight size={17} />
               </Link>
@@ -73,6 +73,7 @@ export default function Home() {
           <div
             className="hero-visual"
             aria-label="Technology learning illustration"
+            data-animate="zoom"
           >
             <div className="hero-orbit orbit-one"></div>
             <div className="hero-orbit orbit-two"></div>
@@ -107,8 +108,8 @@ export default function Home() {
         </section>
 
         <section className="home-highlights">
-          {highlights.map(([title, text, Icon]) => (
-            <div className="highlight-card" key={title}>
+          {highlights.map(([title, text, Icon], index) => (
+            <div className="highlight-card" key={title} data-animate="pop" data-delay={(index % 8) + 1}>
               <Icon />
               <div>
                 <h3>{title}</h3>
@@ -126,7 +127,7 @@ export default function Home() {
           />
           <div className="learning-steps">
             {["Learn", "Explore", "Build", "Create"].map((item, i) => (
-              <div key={item} className="learning-step">
+              <div key={item} className="learning-step" data-animate="fade-up" data-delay={i + 1}>
                 <span>0{i + 1}</span>
                 <h3>{item}</h3>
                 <p>
@@ -151,8 +152,8 @@ export default function Home() {
             text="Choose a starting point based on age, interest and experience."
           />
           <div className="course-grid">
-            {courses.slice(0, 6).map((course) => (
-              <CourseCard key={course.id} course={course} />
+            {courses.slice(0, 6).map((course, index) => (
+              <CourseCard key={course.id} course={course} index={index} />
             ))}
           </div>
           <div className="center-link">
@@ -169,14 +170,14 @@ export default function Home() {
             text="Hands-on projects help children connect coding, sensors, electronics and real-world problems."
           />
           <div className="project-grid">
-            {projects.map((project) => (
-              <ProjectCard key={project[0]} project={project} />
+            {projects.map((project, index) => (
+              <ProjectCard key={project[0]} project={project} index={index} />
             ))}
           </div>
         </section>
 
         <section className="home-section trust-section">
-          <div className="trust-copy">
+          <div className="trust-copy" data-animate="fade-left">
             <span className="eyebrow">For parents</span>
             <h2>Fun for kids. Meaningful for parents.</h2>
             <p>
@@ -191,7 +192,7 @@ export default function Home() {
               "Age-appropriate Learning",
               "Project-based Learning",
             ].map((x, i) => (
-              <div key={x}>
+              <div key={x} data-animate="pop" data-delay={i + 1}>
                 <span>0{i + 1}</span>
                 <ShieldCheck size={20} />
                 <b>{x}</b>
@@ -207,8 +208,8 @@ export default function Home() {
             text="Placeholder testimonials are structured for easy replacement later."
           />
           <div className="testimonial-grid">
-            {testimonials.map((item) => (
-              <TestimonialCard key={item[0] + item[1]} item={item} />
+            {testimonials.map((item, index) => (
+              <TestimonialCard key={item[0] + item[1]} item={item} index={index} />
             ))}
           </div>
         </section>

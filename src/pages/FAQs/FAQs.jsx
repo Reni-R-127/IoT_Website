@@ -8,9 +8,16 @@ import "./FAQs.css";
 export default function FAQs() {
   return (
     <>
-      <PageHero eyebrow="FAQs" title="Questions parents usually ask." text="Open a question to see a simple answer. Update these answers with your actual policies before launch." />
+      <PageHero
+        eyebrow="FAQs"
+        title="Questions parents usually ask."
+        text="Open a question to see a simple answer. Update these answers with your actual policies before launch."
+      />
       <main className="faqs-page">
-        <SectionTitle eyebrow="Need to know" title="Frequently asked questions" />
+        <SectionTitle
+          eyebrow="Need to know"
+          title="Frequently asked questions"
+        />
         <FAQAccordion items={faqs} />
       </main>
       <CTASection />

@@ -2,9 +2,11 @@ import { Check, MessageCircle } from "lucide-react";
 import { whatsappUrl } from "../../config/site.js";
 import "./PricingCard.css";
 
-export default function PricingCard({ plan }) {
+export default function PricingCard({ plan, index = 0 }) {
+  const delay = (index % 8) + 1;
+
   return (
-    <article className={`pricing-card ${plan.popular ? "popular" : ""}`}>
+    <article className={`pricing-card ${plan.popular ? "popular" : ""}`} data-animate="pop" data-delay={delay}>
       {plan.popular && <span className="popular-badge">Most Popular</span>}
       <span className="pricing-audience">{plan.audience}</span>
       <h3>{plan.name}</h3>

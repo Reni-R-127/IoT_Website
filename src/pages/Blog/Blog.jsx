@@ -15,7 +15,7 @@ export function Blog() {
       <main className="blog-page">
         <SectionTitle eyebrow="Technology education" title="Explore the blog" />
         <div className="category-row">{["All","IoT","Robotics","Coding","Electronics","AI","Kids Projects","STEM Education"].map((x,i) => <span className={i === 0 ? "selected" : ""} key={x}>{x}</span>)}</div>
-        <div className="blog-grid">{blogPosts.map((post,i) => <BlogCard key={post[1]} post={post} slug={slugs[i]}/>)}</div>
+        <div className="blog-grid">{blogPosts.map((post,i) => <BlogCard key={post[1]} post={post} slug={slugs[i]} index={i}/>)}</div>
       </main>
       <CTASection />
     </>
@@ -30,9 +30,9 @@ export function BlogDetails() {
   if (!post) return <div className="blog-not-found"><h1>Article not found</h1></div>;
 
   return (
-    <main className="blog-detail">
+    <main className="blog-detail" data-animate="fade-up">
       <span>{post[0]}</span><h1>{post[1]}</h1><time>{post[3]}</time>
-      <div className="blog-detail-image">⚡</div>
+      <div className="blog-detail-image" data-animate="zoom">⚡</div>
       <p>{post[2]}</p>
       <p>This placeholder article area is ready for your full blog content. You can replace this text with a longer educational article, images, project instructions and links without changing the page structure.</p>
     </main>

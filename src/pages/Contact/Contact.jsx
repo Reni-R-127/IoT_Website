@@ -160,9 +160,9 @@ export default function Contact() {
           </label>
           <div className="form-actions">
             <button type="submit">Send Enquiry</button>
-            <a href={whatsappUrl} target="_blank" rel="noreferrer">
+            {/* <a href={whatsappUrl} target="_blank" rel="noreferrer">
               <MessageCircle size={16} /> Chat on WhatsApp
-            </a>
+            </a> */}
           </div>
           <small>
             Send Enquiry prepares the entered details as a WhatsApp message.

@@ -7,7 +7,7 @@
 .eyebrow {
   display: inline-block;
   margin-bottom: 9px;
-  color: #1599d6;
+  color: #4D96FF;
   font-size: 12px;
   font-weight: 900;
   text-transform: uppercase;
@@ -15,14 +15,14 @@
 }
 .section-title h2 {
   margin: 0;
-  color: #101828;
+  color: #24324A;
   font-size: clamp(30px, 4vw, 46px);
   line-height: 1.08;
   letter-spacing: -.04em;
 }
 .section-title p {
   margin: 15px auto 0;
-  color: #687386;
+  color: #667085;
   line-height: 1.75;
   font-size: 15px;
 }
