@@ -4,6 +4,8 @@ import { Menu, X, MessageCircle } from "lucide-react";
 import { siteConfig, whatsappUrl } from "../../config/site.js";
 import "./Navbar.css";
 
+import logo from "../../assets/logo.png";
+
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
@@ -14,9 +16,8 @@ const links = [
   ["/pricing", "Pricing"],
   ["/faqs", "FAQs"],
   ["/blog", "Blog"],
-  ["/contact", "Contact"]
+  ["/contact", "Contact"],
 ];
-
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -30,19 +31,23 @@ export default function Navbar() {
       behavior: "instant",
     });
   }, [pathname]);
-  
+
   return (
     <header className="navbar">
       <div className="navbar-inner">
         <Link className="brand" to="/" onClick={() => setOpen(false)}>
-          <span className="brand-mark">TS</span>
+          <img src={logo} alt="TechSprout Kids Logo" className="brand-logo" />{" "}
           <span>
             <strong>{siteConfig.companyName}</strong>
             <small>Learn • Build • Create</small>
           </span>
         </Link>
 
-        <button className="menu-button" onClick={() => setOpen(!open)} aria-label="Toggle menu">
+        <button
+          className="menu-button"
+          onClick={() => setOpen(!open)}
+          aria-label="Toggle menu"
+        >
           {open ? <X size={24} /> : <Menu size={24} />}
         </button>
 
@@ -51,13 +56,21 @@ export default function Navbar() {
             <NavLink
               key={to}
               to={to}
-              className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}
+              className={({ isActive }) =>
+                isActive ? "nav-link active" : "nav-link"
+              }
               onClick={() => setOpen(false)}
             >
               {label}
             </NavLink>
           ))}
-          <a className="nav-enroll" href={whatsappUrl} target="_blank" rel="noreferrer" onClick={() => setOpen(false)}>
+          <a
+            className="nav-enroll"
+            href={whatsappUrl}
+            target="_blank"
+            rel="noreferrer"
+            onClick={() => setOpen(false)}
+          >
             <MessageCircle size={17} /> Enroll Now
           </a>
         </nav>

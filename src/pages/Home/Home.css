@@ -235,38 +235,89 @@
 .home-highlights {
   width: min(1180px, calc(100% - 36px));
   margin: -80px auto 0;
+
   position: relative;
   z-index: 5;
+
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  border: 1px solid #DDE7F2;
-  border-radius: 20px;
-  background: #fff;
-  box-shadow: 0 18px 38px rgba(16, 24, 40, 0.07);
+  gap: 14px;
 }
 .highlight-card {
+  width: 100%;
+  min-width: 0;
+  min-height: 120px;
+
   display: flex;
+  align-items: flex-start;
   gap: 13px;
+
   padding: 22px;
-  border-right: 1px solid #E3EAF3;
+
+  border: 1px solid #DDE7F2;
+  border-radius: 18px;
+
+  background: #FFFFFF;
+
+  box-shadow: 0 10px 25px rgba(16, 24, 40, 0.05);
+
+  box-sizing: border-box;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
 }
 .highlight-card:last-child {
   border-right: 0;
 }
 .highlight-card > svg {
   flex: 0 0 auto;
+
+  margin-top: 2px;
+
   color: #4D96FF;
+
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease;
 }
 .highlight-card h3 {
-  margin: 0 0 4px;
-  font-size: 15px;
+  margin: 0 0 5px;
+
   color: #24324A;
+
+  font-size: 14px;
+  font-weight: 800;
+
+  transition: color 0.3s ease;
 }
 .highlight-card p {
-  margin: 0;
+   margin: 0;
+
   color: #667085;
+
   font-size: 15px;
   line-height: 1.5;
+}
+
+.highlight-card:hover {
+  transform: translateY(-7px);
+
+  border-color: #4D96FF;
+
+  box-shadow:
+    0 18px 35px rgba(77, 150, 255, 0.14);
+}
+
+.highlight-card:hover > svg {
+  transform: scale(1.12) rotate(-6deg);
+
+  color: #9B5DE5;
+}
+
+.highlight-card:hover h3 {
+  color: #4D96FF;
 }
 
 .home-section {

@@ -1,5 +1,5 @@
 export const siteConfig = {
-  companyName: "TechSprout Kids",
+  companyName: "IoT Web",
   phone: "+91 89254 50473",
   email: "teamprojenius@gmail.com",
   location: "Madurai, Tamil Nadu 625003",

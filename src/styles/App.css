@@ -27,9 +27,9 @@ body {
     "Segoe UI",
     sans-serif;
 
-  color: #24324A;
+  color: #24324a;
   background: #fff;
-
+  overflow-x: hidden;
   overscroll-behavior-y: none;
 }
 
@@ -76,8 +76,8 @@ a {
 }
 
 ::selection {
-  color: #24324A;
-  background: #6BCB77;
+  color: #24324a;
+  background: #6bcb77;
 }
 
 /* =========================================
@@ -85,52 +85,104 @@ a {
    ========================================= */
 [data-animate] {
   opacity: 0;
-  transition: opacity 0.7s ease, transform 0.7s ease;
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
   will-change: opacity, transform;
 }
 
-[data-animate="fade-up"] { transform: translateY(32px); }
-[data-animate="fade-down"] { transform: translateY(-24px); }
-[data-animate="fade-left"] { transform: translateX(-32px); }
-[data-animate="fade-right"] { transform: translateX(32px); }
-[data-animate="zoom"] { transform: scale(0.92); }
-[data-animate="pop"] { transform: translateY(24px) scale(0.94); }
+[data-animate="fade-up"] {
+  transform: translateY(32px);
+}
+[data-animate="fade-down"] {
+  transform: translateY(-24px);
+}
+[data-animate="fade-left"] {
+  transform: translateX(-32px);
+}
+[data-animate="fade-right"] {
+  transform: translateX(32px);
+}
+[data-animate="zoom"] {
+  transform: scale(0.92);
+}
+[data-animate="pop"] {
+  transform: translateY(24px) scale(0.94);
+}
 
 [data-animate].is-visible {
   opacity: 1;
   transform: translate(0) scale(1);
 }
 
-[data-delay="1"] { transition-delay: 0.08s; }
-[data-delay="2"] { transition-delay: 0.16s; }
-[data-delay="3"] { transition-delay: 0.24s; }
-[data-delay="4"] { transition-delay: 0.32s; }
-[data-delay="5"] { transition-delay: 0.40s; }
-[data-delay="6"] { transition-delay: 0.48s; }
-[data-delay="7"] { transition-delay: 0.56s; }
-[data-delay="8"] { transition-delay: 0.64s; }
+[data-delay="1"] {
+  transition-delay: 0.08s;
+}
+[data-delay="2"] {
+  transition-delay: 0.16s;
+}
+[data-delay="3"] {
+  transition-delay: 0.24s;
+}
+[data-delay="4"] {
+  transition-delay: 0.32s;
+}
+[data-delay="5"] {
+  transition-delay: 0.4s;
+}
+[data-delay="6"] {
+  transition-delay: 0.48s;
+}
+[data-delay="7"] {
+  transition-delay: 0.56s;
+}
+[data-delay="8"] {
+  transition-delay: 0.64s;
+}
 
 @keyframes kidsFloat {
-  0%, 100% { transform: translateY(0) rotate(0deg); }
-  50% { transform: translateY(-10px) rotate(2deg); }
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(2deg);
+  }
 }
 
 @keyframes kidsFloatReverse {
-  0%, 100% { transform: translateY(0) rotate(0deg); }
-  50% { transform: translateY(9px) rotate(-2deg); }
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(9px) rotate(-2deg);
+  }
 }
 
 @keyframes kidsPulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.05); }
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  *, *::before, *::after {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
-  [data-animate] { opacity: 1; transform: none; }
+  [data-animate] {
+    opacity: 1;
+    transform: none;
+  }
 }

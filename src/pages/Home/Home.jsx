@@ -122,6 +122,7 @@ export default function Home() {
               data-delay={(index % 8) + 1}
             >
               <Icon />
+
               <div>
                 <h3>{title}</h3>
                 <p>{text}</p>

@@ -30,16 +30,12 @@
   color: #24324A;
 }
 
-.brand-mark {
+.brand-logo {
   width: 43px;
   height: 43px;
-  border-radius: 13px;
-  display: grid;
-  place-items: center;
-  font-weight: 900;
-  color: #24324A;
-  background: linear-gradient(135deg, #6BCB77, #58a9ff);
-  box-shadow: 0 8px 22px rgba(21,153,214,.18);
+  object-fit: contain;
+  display: block;
+  flex-shrink: 0;
 }
 
 .brand strong {
@@ -51,7 +47,7 @@
   display: block;
   margin-top: 2px;
   color: #667085;
-  font-size: 10px;
+  font-size: 15px;
 }
 
 .nav-links {
