@@ -1,16 +1,92 @@
 .page-hero {
   position: relative;
-  min-height: 290px;
-  overflow: hidden;
+
+  min-height: 300px;
+
   display: grid;
   place-items: center;
-  padding: 70px 18px;
-  background: linear-gradient(135deg,#effcff,#f2edff 62%,#fff8d9);
+
+  /* Space for fixed navbar + visual breathing room */
+  padding: 125px 30px 70px;
+
+  box-sizing: border-box;
+
+  overflow: hidden;
+
+  background: linear-gradient(135deg, #effcff, #f2edff 62%, #fff8d9);
 }
-.page-hero-content { position: relative; z-index: 1; max-width: 760px; text-align: center; }
-.page-hero-content span { color: #1599d6; font-size: 11px; font-weight: 900; text-transform: uppercase; letter-spacing: .12em; }
-.page-hero h1 { margin: 10px 0; color: #101828; font-size: clamp(36px,6vw,58px); line-height: 1; letter-spacing: -.045em; }
-.page-hero p { margin: 0 auto; max-width: 650px; color: #687386; font-size: 15px; line-height: 1.75; }
-.page-hero-shape { position: absolute; border-radius: 50%; filter: blur(1px); opacity: .65; }
-.shape-one { width: 190px; height: 190px; left: 6%; top: -55px; background: #c5f7f2; }
-.shape-two { width: 230px; height: 230px; right: 5%; bottom: -110px; background: #ded2ff; }
+.page-hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 760px;
+  text-align: center;
+}
+.page-hero-content span {
+  color: #1599d6;
+  font-size: 11px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+.page-hero h1 {
+  margin: 10px 0;
+  color: #101828;
+  font-size: clamp(36px, 6vw, 58px);
+  line-height: 1;
+  letter-spacing: -0.045em;
+}
+.page-hero p {
+  margin: 0 auto;
+  max-width: 650px;
+  color: #687386;
+  font-size: 15px;
+  line-height: 1.75;
+}
+.page-hero-shape {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(1px);
+  opacity: 0.65;
+}
+.shape-one {
+  width: 190px;
+  height: 190px;
+  left: 6%;
+  top: -55px;
+  background: #c5f7f2;
+}
+.shape-two {
+  width: 230px;
+  height: 230px;
+  right: 5%;
+  bottom: -110px;
+  background: #ded2ff;
+}
+
+@media (max-width: 950px) {
+  .page-hero {
+    min-height: 280px;
+    padding: 105px 24px 60px;
+  }
+}
+
+@media (max-width: 600px) {
+  .page-hero {
+    min-height: 270px;
+    padding: 90px 18px 55px;
+  }
+
+  .page-hero-content {
+    max-width: 100%;
+  }
+
+  .page-hero h1 {
+    font-size: clamp(34px, 10vw, 48px);
+    line-height: 1.02;
+  }
+
+  .page-hero p {
+    font-size: 14px;
+    line-height: 1.65;
+  }
+}

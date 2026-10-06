@@ -4,6 +4,9 @@ import { Menu, X, MessageCircle } from "lucide-react";
 import { siteConfig, whatsappUrl } from "../../config/site.js";
 import "./Navbar.css";
 
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+
 const links = [
   ["/", "Home"],
   ["/about", "About Us"],
@@ -14,9 +17,20 @@ const links = [
   ["/contact", "Contact"]
 ];
 
+
 export default function Navbar() {
   const [open, setOpen] = useState(false);
 
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "instant",
+    });
+  }, [pathname]);
+  
   return (
     <header className="navbar">
       <div className="navbar-inner">
