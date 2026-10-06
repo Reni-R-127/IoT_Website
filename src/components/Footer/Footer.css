@@ -175,12 +175,12 @@
 .footer-whatsapp:hover {
   color: #24324A;
 
-  background: #FF6B6B;
+  background: #55d375;
 
   transform: translateY(-3px);
 
   box-shadow:
-    0 12px 25px rgba(255, 107, 107, 0.25);
+    0 12px 25px rgba(18, 221, 110, 0.25);
 }
 
 .footer-whatsapp svg {
