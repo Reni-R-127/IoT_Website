@@ -5,9 +5,10 @@ import { courses } from "../../data/content.js";
 import { whatsappUrl } from "../../config/site.js";
 import PageHero from "../../components/PageHero/PageHero.jsx";
 import SectionTitle from "../../components/SectionTitle/SectionTitle.jsx";
-import CourseCard from "../../components/CourseCard/CourseCard.jsx";
+// import CourseCard from "../../components/CourseCard/CourseCard.jsx";
 import CTASection from "../../components/CTASection/CTASection.jsx";
 import "./Courses.css";
+import PopularLearning from "../../components/Home/PopularLearning/PopularLearning.jsx";
 
 export function Courses() {
   return (
@@ -17,18 +18,21 @@ export function Courses() {
         title="Learn technology by building with it."
         text="Explore practical courses across IoT, electronics, Arduino, robotics, coding and AI."
       />
-      <main className="courses-page">
-        <SectionTitle
+      {/* <main className="courses-page"> */}
+        {/* <SectionTitle
           eyebrow="Course library"
           title="Choose a learning path"
           text="Each course can be customized later with your real age groups, duration, price and delivery mode."
-        />
-        <div className="all-courses-grid">
+        /> */}
+        {/* <div className="all-courses-grid">
           {courses.map((course, index) => (
             <CourseCard key={course.id} course={course} index={index} />
           ))}
-        </div>
-      </main>
+        </div> */}
+
+        
+      {/* </main> */}
+      <PopularLearning />
       <CTASection />
     </>
   );
