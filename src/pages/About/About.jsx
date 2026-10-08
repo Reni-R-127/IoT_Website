@@ -18,8 +18,11 @@ import WhoWeAre from "../../components/About/WhoWeAre/WhoWeAre.jsx";
 import VisionMissionGoal from "../../components/About/VisionMissionGoal/VisionMissionGoal.jsx";
 import Teaching from "../../components/About/Teaching/Teaching.jsx";
 
-import "./About.css";
+// import "./About.css";
 import LearningApproach from "../../components/About/LearningApproach/LearningApproach.jsx";
+import Skill from "../../components/About/Skill/Skill.jsx";
+import WhyTechnology from "../../components/About/WhyTechnology/WhyTechnology.jsx";
+
 
 const topics = [
   ["IoT", Radio],
@@ -75,8 +78,9 @@ export default function About() {
 
       <VisionMissionGoal />
       <Teaching />
-
+      <Skill />
       <LearningApproach />
+      <WhyTechnology />
       {/* =====================================================
           ABOUT CONTENT
       ===================================================== */}
@@ -187,7 +191,7 @@ export default function About() {
             WHY TECHNOLOGY
         ===================================================== */}
 
-        <section className="benefits-section" data-animate="fade-up">
+        {/* <section className="benefits-section" data-animate="fade-up">
           <div className="benefits-content">
             <span className="eyebrow">WHY TECHNOLOGY?</span>
 
@@ -213,18 +217,18 @@ export default function About() {
               </div>
             ))}
           </div>
-        </section>
+        </section> */}
 
         {/* =====================================================
             ABOUT CTA
         ===================================================== */}
 
-        <div className="about-cta">
+        {/* <div className="about-cta">
           <Link to="/courses">
             Explore Courses
             <ArrowRight size={17} />
           </Link>
-        </div>
+        </div> */}
       </main>
 
       {/* =====================================================
