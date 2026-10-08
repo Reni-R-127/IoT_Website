@@ -11,7 +11,7 @@
   min-height: auto;
 
   margin: 0;
-  padding: 34px 32px 28px;
+  padding: 45px 32px 28px;
 
   box-sizing: border-box;
 
@@ -23,11 +23,11 @@
   align-content: center;
 
   column-gap: 32px;
-  row-gap: 22px;
+  row-gap: 20px;
 }
 
 /* =========================================================
-   BLUE HALF CIRCLE
+   DECORATIVE CIRCLES
 ========================================================= */
 
 .home-hero::before {
@@ -46,12 +46,9 @@
   background: #dceeff;
 
   pointer-events: none;
+
   z-index: 0;
 }
-
-/* =========================================================
-   VIOLET HALF CIRCLE
-========================================================= */
 
 .home-hero::after {
   content: "";
@@ -69,11 +66,12 @@
   background: #eee5ff;
 
   pointer-events: none;
+
   z-index: 0;
 }
 
 /* =========================================================
-   CONTENT ABOVE DECORATION
+   CONTENT LAYER
 ========================================================= */
 
 .hero-content,
@@ -89,6 +87,12 @@
 
 .hero-content {
   min-width: 0;
+
+  /*
+    Slightly lower on desktop,
+    matching your first screenshot.
+  */
+  transform: translateY(10px);
 }
 
 .hero-kicker {
@@ -104,6 +108,7 @@
 }
 
 .hero-content h1 {
+  width: 100%;
   max-width: 650px;
 
   margin: 8px 0 12px;
@@ -111,8 +116,13 @@
   color: #24324a;
 
   font-size: clamp(40px, 5.2vw, 66px);
+
   line-height: 1;
+
   letter-spacing: -0.05em;
+
+  overflow-wrap: normal;
+  word-break: normal;
 }
 
 .hero-content h1 em {
@@ -121,6 +131,7 @@
 }
 
 .hero-content > p {
+  width: 100%;
   max-width: 600px;
 
   margin: 0;
@@ -142,6 +153,8 @@
   gap: 10px;
 
   margin-top: 17px;
+
+  flex-wrap: wrap;
 }
 
 .primary-btn,
@@ -153,6 +166,7 @@
   gap: 8px;
 
   min-height: 50px;
+
   padding: 0 21px;
 
   border-radius: 12px;
@@ -208,7 +222,8 @@
 .hero-visual {
   position: relative;
 
-  min-height: 400px;
+  width: 100%;
+  min-height: 450px;
 
   display: grid;
   place-items: center;
@@ -234,7 +249,7 @@
 }
 
 /* =========================================================
-   HERO ORBITS
+   ORBITS
 ========================================================= */
 
 .hero-orbit {
@@ -437,7 +452,7 @@
 }
 
 /* =========================================================
-   HERO CAPTION
+   CAPTION
 ========================================================= */
 
 .hero-caption {
@@ -459,17 +474,19 @@
 
   color: #405064;
 
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.88);
 
   font-size: 10px;
   font-weight: 900;
+
+  white-space: nowrap;
 
   animation:
     heroCaptionFloat 3.5s ease-in-out infinite;
 }
 
 /* =========================================================
-   HERO HIGHLIGHTS
+   HIGHLIGHTS
 ========================================================= */
 
 .hero-highlights {
@@ -484,7 +501,7 @@
 
   gap: 14px;
 
-  margin-top: 0;
+  margin: 0;
 }
 
 /* =========================================================
@@ -494,6 +511,7 @@
 .hero-highlight-card {
   position: relative;
 
+  min-width: 0;
   min-height: 88px;
 
   display: flex;
@@ -520,11 +538,15 @@
 }
 
 .hero-highlight-card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-5px);
 
   box-shadow:
     0 12px 25px rgba(30, 80, 130, 0.14);
 }
+
+/* =========================================================
+   CARD ICON
+========================================================= */
 
 .hero-highlight-icon {
   flex: 0 0 48px;
@@ -545,8 +567,12 @@
 }
 
 .hero-highlight-card:hover .hero-highlight-icon {
-  transform: scale(1.1) rotate(-4deg);
+  transform: scale(1.08) rotate(-4deg);
 }
+
+/* =========================================================
+   CARD CONTENT
+========================================================= */
 
 .hero-highlight-content {
   min-width: 0;
@@ -554,24 +580,41 @@
 }
 
 .hero-highlight-content h3 {
+  width: 100%;
+
   margin: 0 0 5px;
 
   font-size: 16px;
   line-height: 1.2;
   font-weight: 900;
 
-  white-space: nowrap;
+  /*
+    IMPORTANT:
+    Do not use nowrap here.
+    This was one reason text could get clipped
+    at smaller widths.
+  */
+  white-space: normal;
+
+  overflow-wrap: break-word;
 }
 
 .hero-highlight-content p {
-  margin: 0;
+  width: 100%;
 
-  max-width: 230px;
+  margin: 0;
 
   color: #667085;
 
   font-size: 14px;
   line-height: 1.4;
+
+  /*
+    Allow complete text.
+  */
+  white-space: normal;
+
+  overflow-wrap: break-word;
 }
 
 .hero-highlight-line {
@@ -738,61 +781,54 @@
 
 @media (max-width: 950px) {
   .home-hero {
-    min-height: auto;
-
-    margin: 0;
-
-    padding: 45px 24px 28px;
-
-    display: grid;
+    padding: 42px 24px 26px;
 
     grid-template-columns: 1fr;
     grid-template-rows: auto auto auto;
 
-    gap: 24px;
+    gap: 22px;
 
     align-items: start;
     align-content: start;
-
-    overflow: hidden;
   }
 
+  /*
+    Remove desktop vertical shift.
+  */
   .hero-content {
+    transform: none;
+
     width: 100%;
     max-width: 850px;
 
     margin: 0 auto;
 
     text-align: center;
-
-    opacity: 1;
-    visibility: visible;
   }
 
   .hero-kicker {
     font-size: 14px;
-    margin-bottom: 6px;
   }
 
   .hero-content h1 {
-    width: 100%;
     max-width: 800px;
 
     margin: 6px auto 12px;
 
     font-size: clamp(40px, 6vw, 56px);
+
     line-height: 1.04;
 
     text-align: center;
   }
 
   .hero-content > p {
-    width: 100%;
     max-width: 700px;
 
     margin: 0 auto;
 
     font-size: 15px;
+
     line-height: 1.55;
 
     text-align: center;
@@ -801,27 +837,29 @@
   .hero-actions {
     justify-content: center;
 
-    gap: 10px;
-
-    margin-top: 16px;
-
-    flex-wrap: wrap;
+    margin-top: 15px;
   }
+
+  /* =====================================================
+     TABLET VISUAL
+  ===================================================== */
 
   .hero-visual {
     width: 100%;
     max-width: 680px;
 
-    min-height: 350px;
+    min-height: 330px;
 
     margin: 0 auto;
 
     border-radius: 26px;
   }
 
-  .hero-highlights {
-    width: 100%;
+  /* =====================================================
+     TABLET HIGHLIGHTS
+  ===================================================== */
 
+  .hero-highlights {
     grid-column: 1;
 
     grid-template-columns:
@@ -829,7 +867,25 @@
 
     gap: 12px;
 
-    margin: 0 auto;
+    width: 100%;
+  }
+
+  .hero-highlight-card {
+    min-width: 0;
+
+    min-height: 86px;
+
+    padding: 11px 13px;
+
+    gap: 11px;
+  }
+
+  .hero-highlight-content h3 {
+    font-size: 15px;
+  }
+
+  .hero-highlight-content p {
+    font-size: 13px;
   }
 
   .home-hero::before {
@@ -861,12 +917,21 @@
 
     margin: 0;
 
-    padding: 28px 14px 22px;
+    /*
+      IMPORTANT:
+      This reserves space below a fixed mobile navbar.
+      It prevents the kicker/title from going underneath
+      the navbar.
+    */
+    padding:
+      92px 14px 20px;
 
-    gap: 16px;
+    gap: 15px;
 
     grid-template-columns: 1fr;
     grid-template-rows: auto auto auto;
+
+    overflow: hidden;
   }
 
   .hero-content {
@@ -878,12 +943,17 @@
     padding: 0 2px;
 
     text-align: center;
+
+    transform: none;
   }
 
   .hero-kicker {
-    margin-bottom: 6px;
+    display: block;
 
-    font-size: 12px;
+    margin-bottom: 5px;
+
+    font-size: 11px;
+
     line-height: 1.4;
 
     letter-spacing: 0.08em;
@@ -893,16 +963,18 @@
     width: 100%;
     max-width: 100%;
 
-    margin: 6px auto 11px;
+    margin: 5px auto 10px;
 
-    font-size: clamp(32px, 9vw, 40px);
+    font-size: clamp(30px, 8.8vw, 39px);
 
-    line-height: 1.04;
+    line-height: 1.05;
+
     letter-spacing: -0.04em;
 
     text-align: center;
 
-    overflow-wrap: break-word;
+    overflow-wrap: normal;
+    word-break: normal;
   }
 
   .hero-content > p {
@@ -911,41 +983,52 @@
 
     margin: 0 auto;
 
-    font-size: 13.5px;
-    line-height: 1.55;
+    font-size: 13px;
+
+    line-height: 1.5;
 
     text-align: center;
   }
 
+  /* =====================================================
+     MOBILE BUTTONS
+  ===================================================== */
+
   .hero-actions {
     width: 100%;
 
+    display: flex;
+
     justify-content: center;
+
+    align-items: center;
 
     gap: 8px;
 
-    margin-top: 14px;
+    margin-top: 13px;
 
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
   }
 
   .primary-btn,
   .secondary-btn {
-    min-height: 45px;
+    min-height: 44px;
 
-    padding: 0 15px;
+    padding: 0 14px;
 
-    font-size: 12.5px;
+    font-size: 12px;
+
+    flex-shrink: 0;
   }
 
-  /* -------------------------------
+  /* =====================================================
      MOBILE VISUAL
-  ------------------------------- */
+  ===================================================== */
 
   .hero-visual {
     width: 100%;
 
-    min-height: 270px;
+    min-height: 265px;
 
     margin: 0 auto;
 
@@ -953,22 +1036,22 @@
   }
 
   .hero-device {
-    transform: scale(0.65);
+    transform: scale(0.64);
   }
 
   .orbit-one {
-    width: 225px;
-    height: 225px;
+    width: 220px;
+    height: 220px;
   }
 
   .orbit-two {
-    width: 175px;
-    height: 175px;
+    width: 170px;
+    height: 170px;
   }
 
   .floating-chip {
-    width: 44px;
-    height: 44px;
+    width: 43px;
+    height: 43px;
 
     border-radius: 12px;
   }
@@ -987,12 +1070,14 @@
     font-size: 8px;
   }
 
-  /* -------------------------------
+  /* =====================================================
      MOBILE HIGHLIGHTS
-  ------------------------------- */
+  ===================================================== */
 
   .hero-highlights {
     width: 100%;
+
+    display: grid;
 
     grid-template-columns: 1fr;
 
@@ -1004,18 +1089,25 @@
   .hero-highlight-card {
     width: 100%;
 
-    min-height: 70px;
+    min-width: 0;
 
-    padding: 9px 12px;
+    min-height: 69px;
+
+    padding: 9px 11px;
 
     gap: 10px;
+
+    /*
+      Never clip text.
+    */
+    overflow: visible;
   }
 
   .hero-highlight-icon {
-    flex: 0 0 42px;
+    flex: 0 0 41px;
 
-    width: 42px;
-    height: 42px;
+    width: 41px;
+    height: 41px;
 
     border-radius: 11px;
   }
@@ -1025,46 +1117,66 @@
     height: 19px;
   }
 
+  .hero-highlight-content {
+    min-width: 0;
+
+    flex: 1;
+  }
+
   .hero-highlight-content h3 {
-    margin-bottom: 3px;
+    width: 100%;
+
+    margin: 0 0 3px;
 
     font-size: 13px;
 
+    line-height: 1.2;
+
     white-space: normal;
+
+    overflow-wrap: anywhere;
   }
 
   .hero-highlight-content p {
-    max-width: 100%;
+    width: 100%;
+
+    margin: 0;
 
     font-size: 11px;
+
     line-height: 1.4;
+
+    white-space: normal;
+
+    overflow-wrap: anywhere;
   }
 
   .hero-highlight-line {
     width: 42px;
+
     height: 2px;
 
     margin-top: 4px;
   }
 
-  /* -------------------------------
+  /* =====================================================
      MOBILE DECORATIONS
-  ------------------------------- */
+  ===================================================== */
 
   .home-hero::before {
-    width: 145px;
-    height: 145px;
+    width: 140px;
+    height: 140px;
 
-    left: -72px;
-    top: -72px;
+    left: -70px;
+    top: -70px;
   }
 
   .home-hero::after {
-    width: 155px;
-    height: 155px;
+    width: 150px;
+    height: 150px;
 
-    right: -77px;
-    bottom: -77px;
+    right: -75px;
+    bottom: -75px;
   }
 }
 
@@ -1074,73 +1186,85 @@
 
 @media (max-width: 420px) {
   .home-hero {
-    padding: 24px 11px 18px;
+    /*
+      Still leaves enough space for the navbar,
+      but does not create a huge blank area.
+    */
+    padding:
+      88px 10px 17px;
 
-    gap: 14px;
+    gap: 13px;
   }
 
   .hero-kicker {
-    font-size: 10.5px;
+    font-size: 10px;
+
+    letter-spacing: 0.07em;
   }
 
   .hero-content h1 {
-    font-size: 34px;
+    font-size: 33px;
 
-    line-height: 1.05;
+    line-height: 1.04;
 
-    margin-top: 5px;
+    margin-top: 4px;
   }
 
   .hero-content > p {
-    font-size: 12.5px;
-    line-height: 1.5;
+    font-size: 12px;
+
+    line-height: 1.48;
   }
 
   .hero-actions {
     gap: 7px;
 
-    margin-top: 12px;
+    margin-top: 11px;
   }
 
   .primary-btn,
   .secondary-btn {
-    min-height: 43px;
+    min-height: 42px;
 
-    padding: 0 13px;
+    padding: 0 12px;
 
-    font-size: 11.5px;
+    font-size: 11px;
   }
 
-  .hero-visual {
-    min-height: 245px;
+  /* =====================================================
+     SMALL MOBILE VISUAL
+  ===================================================== */
 
-    border-radius: 20px;
+  .hero-visual {
+    min-height: 235px;
+
+    border-radius: 19px;
   }
 
   .hero-device {
-    transform: scale(0.58);
+    transform: scale(0.56);
   }
 
   .orbit-one {
-    width: 200px;
-    height: 200px;
+    width: 195px;
+    height: 195px;
   }
 
   .orbit-two {
-    width: 155px;
-    height: 155px;
+    width: 150px;
+    height: 150px;
   }
 
   .floating-chip {
-    width: 40px;
-    height: 40px;
+    width: 38px;
+    height: 38px;
 
-    border-radius: 11px;
+    border-radius: 10px;
   }
 
   .floating-chip svg {
-    width: 17px;
-    height: 17px;
+    width: 16px;
+    height: 16px;
   }
 
   .hero-caption {
@@ -1149,50 +1273,56 @@
 
     padding: 6px 7px;
 
-    font-size: 7.5px;
+    font-size: 7px;
   }
 
+  /* =====================================================
+     SMALL MOBILE CARDS
+  ===================================================== */
+
   .hero-highlight-card {
-    min-height: 67px;
+    min-height: 65px;
 
-    padding: 8px 10px;
+    padding: 8px 9px;
 
-    gap: 9px;
+    gap: 8px;
   }
 
   .hero-highlight-icon {
-    flex: 0 0 39px;
+    flex: 0 0 38px;
 
-    width: 39px;
-    height: 39px;
+    width: 38px;
+    height: 38px;
   }
 
   .hero-highlight-icon svg {
-    width: 18px;
-    height: 18px;
+    width: 17px;
+    height: 17px;
   }
 
   .hero-highlight-content h3 {
-    font-size: 12.5px;
+    font-size: 12px;
   }
 
   .hero-highlight-content p {
     font-size: 10.5px;
+
+    line-height: 1.35;
   }
 
   .home-hero::before {
-    width: 125px;
-    height: 125px;
+    width: 120px;
+    height: 120px;
 
-    left: -62px;
-    top: -62px;
+    left: -60px;
+    top: -60px;
   }
 
   .home-hero::after {
-    width: 140px;
-    height: 140px;
+    width: 135px;
+    height: 135px;
 
-    right: -70px;
-    bottom: -70px;
+    right: -67px;
+    bottom: -67px;
   }
 }
