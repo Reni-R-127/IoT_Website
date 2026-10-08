@@ -16,8 +16,10 @@ import SectionTitle from "../../components/SectionTitle/SectionTitle.jsx";
 import CTASection from "../../components/CTASection/CTASection.jsx";
 import WhoWeAre from "../../components/About/WhoWeAre/WhoWeAre.jsx";
 import VisionMissionGoal from "../../components/About/VisionMissionGoal/VisionMissionGoal.jsx";
+import Teaching from "../../components/About/Teaching/Teaching.jsx";
 
 import "./About.css";
+import LearningApproach from "../../components/About/LearningApproach/LearningApproach.jsx";
 
 const topics = [
   ["IoT", Radio],
@@ -72,6 +74,9 @@ export default function About() {
       <WhoWeAre />
 
       <VisionMissionGoal />
+      <Teaching />
+
+      <LearningApproach />
       {/* =====================================================
           ABOUT CONTENT
       ===================================================== */}
@@ -107,7 +112,7 @@ export default function About() {
             MISSION
         ===================================================== */}
 
-        <section className="mission-card" data-animate="pop">
+        {/* <section className="mission-card" data-animate="pop">
           <div className="mission-icon">
             <Lightbulb size={30} />
           </div>
@@ -120,13 +125,13 @@ export default function About() {
               every child.
             </h2>
           </div>
-        </section>
+        </section> */}
 
         {/* =====================================================
             WHAT WE TEACH
         ===================================================== */}
 
-        <section className="about-section">
+        {/* <section className="about-section">
           <SectionTitle
             eyebrow="WHAT WE TEACH"
             title="Explore the technology behind everyday ideas"
@@ -148,13 +153,13 @@ export default function About() {
               </div>
             ))}
           </div>
-        </section>
+        </section> */}
 
         {/* =====================================================
             LEARNING APPROACH
         ===================================================== */}
 
-        <section className="approach-section">
+        {/* <section className="approach-section">
           <SectionTitle
             eyebrow="OUR LEARNING APPROACH"
             title="Learn → Explore → Build → Create"
@@ -176,7 +181,7 @@ export default function About() {
               </div>
             ))}
           </div>
-        </section>
+        </section> */}
 
         {/* =====================================================
             WHY TECHNOLOGY
