@@ -8,11 +8,14 @@ import {
   CircuitBoard,
   ArrowRight,
 } from "lucide-react";
+
 import { Link } from "react-router-dom";
-import { whatsappUrl } from "../../config/site.js";
-import PageHero from "../../components/PageHero/PageHero.jsx";
+
+import AboutHero from "../../components/About/AboutHero/AboutHero.jsx";
 import SectionTitle from "../../components/SectionTitle/SectionTitle.jsx";
 import CTASection from "../../components/CTASection/CTASection.jsx";
+import WhoWeAre from "../../components/About/WhoWeAre/WhoWeAre.jsx";
+
 import "./About.css";
 
 const topics = [
@@ -25,117 +28,246 @@ const topics = [
   ["Artificial Intelligence", Brain],
 ];
 
+const approachSteps = [
+  {
+    number: "01",
+    title: "Learn",
+    text: "Understand the core idea.",
+  },
+  {
+    number: "02",
+    title: "Explore",
+    text: "Experiment with tools and questions.",
+  },
+  {
+    number: "03",
+    title: "Build",
+    text: "Build a working project.",
+  },
+  {
+    number: "04",
+    title: "Create",
+    text: "Improve it and make it your own.",
+  },
+];
+
+const benefits = [
+  "Creativity",
+  "Problem Solving",
+  "Logical Thinking",
+  "Practical Skills",
+  "Innovation",
+  "Confidence",
+];
+
 export default function About() {
   return (
     <>
-      <PageHero
-        eyebrow="About us"
-        title="Technology learning that children can experience, not just watch."
-        text="We are a technology education initiative focused on helping children understand and build with modern technology."
-      />
-      <main className="about-page">
-        <section className="about-intro" data-animate="fade-up">
-          <div>
-            <span className="eyebrow">Who we are</span>
-            <h2>Learning becomes powerful when kids get to build.</h2>
-          </div>
-          <p>
-            We create hands-on learning experiences around IoT, electronics,
-            Arduino, sensors, robotics, coding and AI. The goal is to make
-            technology learning simple, practical and exciting for every child.
-          </p>
-        </section>
+      {/* =====================================================
+          ABOUT HERO
+      ===================================================== */}
 
-        <section className="mission-card" data-animate="pop">
-          <Lightbulb size={30} />
+      <AboutHero />
+      <WhoWeAre />
+
+      {/* =====================================================
+          ABOUT CONTENT
+      ===================================================== */}
+
+      <main className="about-page">
+
+        {/* =====================================================
+            WHO WE ARE
+        ===================================================== */}
+
+        {/* <section
+          className="about-intro"
+          data-animate="fade-up"
+        >
           <div>
-            <span>Our Mission</span>
+            <span className="eyebrow">
+              WHO WE ARE
+            </span>
+
             <h2>
-              To make technology learning simple, practical and exciting for
-              every child.
+              Learning becomes powerful when kids get to build.
+            </h2>
+          </div>
+
+          <p>
+            We create hands-on learning experiences around IoT,
+            electronics, Arduino, sensors, robotics, coding and AI.
+            The goal is to make technology learning simple,
+            practical and exciting for every child.
+          </p>
+        </section> */}
+
+
+        {/* =====================================================
+            MISSION
+        ===================================================== */}
+
+        <section
+          className="mission-card"
+          data-animate="pop"
+        >
+          <div className="mission-icon">
+            <Lightbulb size={30} />
+          </div>
+
+          <div className="mission-content">
+            <span>OUR MISSION</span>
+
+            <h2>
+              To make technology learning simple, practical and
+              exciting for every child.
             </h2>
           </div>
         </section>
 
+
+        {/* =====================================================
+            WHAT WE TEACH
+        ===================================================== */}
+
         <section className="about-section">
+
           <SectionTitle
-            eyebrow="What we teach"
+            eyebrow="WHAT WE TEACH"
             title="Explore the technology behind everyday ideas"
           />
+
           <div className="topic-grid">
+
             {topics.map(([name, Icon], index) => (
-              <div key={name} data-animate="pop" data-delay={(index % 8) + 1}>
-                <Icon />
+              <div
+                key={name}
+                className="topic-card"
+                data-animate="pop"
+                data-delay={(index % 8) + 1}
+              >
+                <div className="topic-icon">
+                  <Icon size={25} />
+                </div>
+
                 <b>{name}</b>
               </div>
             ))}
+
           </div>
+
         </section>
 
+
+        {/* =====================================================
+            LEARNING APPROACH
+        ===================================================== */}
+
         <section className="approach-section">
+
           <SectionTitle
-            eyebrow="Our learning approach"
+            eyebrow="OUR LEARNING APPROACH"
             title="Learn → Explore → Build → Create"
           />
+
           <div className="approach-grid">
-            {["Learn", "Explore", "Build", "Create"].map((x, i) => (
-              <div key={x} data-animate="fade-up" data-delay={i + 1}>
-                <span>0{i + 1}</span>
-                <h3>{x}</h3>
+
+            {approachSteps.map((step, index) => (
+              <div
+                key={step.title}
+                className="approach-card"
+                data-animate="fade-up"
+                data-delay={index + 1}
+              >
+                <span className="approach-number">
+                  {step.number}
+                </span>
+
+                <h3>
+                  {step.title}
+                </h3>
+
                 <p>
-                  {
-                    [
-                      "Understand the core idea.",
-                      "Experiment with tools and questions.",
-                      "Build a working project.",
-                      "Improve it and make it your own.",
-                    ][i]
-                  }
+                  {step.text}
                 </p>
               </div>
             ))}
+
           </div>
+
         </section>
 
-        <section className="benefits-section">
-          <div>
-            <span className="eyebrow">Why technology?</span>
-            <h2>Skills that go beyond the classroom</h2>
+
+        {/* =====================================================
+            WHY TECHNOLOGY
+        ===================================================== */}
+
+        <section
+          className="benefits-section"
+          data-animate="fade-up"
+        >
+
+          <div className="benefits-content">
+
+            <span className="eyebrow">
+              WHY TECHNOLOGY?
+            </span>
+
+            <h2>
+              Skills that go beyond the classroom
+            </h2>
+
             <p>
-              Technology projects encourage children to think, test, make
-              mistakes, solve problems and explain what they built.
+              Technology projects encourage children to think,
+              test, make mistakes, solve problems and explain
+              what they built.
             </p>
+
           </div>
+
+
           <div className="benefit-list">
-            {[
-              "Creativity",
-              "Problem Solving",
-              "Logical Thinking",
-              "Practical Skills",
-              "Innovation",
-              "Confidence",
-            ].map((x, index) => (
+
+            {benefits.map((item, index) => (
               <div
-                key={x}
+                key={item}
+                className="benefit-item"
                 data-animate="fade-right"
                 data-delay={(index % 8) + 1}
               >
-                <span>✓</span>
-                {x}
+                <span>
+                  ✓
+                </span>
+
+                {item}
               </div>
             ))}
+
           </div>
+
         </section>
 
+
+        {/* =====================================================
+            ABOUT CTA
+        ===================================================== */}
+
         <div className="about-cta">
+
           <Link to="/courses">
-            Explore Courses <ArrowRight size={16} />
+            Explore Courses
+            <ArrowRight size={17} />
           </Link>
-          {/* <a href={whatsappUrl} target="_blank" rel="noreferrer">
-            Enroll Now → WhatsApp
-          </a> */}
+
         </div>
+
       </main>
+
+
+      {/* =====================================================
+          COMMON CTA
+      ===================================================== */}
+
       <CTASection />
     </>
   );

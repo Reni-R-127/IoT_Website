@@ -1,0 +1,1139 @@
+/* =========================================================
+   WHO WE ARE SECTION
+========================================================= */
+
+.who-we-are {
+  position: relative;
+
+  isolation: isolate;
+
+  overflow: hidden;
+
+  width: 100%;
+
+  padding: 80px 0 72px;
+
+  background:
+    radial-gradient(
+      circle at 65% 25%,
+      rgba(224, 246, 255, 0.75),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 82% 65%,
+      rgba(244, 231, 255, 0.72),
+      transparent 25%
+    ),
+    linear-gradient(
+      180deg,
+      #ffffff 0%,
+      #fafdff 100%
+    );
+}
+
+
+/* =========================================================
+   DECORATIVE CIRCLES
+========================================================= */
+
+.who-circle {
+  position: absolute;
+
+  z-index: -1;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+
+/* TOP LEFT */
+
+.who-circle-top-left {
+  width: 330px;
+
+  height: 220px;
+
+  top: -145px;
+
+  left: -60px;
+
+  background: #e8f8ff;
+}
+
+
+/* TOP RIGHT */
+
+.who-circle-top-right {
+  width: 260px;
+
+  height: 260px;
+
+  top: -100px;
+
+  right: -105px;
+
+  background: #f2e8ff;
+}
+
+
+/* BOTTOM LEFT */
+
+.who-circle-bottom-left {
+  width: 220px;
+
+  height: 120px;
+
+  bottom: -85px;
+
+  left: -40px;
+
+  background: #eaf8ff;
+}
+
+
+/* BOTTOM RIGHT */
+
+.who-circle-bottom-right {
+  width: 260px;
+
+  height: 130px;
+
+  right: -70px;
+
+  bottom: -90px;
+
+  background: #f2e8ff;
+}
+
+
+/* =========================================================
+   MAIN CONTAINER
+========================================================= */
+
+.who-we-are-container {
+  position: relative;
+
+  z-index: 2;
+
+  width: min(
+    1380px,
+    calc(100% - 80px)
+  );
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(500px, 0.84fr)
+    minmax(620px, 1.16fr);
+
+  align-items: center;
+
+  gap: 35px;
+}
+
+
+/* =========================================================
+   LEFT CONTENT
+========================================================= */
+
+.who-content {
+  position: relative;
+
+  z-index: 5;
+
+  padding: 15px 0 20px;
+}
+
+
+/* =========================================================
+   EYEBROW
+========================================================= */
+
+.who-heading-row {
+  display: flex;
+
+  align-items: center;
+
+  gap: 13px;
+
+  margin-bottom: 22px;
+}
+
+
+.who-eyebrow {
+  color: #347fdf;
+
+  font-size: 15px;
+
+  font-weight: 900;
+
+  letter-spacing: 0.20em;
+
+  line-height: 1;
+
+  white-space: nowrap;
+}
+
+
+.who-eyebrow-line {
+  width: 45px;
+
+  height: 5px;
+
+  border-radius: 10px;
+
+  background: #f5d45c;
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.who-content h2 {
+  max-width: 620px;
+
+  margin: 0;
+
+  color: #16294d;
+
+  font-size: clamp(
+    44px,
+    4.2vw,
+    65px
+  );
+
+  font-weight: 900;
+
+  line-height: 0.99;
+
+  letter-spacing: -0.052em;
+}
+
+
+.who-content h2 strong {
+  color: #3787ed;
+
+  font-weight: 900;
+}
+
+
+/* =========================================================
+   HEADING UNDERLINE
+========================================================= */
+
+.who-heading-underline {
+  display: block;
+
+  width: 155px;
+
+  height: 8px;
+
+  margin: 8px 0 17px 185px;
+
+  border-top: 5px solid #72b7f7;
+
+  border-radius: 50%;
+
+  transform: rotate(-2deg);
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.who-description {
+  max-width: 620px;
+
+  margin: 0 0 27px;
+
+  color: #687892;
+
+  font-size: 17px;
+
+  font-weight: 500;
+
+  line-height: 1.52;
+}
+
+
+/* =========================================================
+   FEATURE CARDS
+========================================================= */
+
+.who-feature-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 13px;
+
+  max-width: 650px;
+}
+
+
+.who-feature-card {
+  min-height: 170px;
+
+  padding: 19px 18px;
+
+  border-radius: 16px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-start;
+
+  justify-content: flex-start;
+
+  box-sizing: border-box;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+
+.who-feature-card:hover {
+  transform: translateY(-5px);
+
+  box-shadow:
+    0 15px 30px
+    rgba(53, 103, 160, 0.10);
+}
+
+
+/* BLUE */
+
+.who-feature-blue {
+  background: #eef8ff;
+}
+
+
+/* YELLOW */
+
+.who-feature-yellow {
+  background: #fff9e9;
+}
+
+
+/* PURPLE */
+
+.who-feature-purple {
+  background: #f5efff;
+}
+
+
+/* =========================================================
+   FEATURE ICON
+========================================================= */
+
+.who-feature-icon {
+  width: 49px;
+
+  height: 49px;
+
+  display: grid;
+
+  place-items: center;
+
+  margin-bottom: 14px;
+
+  border-radius: 13px;
+}
+
+
+.who-feature-blue .who-feature-icon {
+  color: #3989eb;
+
+  background: #d9eeff;
+}
+
+
+.who-feature-yellow .who-feature-icon {
+  color: #f2b900;
+
+  background: #fff0bd;
+}
+
+
+.who-feature-purple .who-feature-icon {
+  color: #7954df;
+
+  background: #e9ddff;
+}
+
+
+/* =========================================================
+   FEATURE TEXT
+========================================================= */
+
+.who-feature-card h3 {
+  margin: 0 0 8px;
+
+  color: #1d3153;
+
+  font-size: 17px;
+
+  font-weight: 900;
+
+  line-height: 1.15;
+}
+
+
+.who-feature-card p {
+  margin: 0;
+
+  color: #6d7c92;
+
+  font-size: 14px;
+
+  line-height: 1.45;
+}
+
+
+/* =========================================================
+   STATS
+========================================================= */
+
+.who-stats {
+  display: flex;
+
+  align-items: center;
+
+  max-width: 650px;
+
+  margin-top: 29px;
+}
+
+
+.who-stat {
+  min-width: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding-right: 24px;
+
+  margin-right: 24px;
+
+  border-right: 1px solid #d8e2ed;
+}
+
+
+.who-stat:last-child {
+  padding-right: 0;
+
+  margin-right: 0;
+
+  border-right: 0;
+}
+
+
+.who-stat-icon {
+  flex: 0 0 auto;
+}
+
+
+.who-stat-content {
+  display: flex;
+
+  flex-direction: column;
+}
+
+
+.who-stat-content strong {
+  color: #1d3153;
+
+  font-size: 24px;
+
+  font-weight: 900;
+
+  line-height: 1.05;
+}
+
+
+.who-stat-content span {
+  margin-top: 3px;
+
+  color: #748298;
+
+  font-size: 12px;
+
+  line-height: 1.2;
+
+  white-space: nowrap;
+}
+
+
+/* STAT COLORS */
+
+.who-stat-blue .who-stat-icon {
+  color: #4d96ff;
+}
+
+
+.who-stat-green .who-stat-icon {
+  color: #45c6af;
+}
+
+
+.who-stat-purple .who-stat-icon {
+  color: #805ce2;
+}
+
+
+/* =========================================================
+   RIGHT VISUAL
+========================================================= */
+
+.who-visual {
+  position: relative;
+
+  min-width: 0;
+
+  min-height: 610px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+
+/* =========================================================
+   IMAGE GLOW
+========================================================= */
+
+.who-image-glow {
+  position: absolute;
+
+  width: 720px;
+
+  height: 560px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle at 48% 48%,
+      rgba(75, 198, 255, 0.30),
+      transparent 34%
+    ),
+    radial-gradient(
+      circle at 76% 35%,
+      rgba(157, 112, 255, 0.22),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 32% 75%,
+      rgba(255, 221, 78, 0.18),
+      transparent 28%
+    );
+
+  filter: blur(14px);
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   ORBITS
+========================================================= */
+
+.who-orbit {
+  position: absolute;
+
+  z-index: 1;
+
+  border-radius: 50%;
+
+  border: 2px dashed
+    rgba(57, 150, 242, 0.32);
+
+  pointer-events: none;
+}
+
+
+.who-orbit-one {
+  width: 570px;
+
+  height: 420px;
+
+  transform: rotate(-10deg);
+}
+
+
+.who-orbit-two {
+  width: 670px;
+
+  height: 500px;
+
+  border-color:
+    rgba(137, 101, 232, 0.16);
+
+  transform: rotate(9deg);
+}
+
+
+/* =========================================================
+   IMAGE
+========================================================= */
+
+.who-image {
+  position: relative;
+
+  z-index: 3;
+
+  display: block;
+
+  width: 100%;
+
+  max-width: 800px;
+
+  height: auto;
+
+  object-fit: contain;
+
+  background: transparent;
+
+  filter:
+    drop-shadow(
+      0 22px 30px
+      rgba(34, 74, 120, 0.08)
+    );
+
+  transform: translate(
+    20px,
+    10px
+  );
+}
+
+
+/* =========================================================
+   LARGE TABLET
+========================================================= */
+
+@media (max-width: 1200px) {
+
+  .who-we-are-container {
+    width: min(
+      calc(100% - 48px),
+      1080px
+    );
+
+    grid-template-columns:
+      0.9fr
+      1.1fr;
+
+    gap: 15px;
+  }
+
+
+  .who-content h2 {
+    font-size:
+      clamp(
+        40px,
+        4.8vw,
+        56px
+      );
+  }
+
+
+  .who-description {
+    font-size: 16px;
+  }
+
+
+  .who-feature-card {
+    min-height: 160px;
+
+    padding: 16px;
+  }
+
+
+  .who-feature-card h3 {
+    font-size: 15px;
+  }
+
+
+  .who-feature-card p {
+    font-size: 13px;
+  }
+
+
+  .who-visual {
+    min-height: 500px;
+  }
+
+
+  .who-image {
+    max-width: 650px;
+
+    transform: none;
+  }
+
+
+  .who-image-glow {
+    width: 550px;
+
+    height: 430px;
+  }
+
+
+  .who-orbit-one {
+    width: 430px;
+
+    height: 330px;
+  }
+
+
+  .who-orbit-two {
+    width: 530px;
+
+    height: 400px;
+  }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .who-we-are {
+    padding: 65px 0;
+  }
+
+
+  .who-we-are-container {
+    width: calc(100% - 40px);
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 35px;
+  }
+
+
+  .who-content {
+    width: 100%;
+
+    text-align: center;
+  }
+
+
+  .who-heading-row {
+    justify-content: center;
+  }
+
+
+  .who-content h2 {
+    max-width: 700px;
+
+    margin: 0 auto;
+
+    font-size:
+      clamp(
+        42px,
+        7vw,
+        58px
+      );
+  }
+
+
+  .who-heading-underline {
+    margin: 10px auto 18px;
+  }
+
+
+  .who-description {
+    margin-left: auto;
+
+    margin-right: auto;
+  }
+
+
+  .who-feature-grid {
+    max-width: 750px;
+
+    margin: 0 auto;
+  }
+
+
+  .who-stats {
+    justify-content: center;
+
+    max-width: 750px;
+
+    margin-left: auto;
+
+    margin-right: auto;
+  }
+
+
+  .who-visual {
+    width: 100%;
+
+    min-height: 470px;
+  }
+
+
+  .who-image {
+    max-width: 720px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+  .who-we-are {
+    padding: 55px 0 60px;
+  }
+
+
+  .who-we-are-container {
+    width: calc(100% - 28px);
+
+    gap: 30px;
+  }
+
+
+  .who-heading-row {
+    gap: 9px;
+
+    margin-bottom: 17px;
+  }
+
+
+  .who-eyebrow {
+    font-size: 12px;
+
+    letter-spacing: 0.16em;
+  }
+
+
+  .who-eyebrow-line {
+    width: 30px;
+
+    height: 4px;
+  }
+
+
+  .who-content h2 {
+    font-size:
+      clamp(
+        35px,
+        9.5vw,
+        47px
+      );
+
+    line-height: 1.02;
+
+    letter-spacing: -0.045em;
+  }
+
+
+  .who-heading-underline {
+    width: 120px;
+
+    margin-top: 9px;
+
+    margin-bottom: 15px;
+  }
+
+
+  .who-description {
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    margin-bottom: 22px;
+  }
+
+
+  /* FEATURE CARDS */
+
+  .who-feature-grid {
+    width: 100%;
+
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+
+    gap: 8px;
+  }
+
+
+  .who-feature-card {
+    min-height: 145px;
+
+    padding: 13px 11px;
+
+    border-radius: 13px;
+  }
+
+
+  .who-feature-icon {
+    width: 40px;
+
+    height: 40px;
+
+    margin-bottom: 10px;
+
+    border-radius: 10px;
+  }
+
+
+  .who-feature-icon svg {
+    width: 22px;
+
+    height: 22px;
+  }
+
+
+  .who-feature-card h3 {
+    margin-bottom: 5px;
+
+    font-size: 13px;
+
+    line-height: 1.15;
+  }
+
+
+  .who-feature-card p {
+    font-size: 11px;
+
+    line-height: 1.4;
+  }
+
+
+  /* STATS */
+
+  .who-stats {
+    width: 100%;
+
+    justify-content: space-between;
+
+    margin-top: 22px;
+  }
+
+
+  .who-stat {
+    gap: 6px;
+
+    padding-right: 8px;
+
+    margin-right: 8px;
+  }
+
+
+  .who-stat-icon {
+    width: 28px;
+
+    height: 28px;
+  }
+
+
+  .who-stat-content strong {
+    font-size: 19px;
+  }
+
+
+  .who-stat-content span {
+    font-size: 9px;
+  }
+
+
+  /* IMAGE */
+
+  .who-visual {
+    min-height: 330px;
+
+    width: 100%;
+  }
+
+
+  .who-image {
+    width: 100%;
+
+    max-width: 600px;
+
+    transform: none;
+  }
+
+
+  .who-image-glow {
+    width: 100%;
+
+    height: 300px;
+  }
+
+
+  .who-orbit-one {
+    width: 290px;
+
+    height: 220px;
+  }
+
+
+  .who-orbit-two {
+    width: 350px;
+
+    height: 265px;
+  }
+
+
+  /* DECORATION */
+
+  .who-circle-top-left {
+    width: 220px;
+
+    height: 160px;
+
+    left: -100px;
+
+    top: -100px;
+  }
+
+
+  .who-circle-top-right {
+    width: 180px;
+
+    height: 180px;
+
+    right: -100px;
+
+    top: -80px;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 450px) {
+
+  .who-we-are {
+    padding-top: 45px;
+  }
+
+
+  .who-we-are-container {
+    width: calc(100% - 22px);
+  }
+
+
+  .who-content h2 {
+    font-size: 34px;
+  }
+
+
+  .who-description {
+    font-size: 13px;
+  }
+
+
+  .who-feature-grid {
+    gap: 6px;
+  }
+
+
+  .who-feature-card {
+    min-height: 138px;
+
+    padding: 11px 8px;
+  }
+
+
+  .who-feature-icon {
+    width: 36px;
+
+    height: 36px;
+
+    margin-bottom: 8px;
+  }
+
+
+  .who-feature-icon svg {
+    width: 19px;
+
+    height: 19px;
+  }
+
+
+  .who-feature-card h3 {
+    font-size: 12px;
+  }
+
+
+  .who-feature-card p {
+    font-size: 10px;
+  }
+
+
+  .who-stat {
+    gap: 4px;
+
+    padding-right: 5px;
+
+    margin-right: 5px;
+  }
+
+
+  .who-stat-icon {
+    width: 24px;
+
+    height: 24px;
+  }
+
+
+  .who-stat-content strong {
+    font-size: 17px;
+  }
+
+
+  .who-stat-content span {
+    font-size: 8px;
+  }
+
+
+  .who-visual {
+    min-height: 270px;
+  }
+
+
+  .who-image-glow {
+    height: 240px;
+  }
+
+
+  .who-orbit-one {
+    width: 240px;
+
+    height: 180px;
+  }
+
+
+  .who-orbit-two {
+    width: 290px;
+
+    height: 215px;
+  }
+}
