@@ -538,6 +538,10 @@
    MOBILE
 ========================================================= */
 
+/* =========================================================
+   MOBILE
+========================================================= */
+
 @media (max-width: 700px) {
 
   .popular-learning {
@@ -553,56 +557,203 @@
   }
 
   .popular-heading > span {
-    font-size: 12px;
-
+    font-size: 13px;
     letter-spacing: 0.15em;
   }
 
   .popular-heading h2 {
-    margin: 8px 0 9px;
-
-    font-size: 34px;
-
+    margin: 8px 0 10px;
+    font-size: 36px;
     line-height: 1.08;
   }
 
   .popular-heading p {
-    max-width: 420px;
-
+    max-width: 450px;
     margin: 0 auto;
 
-    font-size: 14px;
-
+    font-size: 15px;
     line-height: 1.5;
   }
 
   .popular-grid {
     grid-template-columns: 1fr;
-
-    gap: 14px;
+    gap: 15px;
   }
 
   .popular-card {
     min-height: 0;
-
-    padding: 16px;
-
+    padding: 17px;
     border-radius: 18px;
   }
 
-  .popular-top {
-    min-height: 48px;
+  /* TOP */
 
+  .popular-top {
+    min-height: 50px;
     gap: 8px;
   }
 
   .popular-icon {
-    width: 48px;
-    height: 48px;
-
-    flex-basis: 48px;
-
+    width: 50px;
+    height: 50px;
+    flex-basis: 50px;
     border-radius: 13px;
+  }
+
+  .popular-icon svg {
+    width: 23px;
+    height: 23px;
+  }
+
+  .popular-top > span {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+
+  /* COURSE CONTENT */
+
+  .popular-main {
+    min-height: 0;
+
+    grid-template-columns: minmax(0, 1fr) 0.85fr;
+
+    gap: 10px;
+
+    margin-top: 9px;
+  }
+
+  .popular-copy {
+    align-self: center;
+  }
+
+  .popular-copy h3 {
+    margin-bottom: 7px;
+
+    font-size: 22px;
+    line-height: 1.18;
+  }
+
+  .popular-copy p {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  /* IMAGE */
+
+  .popular-image {
+    height: 125px;
+    align-self: center;
+  }
+
+  .popular-image img {
+    width: 100%;
+    max-width: 175px;
+    height: 120px;
+  }
+
+  /* META */
+
+  .popular-meta {
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 7px;
+    margin-top: 13px;
+  }
+
+  .popular-meta span {
+    min-height: 44px;
+
+    padding: 0 6px;
+
+    gap: 5px;
+
+    font-size: 12px;
+
+    border-radius: 9px;
+  }
+
+  .popular-meta svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  /* BUTTONS */
+
+  .popular-actions {
+    gap: 8px;
+    margin-top: 12px;
+  }
+
+  .popular-actions a {
+    height: 45px;
+
+    padding: 0 9px;
+
+    border-radius: 10px;
+
+    font-size: 13px;
+
+    gap: 5px;
+  }
+
+  .popular-actions a svg {
+    width: 15px;
+    height: 15px;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .popular-learning {
+    padding: 40px 0 45px;
+  }
+
+  .popular-container {
+    width: calc(100% - 20px);
+  }
+
+  .popular-heading {
+    margin-bottom: 20px;
+  }
+
+  .popular-heading > span {
+    font-size: 12px;
+  }
+
+  .popular-heading h2 {
+    font-size: 32px;
+    line-height: 1.08;
+  }
+
+  .popular-heading p {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .popular-grid {
+    gap: 13px;
+  }
+
+  .popular-card {
+    padding: 15px;
+    border-radius: 17px;
+  }
+
+  /* TOP */
+
+  .popular-top {
+    min-height: 47px;
+  }
+
+  .popular-icon {
+    width: 47px;
+    height: 47px;
+    flex-basis: 47px;
   }
 
   .popular-icon svg {
@@ -611,110 +762,82 @@
   }
 
   .popular-top > span {
-    padding: 7px 11px;
-
+    padding: 7px 10px;
     font-size: 11px;
   }
 
-  /* -----------------------------------------
-     MAIN CONTENT
-  ----------------------------------------- */
+  /* CONTENT */
 
   .popular-main {
-    min-height: 0;
-
-    grid-template-columns: 1fr 0.85fr;
+    grid-template-columns: minmax(0, 1fr) 125px;
 
     gap: 8px;
 
     margin-top: 8px;
   }
 
-  .popular-copy {
-    align-self: center;
-  }
-
   .popular-copy h3 {
     margin-bottom: 6px;
 
     font-size: 20px;
-
     line-height: 1.18;
   }
 
   .popular-copy p {
-    font-size: 12.5px;
-
+    font-size: 13px;
     line-height: 1.45;
   }
 
-  /* -----------------------------------------
-     IMAGE
-  ----------------------------------------- */
+  /* IMAGE */
 
   .popular-image {
-    height: 120px;
-
-    align-self: center;
+    height: 110px;
   }
 
   .popular-image img {
-    width: 100%;
-
-    max-width: 165px;
-
-    height: 115px;
+    max-width: 125px;
+    height: 105px;
   }
 
-  /* -----------------------------------------
-     META
-  ----------------------------------------- */
+  /* META */
 
   .popular-meta {
-    grid-template-columns: repeat(3, 1fr);
-
-    gap: 7px;
-
-    margin-top: 12px;
+    gap: 6px;
+    margin-top: 11px;
   }
 
   .popular-meta span {
-    min-height: 42px;
+    min-height: 41px;
 
     padding: 0 5px;
 
     gap: 4px;
 
-    font-size: 10.5px;
+    font-size: 11px;
 
-    border-radius: 9px;
+    border-radius: 8px;
   }
 
   .popular-meta svg {
-    width: 14px;
-    height: 14px;
+    width: 13px;
+    height: 13px;
   }
 
-  /* -----------------------------------------
-     BUTTONS
-  ----------------------------------------- */
+  /* BUTTONS */
 
   .popular-actions {
-    gap: 8px;
-
-    margin-top: 11px;
+    gap: 7px;
+    margin-top: 10px;
   }
 
   .popular-actions a {
-    height: 43px;
+    height: 42px;
 
-    padding: 0 8px;
+    padding: 0 7px;
 
-    border-radius: 10px;
+    border-radius: 9px;
 
     font-size: 12px;
-
-    gap: 5px;
   }
 
   .popular-actions a svg {
@@ -723,6 +846,82 @@
   }
 }
 
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 360px) {
+
+  .popular-container {
+    width: calc(100% - 16px);
+  }
+
+  .popular-card {
+    padding: 13px;
+  }
+
+  .popular-main {
+    grid-template-columns: minmax(0, 1fr) 105px;
+    gap: 6px;
+  }
+
+  .popular-copy h3 {
+    font-size: 18px;
+    line-height: 1.18;
+  }
+
+  .popular-copy p {
+    font-size: 12px;
+    line-height: 1.4;
+  }
+
+  .popular-image {
+    height: 92px;
+  }
+
+  .popular-image img {
+    max-width: 105px;
+    height: 90px;
+  }
+
+  .popular-meta {
+    gap: 4px;
+  }
+
+  .popular-meta span {
+    min-height: 38px;
+
+    padding: 0 3px;
+
+    font-size: 10px;
+
+    gap: 3px;
+  }
+
+  .popular-meta svg {
+    width: 12px;
+    height: 12px;
+  }
+
+  .popular-actions {
+    gap: 5px;
+    margin-top: 9px;
+  }
+
+  .popular-actions a {
+    height: 40px;
+
+    padding: 0 5px;
+
+    font-size: 11px;
+  }
+
+  .popular-actions a svg {
+    width: 13px;
+    height: 13px;
+  }
+}
 
 /* =========================================================
    SMALL MOBILE
