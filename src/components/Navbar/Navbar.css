@@ -76,7 +76,18 @@
    DECORATIVE CIRCLES
 ========================================================= */
 
-.navbar-inner::before {
+/* =========================================================
+   NAVBAR DECORATION
+   Hidden to keep navbar clean
+========================================================= */
+
+.navbar-inner::before,
+.navbar-inner::after {
+  display: none;
+  content: none;
+}
+
+/* .navbar-inner::before {
   content: "";
 
   position: absolute;
@@ -118,7 +129,7 @@
   );
 
   pointer-events: none;
-}
+} */
 
 
 /* =========================================================

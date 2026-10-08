@@ -1,308 +1,948 @@
+/* =========================================================
+   POPULAR LEARNING SECTION
+========================================================= */
+
 .popular-learning {
   position: relative;
   overflow: hidden;
+
   padding: 60px 0 65px;
+
   background: #f7fbff;
 }
+
+
+/* =========================================================
+   BACKGROUND BLOBS
+========================================================= */
+
 .popular-blob {
   position: absolute;
+
   border-radius: 50%;
+
   pointer-events: none;
+
   background: #e5f4ff;
 }
+
 .blob-one {
   width: 360px;
   height: 250px;
+
   left: -190px;
   top: -90px;
 }
+
 .blob-two {
   width: 300px;
   height: 220px;
+
   right: -150px;
   bottom: -100px;
+
   background: #eeeaff;
 }
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
 .popular-container {
   position: relative;
   z-index: 2;
+
   width: min(1430px, calc(100% - 40px));
+
   margin: 0 auto;
 }
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
 .popular-heading {
-  text-align: center;
   margin-bottom: 28px;
+
+  text-align: center;
 }
+
 .popular-heading > span {
   display: inline-block;
+
   color: #167de5;
+
   font-size: 15px;
   font-weight: 900;
+
   letter-spacing: 0.18em;
 }
+
 .popular-heading h2 {
   margin: 10px 0 12px;
+
   color: #0c1838;
+
   font-size: clamp(38px, 4.2vw, 54px);
+
   line-height: 1.05;
+
   letter-spacing: -0.045em;
 }
+
 .popular-heading h2 strong {
   color: #167de5;
 }
+
 .popular-heading p {
   margin: 0;
+
   color: #687994;
+
   font-size: 16px;
+
+  line-height: 1.5;
 }
+
+
+/* =========================================================
+   GRID
+========================================================= */
+
 .popular-grid {
   display: grid;
+
   grid-template-columns: repeat(3, 1fr);
+
   gap: 18px 20px;
 }
+
+
+/* =========================================================
+   COURSE CARD
+========================================================= */
+
 .popular-card {
   position: relative;
+
   min-height: 360px;
+
   padding: 18px 24px;
+
+  display: flex;
+  flex-direction: column;
+
   border: 1px solid #dce9f5;
+
   border-radius: 22px;
+
   background: rgba(255, 255, 255, 0.96);
+
   box-shadow: 0 9px 28px rgba(40, 93, 140, 0.07);
+
   overflow: hidden;
+
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease,
     border-color 0.3s ease;
 }
+
 .popular-card::after {
   content: "";
+
   position: absolute;
+
   width: 150px;
   height: 150px;
-  border-radius: 50%;
+
   right: -55px;
   top: 70px;
+
+  border-radius: 50%;
+
   opacity: 0.55;
+
   filter: blur(3px);
+
   background: #edf5ff;
+
   pointer-events: none;
 }
+
 .popular-card:hover {
   transform: translateY(-8px);
+
   box-shadow: 0 20px 40px rgba(47, 128, 237, 0.12);
+
   border-color: #c6e1fa;
 }
-.popular-card:hover .popular-image img {
-  transform: scale(1.08) rotate(-2deg);
-}
+
+
+/* =========================================================
+   TOP ROW
+========================================================= */
+
 .popular-top {
-  height: 60px;
+  min-height: 54px;
+
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
+
+  gap: 10px;
+
+  position: relative;
+  z-index: 3;
 }
+
 .popular-icon {
   width: 54px;
   height: 54px;
+
+  flex: 0 0 54px;
+
   display: grid;
   place-items: center;
+
   border-radius: 15px;
 }
+
 .popular-top > span {
   padding: 8px 14px;
+
   border-radius: 999px;
+
   font-size: 14px;
   font-weight: 900;
+
   white-space: nowrap;
 }
+
+
+/* =========================================================
+   CARD COLORS
+========================================================= */
+
 .blue .popular-icon {
   color: #2f80ed;
   background: #e5f2ff;
 }
+
 .blue .popular-top > span {
   color: #2379dd;
   background: #e1f0ff;
 }
+
 .green .popular-icon {
   color: #0ca79b;
   background: #dff8f5;
 }
+
 .green .popular-top > span {
   color: #087c73;
   background: #d9f4ef;
 }
+
 .purple .popular-icon {
   color: #7545db;
   background: #eee7ff;
 }
+
 .purple .popular-top > span {
   color: #6d38c9;
   background: #eee2ff;
 }
+
 .yellow .popular-icon {
   color: #f5a800;
   background: #fff2cc;
 }
+
 .yellow .popular-top > span {
   color: #9b6500;
   background: #fff0ca;
 }
+
 .pink .popular-icon {
   color: #e6298b;
   background: #ffe4f2;
 }
+
 .pink .popular-top > span {
   color: #df197c;
   background: #ffe1ef;
 }
+
 .mint .popular-icon {
   color: #0da98e;
   background: #dff8f1;
 }
+
 .mint .popular-top > span {
   color: #6d38c9;
   background: #eee2ff;
 }
+
+
+/* =========================================================
+   MAIN COURSE CONTENT
+========================================================= */
+
 .popular-main {
-  height: 150px;
+  min-height: 150px;
+
   display: grid;
+
   grid-template-columns: 1.08fr 0.92fr;
-  gap: 4px;
+
+  gap: 8px;
+
   align-items: center;
+
   position: relative;
   z-index: 2;
+
+  flex: 1;
 }
+
+.popular-copy {
+  min-width: 0;
+}
+
 .popular-copy h3 {
-  margin: 0 0 7px;
+  margin: 0 0 8px;
+
   color: #0b1a3a;
+
   font-size: 24px;
+
   line-height: 1.15;
+
   letter-spacing: -0.03em;
+
+  overflow-wrap: break-word;
 }
+
 .popular-copy p {
   margin: 0;
+
   color: #657590;
+
   font-size: 14px;
+
   line-height: 1.45;
 }
+
+
+/* =========================================================
+   COURSE IMAGE
+========================================================= */
+
 .popular-image {
   height: 145px;
+
   display: grid;
+
   place-items: center;
+
+  min-width: 0;
 }
+
 .popular-image img {
   width: 100%;
   max-width: 220px;
+
   height: 140px;
+
   object-fit: contain;
+
   mix-blend-mode: multiply;
+
   transition: transform 0.35s ease;
 }
+
+.popular-card:hover .popular-image img {
+  transform: scale(1.08) rotate(-2deg);
+}
+
+
+/* =========================================================
+   COURSE META
+========================================================= */
+
 .popular-meta {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 9px;
-  margin-top: 8px;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 8px;
+
+  margin-top: 10px;
+
+  position: relative;
+  z-index: 3;
 }
+
 .popular-meta span {
-  min-height: 48px;
-  padding: 0 7px;
-  border-radius: 11px;
-  background: #f2f8ff;
+  min-width: 0;
+
+  min-height: 46px;
+
+  padding: 0 6px;
+
   display: flex;
+
   align-items: center;
   justify-content: center;
-  gap: 6px;
+
+  gap: 5px;
+
+  border-radius: 10px;
+
+  background: #f2f8ff;
+
   color: #30415e;
-  font-size: 13px;
+
+  font-size: 12px;
+
+  line-height: 1.2;
+
   white-space: nowrap;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
 }
+
 .popular-meta svg {
-  color: #2f80ed;
+  width: 15px;
+  height: 15px;
+
   flex: 0 0 auto;
+
+  color: #2f80ed;
 }
+
+
+/* =========================================================
+   ACTION BUTTONS
+========================================================= */
+
 .popular-actions {
   display: flex;
-  gap: 12px;
-  margin-top: 16px;
+
+  gap: 10px;
+
+  margin-top: 14px;
+
+  position: relative;
+  z-index: 3;
 }
+
 .popular-actions a {
-  height: 50px;
+  height: 46px;
+
   flex: 1;
+
+  min-width: 0;
+
   display: inline-flex;
+
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  border-radius: 12px;
+
+  gap: 6px;
+
+  padding: 0 10px;
+
+  border-radius: 11px;
+
   text-decoration: none;
-  font-size: 15px;
+
+  font-size: 13px;
+
   font-weight: 900;
+
+  white-space: nowrap;
+
   transition:
     transform 0.2s ease,
     background 0.2s ease;
 }
+
 .popular-actions a:first-child {
   color: #1976ed;
+
   background: #e4f1ff;
 }
+
 .popular-actions a:last-child {
   color: #111827;
+
   background: #ffd633;
 }
+
 .popular-actions a:hover {
   transform: translateY(-2px);
 }
-@media (max-width: 1000px) {
-  .popular-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-  .popular-main {
-    grid-template-columns: 1fr 0.9fr;
-  }
+
+.popular-actions svg {
+  flex: 0 0 auto;
 }
-@media (max-width: 700px) {
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
   .popular-container {
-    width: calc(100% - 28px);
+    width: calc(100% - 32px);
   }
+
   .popular-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 16px;
   }
-  .popular-heading h2 {
-    font-size: 36px;
-  }
+
   .popular-card {
-    min-height: 350px;
     padding: 18px;
   }
+
   .popular-main {
-    grid-template-columns: 1fr 0.85fr;
+    grid-template-columns: 1fr 0.9fr;
+
+    gap: 6px;
   }
+
   .popular-copy h3 {
-    font-size: 22px;
+    font-size: 21px;
   }
+
   .popular-copy p {
     font-size: 13px;
   }
-}
-@media (max-width: 480px) {
-  .popular-main {
-    grid-template-columns: 1fr;
-  }
-  .popular-image {
-    order: -1;
-    height: 125px;
-  }
-  .popular-image img {
-    height: 120px;
-  }
-  .popular-meta {
-    grid-template-columns: 1fr;
-  }
+
   .popular-meta span {
-    justify-content: flex-start;
-    padding-left: 15px;
+    font-size: 11px;
   }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .popular-learning {
+    padding: 45px 0 50px;
+  }
+
+  .popular-container {
+    width: calc(100% - 28px);
+  }
+
+  .popular-heading {
+    margin-bottom: 22px;
+  }
+
+  .popular-heading > span {
+    font-size: 12px;
+
+    letter-spacing: 0.15em;
+  }
+
+  .popular-heading h2 {
+    margin: 8px 0 9px;
+
+    font-size: 34px;
+
+    line-height: 1.08;
+  }
+
+  .popular-heading p {
+    max-width: 420px;
+
+    margin: 0 auto;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+  }
+
+  .popular-grid {
+    grid-template-columns: 1fr;
+
+    gap: 14px;
+  }
+
+  .popular-card {
+    min-height: 0;
+
+    padding: 16px;
+
+    border-radius: 18px;
+  }
+
+  .popular-top {
+    min-height: 48px;
+
+    gap: 8px;
+  }
+
+  .popular-icon {
+    width: 48px;
+    height: 48px;
+
+    flex-basis: 48px;
+
+    border-radius: 13px;
+  }
+
+  .popular-icon svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .popular-top > span {
+    padding: 7px 11px;
+
+    font-size: 11px;
+  }
+
+  /* -----------------------------------------
+     MAIN CONTENT
+  ----------------------------------------- */
+
+  .popular-main {
+    min-height: 0;
+
+    grid-template-columns: 1fr 0.85fr;
+
+    gap: 8px;
+
+    margin-top: 8px;
+  }
+
+  .popular-copy {
+    align-self: center;
+  }
+
+  .popular-copy h3 {
+    margin-bottom: 6px;
+
+    font-size: 20px;
+
+    line-height: 1.18;
+  }
+
+  .popular-copy p {
+    font-size: 12.5px;
+
+    line-height: 1.45;
+  }
+
+  /* -----------------------------------------
+     IMAGE
+  ----------------------------------------- */
+
+  .popular-image {
+    height: 120px;
+
+    align-self: center;
+  }
+
+  .popular-image img {
+    width: 100%;
+
+    max-width: 165px;
+
+    height: 115px;
+  }
+
+  /* -----------------------------------------
+     META
+  ----------------------------------------- */
+
+  .popular-meta {
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 7px;
+
+    margin-top: 12px;
+  }
+
+  .popular-meta span {
+    min-height: 42px;
+
+    padding: 0 5px;
+
+    gap: 4px;
+
+    font-size: 10.5px;
+
+    border-radius: 9px;
+  }
+
+  .popular-meta svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  /* -----------------------------------------
+     BUTTONS
+  ----------------------------------------- */
+
   .popular-actions {
-    flex-direction: column;
+    gap: 8px;
+
+    margin-top: 11px;
+  }
+
+  .popular-actions a {
+    height: 43px;
+
+    padding: 0 8px;
+
+    border-radius: 10px;
+
+    font-size: 12px;
+
+    gap: 5px;
+  }
+
+  .popular-actions a svg {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .popular-learning {
+    padding: 38px 0 42px;
+  }
+
+  .popular-container {
+    width: calc(100% - 22px);
+  }
+
+  .popular-heading {
+    margin-bottom: 18px;
+  }
+
+  .popular-heading > span {
+    font-size: 11px;
+  }
+
+  .popular-heading h2 {
+    font-size: 30px;
+
+    letter-spacing: -0.035em;
+  }
+
+  .popular-heading p {
+    font-size: 13px;
+  }
+
+  .popular-grid {
+    gap: 12px;
+  }
+
+  .popular-card {
+    padding: 14px;
+
+    border-radius: 16px;
+  }
+
+  .popular-top {
+    min-height: 44px;
+  }
+
+  .popular-icon {
+    width: 44px;
+    height: 44px;
+
+    flex-basis: 44px;
+
+    border-radius: 11px;
+  }
+
+  .popular-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .popular-top > span {
+    padding: 6px 9px;
+
+    font-size: 10px;
+  }
+
+  /* -----------------------------------------
+     COURSE CONTENT
+  ----------------------------------------- */
+
+  .popular-main {
+    grid-template-columns: minmax(0, 1fr) 125px;
+
+    gap: 6px;
+
+    margin-top: 7px;
+  }
+
+  .popular-copy h3 {
+    font-size: 18px;
+
+    line-height: 1.18;
+  }
+
+  .popular-copy p {
+    font-size: 11.5px;
+
+    line-height: 1.4;
+  }
+
+  .popular-image {
+    height: 105px;
+  }
+
+  .popular-image img {
+    max-width: 125px;
+
+    height: 100px;
+  }
+
+  /* -----------------------------------------
+     META
+  ----------------------------------------- */
+
+  .popular-meta {
+    gap: 5px;
+
+    margin-top: 10px;
+  }
+
+  .popular-meta span {
+    min-height: 39px;
+
+    padding: 0 4px;
+
+    gap: 3px;
+
+    font-size: 9.5px;
+
+    border-radius: 8px;
+  }
+
+  .popular-meta svg {
+    width: 12px;
+    height: 12px;
+  }
+
+  /* -----------------------------------------
+     BUTTONS
+  ----------------------------------------- */
+
+  .popular-actions {
+    gap: 7px;
+
+    margin-top: 9px;
+  }
+
+  .popular-actions a {
+    height: 40px;
+
+    padding: 0 6px;
+
+    border-radius: 9px;
+
+    font-size: 11px;
+
+    gap: 4px;
+  }
+
+  .popular-actions a svg {
+    width: 13px;
+    height: 13px;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 360px) {
+
+  .popular-container {
+    width: calc(100% - 18px);
+  }
+
+  .popular-card {
+    padding: 12px;
+  }
+
+  .popular-main {
+    grid-template-columns: minmax(0, 1fr) 105px;
+  }
+
+  .popular-copy h3 {
+    font-size: 17px;
+  }
+
+  .popular-copy p {
+    font-size: 10.5px;
+  }
+
+  .popular-image {
+    height: 90px;
+  }
+
+  .popular-image img {
+    max-width: 105px;
+
+    height: 88px;
+  }
+
+  .popular-meta {
+    gap: 4px;
+  }
+
+  .popular-meta span {
+    min-height: 36px;
+
+    font-size: 8.5px;
+  }
+
+  .popular-meta svg {
+    width: 11px;
+    height: 11px;
+  }
+
+  .popular-actions {
+    gap: 5px;
+  }
+
+  .popular-actions a {
+    height: 38px;
+
+    font-size: 10px;
+  }
+
+  .popular-actions a svg {
+    width: 12px;
+    height: 12px;
   }
 }
