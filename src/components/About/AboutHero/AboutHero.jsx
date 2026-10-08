@@ -9,7 +9,10 @@ export default function AboutHero() {
   return (
     <section className="about-hero">
 
-      {/* Decorative Background */}
+      {/* =========================================
+          TOP DECORATIVE HALF CIRCLES
+      ========================================= */}
+
       <div
         className="about-hero-decoration about-hero-blue"
         aria-hidden="true"
@@ -20,12 +23,11 @@ export default function AboutHero() {
         aria-hidden="true"
       />
 
-      <div
-        className="about-hero-decoration about-hero-yellow"
-        aria-hidden="true"
-      />
 
-      {/* Main Container */}
+      {/* =========================================
+          MAIN CONTAINER
+      ========================================= */}
+
       <div className="about-hero-container">
 
         {/* =========================================
@@ -90,21 +92,6 @@ export default function AboutHero() {
 
         <div className="about-hero-visual">
 
-          <div
-            className="about-hero-glow"
-            aria-hidden="true"
-          />
-
-          <div
-            className="about-hero-orbit orbit-a"
-            aria-hidden="true"
-          />
-
-          <div
-            className="about-hero-orbit orbit-b"
-            aria-hidden="true"
-          />
-
           <img
             src={heroImage}
             alt="Child building a robotics and electronics project"
@@ -114,6 +101,7 @@ export default function AboutHero() {
         </div>
 
       </div>
+
     </section>
   );
 }

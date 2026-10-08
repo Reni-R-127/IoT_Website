@@ -15,6 +15,7 @@ import AboutHero from "../../components/About/AboutHero/AboutHero.jsx";
 import SectionTitle from "../../components/SectionTitle/SectionTitle.jsx";
 import CTASection from "../../components/CTASection/CTASection.jsx";
 import WhoWeAre from "../../components/About/WhoWeAre/WhoWeAre.jsx";
+import VisionMissionGoal from "../../components/About/VisionMissionGoal/VisionMissionGoal.jsx";
 
 import "./About.css";
 
@@ -70,12 +71,12 @@ export default function About() {
       <AboutHero />
       <WhoWeAre />
 
+      <VisionMissionGoal />
       {/* =====================================================
           ABOUT CONTENT
       ===================================================== */}
 
       <main className="about-page">
-
         {/* =====================================================
             WHO WE ARE
         ===================================================== */}
@@ -102,15 +103,11 @@ export default function About() {
           </p>
         </section> */}
 
-
         {/* =====================================================
             MISSION
         ===================================================== */}
 
-        <section
-          className="mission-card"
-          data-animate="pop"
-        >
+        <section className="mission-card" data-animate="pop">
           <div className="mission-icon">
             <Lightbulb size={30} />
           </div>
@@ -119,26 +116,23 @@ export default function About() {
             <span>OUR MISSION</span>
 
             <h2>
-              To make technology learning simple, practical and
-              exciting for every child.
+              To make technology learning simple, practical and exciting for
+              every child.
             </h2>
           </div>
         </section>
-
 
         {/* =====================================================
             WHAT WE TEACH
         ===================================================== */}
 
         <section className="about-section">
-
           <SectionTitle
             eyebrow="WHAT WE TEACH"
             title="Explore the technology behind everyday ideas"
           />
 
           <div className="topic-grid">
-
             {topics.map(([name, Icon], index) => (
               <div
                 key={name}
@@ -153,25 +147,20 @@ export default function About() {
                 <b>{name}</b>
               </div>
             ))}
-
           </div>
-
         </section>
-
 
         {/* =====================================================
             LEARNING APPROACH
         ===================================================== */}
 
         <section className="approach-section">
-
           <SectionTitle
             eyebrow="OUR LEARNING APPROACH"
             title="Learn → Explore → Build → Create"
           />
 
           <div className="approach-grid">
-
             {approachSteps.map((step, index) => (
               <div
                 key={step.title}
@@ -179,55 +168,33 @@ export default function About() {
                 data-animate="fade-up"
                 data-delay={index + 1}
               >
-                <span className="approach-number">
-                  {step.number}
-                </span>
+                <span className="approach-number">{step.number}</span>
 
-                <h3>
-                  {step.title}
-                </h3>
+                <h3>{step.title}</h3>
 
-                <p>
-                  {step.text}
-                </p>
+                <p>{step.text}</p>
               </div>
             ))}
-
           </div>
-
         </section>
-
 
         {/* =====================================================
             WHY TECHNOLOGY
         ===================================================== */}
 
-        <section
-          className="benefits-section"
-          data-animate="fade-up"
-        >
-
+        <section className="benefits-section" data-animate="fade-up">
           <div className="benefits-content">
+            <span className="eyebrow">WHY TECHNOLOGY?</span>
 
-            <span className="eyebrow">
-              WHY TECHNOLOGY?
-            </span>
-
-            <h2>
-              Skills that go beyond the classroom
-            </h2>
+            <h2>Skills that go beyond the classroom</h2>
 
             <p>
-              Technology projects encourage children to think,
-              test, make mistakes, solve problems and explain
-              what they built.
+              Technology projects encourage children to think, test, make
+              mistakes, solve problems and explain what they built.
             </p>
-
           </div>
 
-
           <div className="benefit-list">
-
             {benefits.map((item, index) => (
               <div
                 key={item}
@@ -235,34 +202,25 @@ export default function About() {
                 data-animate="fade-right"
                 data-delay={(index % 8) + 1}
               >
-                <span>
-                  ✓
-                </span>
+                <span>✓</span>
 
                 {item}
               </div>
             ))}
-
           </div>
-
         </section>
-
 
         {/* =====================================================
             ABOUT CTA
         ===================================================== */}
 
         <div className="about-cta">
-
           <Link to="/courses">
             Explore Courses
             <ArrowRight size={17} />
           </Link>
-
         </div>
-
       </main>
-
 
       {/* =====================================================
           COMMON CTA
