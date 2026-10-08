@@ -1,13 +1,11 @@
 /* =========================================================
-   POPULAR LEARNING SECTION
+   POPULAR LEARNING
 ========================================================= */
 
 .popular-learning {
   position: relative;
   overflow: hidden;
-
-  padding: 60px 0 65px;
-
+  padding: 70px 0 75px;
   background: #f7fbff;
 }
 
@@ -18,29 +16,24 @@
 
 .popular-blob {
   position: absolute;
-
   border-radius: 50%;
-
   pointer-events: none;
-
-  background: #e5f4ff;
+  z-index: 0;
 }
 
 .blob-one {
   width: 360px;
   height: 250px;
-
   left: -190px;
   top: -90px;
+  background: #e5f4ff;
 }
 
 .blob-two {
   width: 300px;
   height: 220px;
-
   right: -150px;
   bottom: -100px;
-
   background: #eeeaff;
 }
 
@@ -60,12 +53,11 @@
 
 
 /* =========================================================
-   HEADING
+   SECTION HEADING
 ========================================================= */
 
 .popular-heading {
-  margin-bottom: 28px;
-
+  margin-bottom: 34px;
   text-align: center;
 }
 
@@ -74,21 +66,21 @@
 
   color: #167de5;
 
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 900;
 
   letter-spacing: 0.18em;
 }
 
 .popular-heading h2 {
-  margin: 10px 0 12px;
+  margin: 11px 0 14px;
 
   color: #0c1838;
 
-  font-size: clamp(38px, 4.2vw, 54px);
+  font-size: clamp(42px, 4.2vw, 58px);
+  font-weight: 900;
 
-  line-height: 1.05;
-
+  line-height: 1.08;
   letter-spacing: -0.045em;
 }
 
@@ -101,9 +93,8 @@
 
   color: #687994;
 
-  font-size: 16px;
-
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 1.55;
 }
 
 
@@ -114,9 +105,9 @@
 .popular-grid {
   display: grid;
 
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 
-  gap: 18px 20px;
+  gap: 22px;
 }
 
 
@@ -127,20 +118,19 @@
 .popular-card {
   position: relative;
 
-  min-height: 360px;
+  min-height: 390px;
 
-  padding: 18px 24px;
+  padding: 22px 25px;
 
   display: flex;
   flex-direction: column;
 
   border: 1px solid #dce9f5;
-
   border-radius: 22px;
 
-  background: rgba(255, 255, 255, 0.96);
+  background: rgba(255, 255, 255, 0.97);
 
-  box-shadow: 0 9px 28px rgba(40, 93, 140, 0.07);
+  box-shadow: 0 10px 30px rgba(40, 93, 140, 0.08);
 
   overflow: hidden;
 
@@ -173,11 +163,11 @@
 }
 
 .popular-card:hover {
-  transform: translateY(-8px);
-
-  box-shadow: 0 20px 40px rgba(47, 128, 237, 0.12);
+  transform: translateY(-7px);
 
   border-color: #c6e1fa;
+
+  box-shadow: 0 20px 42px rgba(47, 128, 237, 0.13);
 }
 
 
@@ -186,37 +176,44 @@
 ========================================================= */
 
 .popular-top {
-  min-height: 54px;
+  min-height: 58px;
 
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
 
-  gap: 10px;
+  gap: 12px;
 
   position: relative;
   z-index: 3;
 }
 
 .popular-icon {
-  width: 54px;
-  height: 54px;
+  width: 58px;
+  height: 58px;
 
-  flex: 0 0 54px;
+  flex: 0 0 58px;
 
   display: grid;
   place-items: center;
 
-  border-radius: 15px;
+  border-radius: 16px;
+}
+
+.popular-icon svg {
+  width: 27px;
+  height: 27px;
 }
 
 .popular-top > span {
-  padding: 8px 14px;
+  padding: 9px 15px;
 
   border-radius: 999px;
 
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 900;
+
+  line-height: 1.2;
 
   white-space: nowrap;
 }
@@ -292,13 +289,13 @@
 ========================================================= */
 
 .popular-main {
-  min-height: 150px;
+  min-height: 165px;
 
   display: grid;
 
-  grid-template-columns: 1.08fr 0.92fr;
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
 
-  gap: 8px;
+  gap: 10px;
 
   align-items: center;
 
@@ -306,6 +303,8 @@
   z-index: 2;
 
   flex: 1;
+
+  margin-top: 8px;
 }
 
 .popular-copy {
@@ -313,14 +312,14 @@
 }
 
 .popular-copy h3 {
-  margin: 0 0 8px;
+  margin: 0 0 9px;
 
   color: #0b1a3a;
 
-  font-size: 24px;
+  font-size: 27px;
+  font-weight: 900;
 
   line-height: 1.15;
-
   letter-spacing: -0.03em;
 
   overflow-wrap: break-word;
@@ -331,9 +330,8 @@
 
   color: #657590;
 
-  font-size: 14px;
-
-  line-height: 1.45;
+  font-size: 16px;
+  line-height: 1.55;
 }
 
 
@@ -342,10 +340,9 @@
 ========================================================= */
 
 .popular-image {
-  height: 145px;
+  height: 155px;
 
   display: grid;
-
   place-items: center;
 
   min-width: 0;
@@ -353,9 +350,9 @@
 
 .popular-image img {
   width: 100%;
-  max-width: 220px;
+  max-width: 225px;
 
-  height: 140px;
+  height: 150px;
 
   object-fit: contain;
 
@@ -378,9 +375,9 @@
 
   grid-template-columns: repeat(3, minmax(0, 1fr));
 
-  gap: 8px;
+  gap: 9px;
 
-  margin-top: 10px;
+  margin-top: 13px;
 
   position: relative;
   z-index: 3;
@@ -388,38 +385,36 @@
 
 .popular-meta span {
   min-width: 0;
+  min-height: 50px;
 
-  min-height: 46px;
-
-  padding: 0 6px;
+  padding: 0 8px;
 
   display: flex;
-
   align-items: center;
   justify-content: center;
 
-  gap: 5px;
+  gap: 6px;
 
-  border-radius: 10px;
+  border-radius: 11px;
 
   background: #f2f8ff;
 
   color: #30415e;
 
-  font-size: 12px;
+  font-size: 14px;
+  font-weight: 700;
 
-  line-height: 1.2;
+  line-height: 1.25;
 
   white-space: nowrap;
 
   overflow: hidden;
-
   text-overflow: ellipsis;
 }
 
 .popular-meta svg {
-  width: 15px;
-  height: 15px;
+  width: 17px;
+  height: 17px;
 
   flex: 0 0 auto;
 
@@ -434,36 +429,33 @@
 .popular-actions {
   display: flex;
 
-  gap: 10px;
+  gap: 11px;
 
-  margin-top: 14px;
+  margin-top: 16px;
 
   position: relative;
   z-index: 3;
 }
 
 .popular-actions a {
-  height: 46px;
+  height: 50px;
 
   flex: 1;
-
   min-width: 0;
 
   display: inline-flex;
-
   align-items: center;
   justify-content: center;
 
-  gap: 6px;
+  gap: 7px;
 
-  padding: 0 10px;
+  padding: 0 12px;
 
-  border-radius: 11px;
+  border-radius: 12px;
 
   text-decoration: none;
 
-  font-size: 13px;
-
+  font-size: 15px;
   font-weight: 900;
 
   white-space: nowrap;
@@ -475,13 +467,11 @@
 
 .popular-actions a:first-child {
   color: #1976ed;
-
   background: #e4f1ff;
 }
 
 .popular-actions a:last-child {
   color: #111827;
-
   background: #ffd633;
 }
 
@@ -490,7 +480,46 @@
 }
 
 .popular-actions svg {
+  width: 17px;
+  height: 17px;
+
   flex: 0 0 auto;
+}
+
+
+/* =========================================================
+   LARGE TABLET
+========================================================= */
+
+@media (max-width: 1200px) {
+
+  .popular-container {
+    width: calc(100% - 36px);
+  }
+
+  .popular-grid {
+    gap: 18px;
+  }
+
+  .popular-card {
+    padding: 21px;
+  }
+
+  .popular-copy h3 {
+    font-size: 25px;
+  }
+
+  .popular-copy p {
+    font-size: 15px;
+  }
+
+  .popular-meta span {
+    font-size: 13px;
+  }
+
+  .popular-actions a {
+    font-size: 14px;
+  }
 }
 
 
@@ -500,43 +529,63 @@
 
 @media (max-width: 1000px) {
 
+  .popular-learning {
+    padding: 60px 0 65px;
+  }
+
   .popular-container {
     width: calc(100% - 32px);
   }
 
-  .popular-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .popular-heading h2 {
+    font-size: 46px;
+  }
 
-    gap: 16px;
+  .popular-heading p {
+    font-size: 17px;
+  }
+
+  .popular-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
   }
 
   .popular-card {
-    padding: 18px;
+    min-height: 380px;
+    padding: 20px;
   }
 
   .popular-main {
-    grid-template-columns: 1fr 0.9fr;
-
-    gap: 6px;
+    grid-template-columns: minmax(0, 1fr) 0.9fr;
+    gap: 8px;
   }
 
   .popular-copy h3 {
-    font-size: 21px;
+    font-size: 24px;
   }
 
   .popular-copy p {
-    font-size: 13px;
+    font-size: 15px;
+  }
+
+  .popular-image {
+    height: 145px;
+  }
+
+  .popular-image img {
+    height: 140px;
   }
 
   .popular-meta span {
-    font-size: 11px;
+    font-size: 13px;
+  }
+
+  .popular-actions a {
+    height: 48px;
+    font-size: 14px;
   }
 }
 
-
-/* =========================================================
-   MOBILE
-========================================================= */
 
 /* =========================================================
    MOBILE
@@ -545,59 +594,238 @@
 @media (max-width: 700px) {
 
   .popular-learning {
-    padding: 45px 0 50px;
+    padding: 50px 0 55px;
   }
 
   .popular-container {
     width: calc(100% - 28px);
   }
 
+  /* -------------------------------
+     HEADING
+  ------------------------------- */
+
   .popular-heading {
-    margin-bottom: 22px;
+    margin-bottom: 26px;
   }
 
   .popular-heading > span {
     font-size: 15px;
-    letter-spacing: 0.15em;
+    letter-spacing: 0.14em;
   }
 
   .popular-heading h2 {
-    margin: 8px 0 10px;
-    font-size: 36px;
+    margin: 9px 0 12px;
+
+    font-size: 39px;
     line-height: 1.08;
   }
 
   .popular-heading p {
-    max-width: 450px;
-    margin: 0 auto;
-
-    font-size: 15px;
-    line-height: 1.5;
+    font-size: 16px;
+    line-height: 1.55;
   }
+
+  /* -------------------------------
+     GRID
+  ------------------------------- */
 
   .popular-grid {
     grid-template-columns: 1fr;
+    gap: 17px;
+  }
+
+  /* -------------------------------
+     CARD
+  ------------------------------- */
+
+  .popular-card {
+    min-height: 0;
+
+    padding: 19px;
+
+    border-radius: 19px;
+  }
+
+  /* -------------------------------
+     TOP
+  ------------------------------- */
+
+  .popular-top {
+    min-height: 53px;
+    gap: 10px;
+  }
+
+  .popular-icon {
+    width: 53px;
+    height: 53px;
+    flex-basis: 53px;
+
+    border-radius: 14px;
+  }
+
+  .popular-icon svg {
+    width: 25px;
+    height: 25px;
+  }
+
+  .popular-top > span {
+    padding: 8px 13px;
+
+    font-size: 14px;
+  }
+
+  /* -------------------------------
+     CONTENT
+  ------------------------------- */
+
+  .popular-main {
+    grid-template-columns: minmax(0, 1fr) 0.82fr;
+
+    gap: 12px;
+
+    margin-top: 10px;
+  }
+
+  .popular-copy h3 {
+    margin-bottom: 8px;
+
+    font-size: 24px;
+    line-height: 1.18;
+  }
+
+  .popular-copy p {
+    font-size: 15px;
+    line-height: 1.55;
+  }
+
+  /* -------------------------------
+     IMAGE
+  ------------------------------- */
+
+  .popular-image {
+    height: 130px;
+  }
+
+  .popular-image img {
+    max-width: 180px;
+    height: 125px;
+  }
+
+  /* -------------------------------
+     META
+  ------------------------------- */
+
+  .popular-meta {
+    gap: 8px;
+    margin-top: 14px;
+  }
+
+  .popular-meta span {
+    min-height: 47px;
+
+    padding: 0 6px;
+
+    gap: 5px;
+
+    font-size: 13px;
+  }
+
+  .popular-meta svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  /* -------------------------------
+     BUTTONS
+  ------------------------------- */
+
+  .popular-actions {
+    gap: 9px;
+    margin-top: 14px;
+  }
+
+  .popular-actions a {
+    height: 48px;
+
+    padding: 0 9px;
+
+    border-radius: 11px;
+
+    font-size: 14px;
+
+    gap: 6px;
+  }
+
+  .popular-actions svg {
+    width: 15px;
+    height: 15px;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .popular-learning {
+    padding: 45px 0 50px;
+  }
+
+  .popular-container {
+    width: calc(100% - 22px);
+  }
+
+  /* -------------------------------
+     HEADING
+  ------------------------------- */
+
+  .popular-heading {
+    margin-bottom: 23px;
+  }
+
+  .popular-heading > span {
+    font-size: 13px;
+    letter-spacing: 0.12em;
+  }
+
+  .popular-heading h2 {
+    font-size: 34px;
+    line-height: 1.08;
+  }
+
+  .popular-heading p {
+    font-size: 15px;
+    line-height: 1.55;
+  }
+
+  /* -------------------------------
+     CARD
+  ------------------------------- */
+
+  .popular-grid {
     gap: 15px;
   }
 
   .popular-card {
-    min-height: 0;
     padding: 17px;
     border-radius: 18px;
   }
 
-  /* TOP */
+  /* -------------------------------
+     TOP
+  ------------------------------- */
 
   .popular-top {
     min-height: 50px;
-    gap: 8px;
   }
 
   .popular-icon {
     width: 50px;
     height: 50px;
     flex-basis: 50px;
-    border-radius: 13px;
   }
 
   .popular-icon svg {
@@ -606,78 +834,72 @@
   }
 
   .popular-top > span {
-    padding: 8px 12px;
-    font-size: 15px;
+    padding: 8px 11px;
+    font-size: 13px;
   }
 
-  /* COURSE CONTENT */
+  /* -------------------------------
+     CONTENT
+  ------------------------------- */
 
   .popular-main {
-    min-height: 0;
+    grid-template-columns: minmax(0, 1fr) 120px;
 
-    grid-template-columns: minmax(0, 1fr) 0.85fr;
-
-    gap: 10px;
+    gap: 9px;
 
     margin-top: 9px;
   }
 
-  .popular-copy {
-    align-self: center;
-  }
-
   .popular-copy h3 {
-    margin-bottom: 7px;
-
     font-size: 22px;
     line-height: 1.18;
   }
 
   .popular-copy p {
-    font-size: 15px;
+    font-size: 14px;
     line-height: 1.5;
   }
 
-  /* IMAGE */
+  /* -------------------------------
+     IMAGE
+  ------------------------------- */
 
   .popular-image {
-    height: 125px;
-    align-self: center;
+    height: 115px;
   }
 
   .popular-image img {
-    width: 100%;
-    max-width: 175px;
-    height: 120px;
+    max-width: 120px;
+    height: 110px;
   }
 
-  /* META */
+  /* -------------------------------
+     META
+  ------------------------------- */
 
   .popular-meta {
-    grid-template-columns: repeat(3, 1fr);
-
-    gap: 7px;
-    margin-top: 13px;
+    gap: 6px;
+    margin-top: 12px;
   }
 
   .popular-meta span {
     min-height: 44px;
 
-    padding: 0 6px;
+    padding: 0 5px;
 
-    gap: 5px;
+    gap: 4px;
 
-    font-size: 15px;
-
-    border-radius: 9px;
+    font-size: 12px;
   }
 
   .popular-meta svg {
-    width: 15px;
-    height: 15px;
+    width: 14px;
+    height: 14px;
   }
 
-  /* BUTTONS */
+  /* -------------------------------
+     BUTTONS
+  ------------------------------- */
 
   .popular-actions {
     gap: 8px;
@@ -685,396 +907,20 @@
   }
 
   .popular-actions a {
-    height: 45px;
-
-    padding: 0 9px;
-
-    border-radius: 10px;
-
-    font-size: 15px;
-
-    gap: 5px;
-  }
-
-  .popular-actions a svg {
-    width: 15px;
-    height: 15px;
-  }
-}
-
-
-/* =========================================================
-   SMALL MOBILE
-========================================================= */
-
-@media (max-width: 480px) {
-
-  .popular-learning {
-    padding: 40px 0 45px;
-  }
-
-  .popular-container {
-    width: calc(100% - 20px);
-  }
-
-  .popular-heading {
-    margin-bottom: 20px;
-  }
-
-  .popular-heading > span {
-    font-size: 15px;
-  }
-
-  .popular-heading h2 {
-    font-size: 32px;
-    line-height: 1.08;
-  }
-
-  .popular-heading p {
-    font-size: 15px;
-    line-height: 1.5;
-  }
-
-  .popular-grid {
-    gap: 13px;
-  }
-
-  .popular-card {
-    padding: 15px;
-    border-radius: 17px;
-  }
-
-  /* TOP */
-
-  .popular-top {
-    min-height: 47px;
-  }
-
-  .popular-icon {
-    width: 47px;
-    height: 47px;
-    flex-basis: 47px;
-  }
-
-  .popular-icon svg {
-    width: 22px;
-    height: 22px;
-  }
-
-  .popular-top > span {
-    padding: 7px 10px;
-    font-size: 15px;
-  }
-
-  /* CONTENT */
-
-  .popular-main {
-    grid-template-columns: minmax(0, 1fr) 125px;
-
-    gap: 8px;
-
-    margin-top: 8px;
-  }
-
-  .popular-copy h3 {
-    margin-bottom: 6px;
-
-    font-size: 20px;
-    line-height: 1.18;
-  }
-
-  .popular-copy p {
-    font-size: 15px;
-    line-height: 1.45;
-  }
-
-  /* IMAGE */
-
-  .popular-image {
-    height: 110px;
-  }
-
-  .popular-image img {
-    max-width: 125px;
-    height: 105px;
-  }
-
-  /* META */
-
-  .popular-meta {
-    gap: 6px;
-    margin-top: 11px;
-  }
-
-  .popular-meta span {
-    min-height: 41px;
-
-    padding: 0 5px;
-
-    gap: 4px;
-
-    font-size: 15px;
-
-    border-radius: 8px;
-  }
-
-  .popular-meta svg {
-    width: 13px;
-    height: 13px;
-  }
-
-  /* BUTTONS */
-
-  .popular-actions {
-    gap: 7px;
-    margin-top: 10px;
-  }
-
-  .popular-actions a {
-    height: 42px;
+    height: 46px;
 
     padding: 0 7px;
 
-    border-radius: 9px;
+    border-radius: 10px;
 
-    font-size: 15px;
+    font-size: 13px;
+
+    gap: 5px;
   }
 
-  .popular-actions a svg {
+  .popular-actions svg {
     width: 14px;
     height: 14px;
-  }
-}
-
-
-/* =========================================================
-   VERY SMALL MOBILE
-========================================================= */
-
-@media (max-width: 360px) {
-
-  .popular-container {
-    width: calc(100% - 16px);
-  }
-
-  .popular-card {
-    padding: 13px;
-  }
-
-  .popular-main {
-    grid-template-columns: minmax(0, 1fr) 105px;
-    gap: 6px;
-  }
-
-  .popular-copy h3 {
-    font-size: 18px;
-    line-height: 1.18;
-  }
-
-  .popular-copy p {
-    font-size: 15px;
-    line-height: 1.4;
-  }
-
-  .popular-image {
-    height: 92px;
-  }
-
-  .popular-image img {
-    max-width: 105px;
-    height: 90px;
-  }
-
-  .popular-meta {
-    gap: 4px;
-  }
-
-  .popular-meta span {
-    min-height: 38px;
-
-    padding: 0 3px;
-
-    font-size: 15px;
-
-    gap: 3px;
-  }
-
-  .popular-meta svg {
-    width: 12px;
-    height: 12px;
-  }
-
-  .popular-actions {
-    gap: 5px;
-    margin-top: 9px;
-  }
-
-  .popular-actions a {
-    height: 40px;
-
-    padding: 0 5px;
-
-    font-size: 15px;
-  }
-
-  .popular-actions a svg {
-    width: 13px;
-    height: 13px;
-  }
-}
-
-/* =========================================================
-   SMALL MOBILE
-========================================================= */
-
-@media (max-width: 480px) {
-
-  .popular-learning {
-    padding: 38px 0 42px;
-  }
-
-  .popular-container {
-    width: calc(100% - 22px);
-  }
-
-  .popular-heading {
-    margin-bottom: 18px;
-  }
-
-  .popular-heading > span {
-    font-size: 11px;
-  }
-
-  .popular-heading h2 {
-    font-size: 30px;
-
-    letter-spacing: -0.035em;
-  }
-
-  .popular-heading p {
-    font-size: 13px;
-  }
-
-  .popular-grid {
-    gap: 12px;
-  }
-
-  .popular-card {
-    padding: 14px;
-
-    border-radius: 16px;
-  }
-
-  .popular-top {
-    min-height: 44px;
-  }
-
-  .popular-icon {
-    width: 44px;
-    height: 44px;
-
-    flex-basis: 44px;
-
-    border-radius: 11px;
-  }
-
-  .popular-icon svg {
-    width: 20px;
-    height: 20px;
-  }
-
-  .popular-top > span {
-    padding: 6px 9px;
-
-    font-size: 10px;
-  }
-
-  /* -----------------------------------------
-     COURSE CONTENT
-  ----------------------------------------- */
-
-  .popular-main {
-    grid-template-columns: minmax(0, 1fr) 125px;
-
-    gap: 6px;
-
-    margin-top: 7px;
-  }
-
-  .popular-copy h3 {
-    font-size: 18px;
-
-    line-height: 1.18;
-  }
-
-  .popular-copy p {
-    font-size: 11.5px;
-
-    line-height: 1.4;
-  }
-
-  .popular-image {
-    height: 105px;
-  }
-
-  .popular-image img {
-    max-width: 125px;
-
-    height: 100px;
-  }
-
-  /* -----------------------------------------
-     META
-  ----------------------------------------- */
-
-  .popular-meta {
-    gap: 5px;
-
-    margin-top: 10px;
-  }
-
-  .popular-meta span {
-    min-height: 39px;
-
-    padding: 0 4px;
-
-    gap: 3px;
-
-    font-size: 9.5px;
-
-    border-radius: 8px;
-  }
-
-  .popular-meta svg {
-    width: 12px;
-    height: 12px;
-  }
-
-  /* -----------------------------------------
-     BUTTONS
-  ----------------------------------------- */
-
-  .popular-actions {
-    gap: 7px;
-
-    margin-top: 9px;
-  }
-
-  .popular-actions a {
-    height: 40px;
-
-    padding: 0 6px;
-
-    border-radius: 9px;
-
-    font-size: 11px;
-
-    gap: 4px;
-  }
-
-  .popular-actions a svg {
-    width: 13px;
-    height: 13px;
   }
 }
 
@@ -1090,58 +936,124 @@
   }
 
   .popular-card {
-    padding: 12px;
+    padding: 15px;
   }
+
+  /* -------------------------------
+     HEADING
+  ------------------------------- */
+
+  .popular-heading > span {
+    font-size: 12px;
+  }
+
+  .popular-heading h2 {
+    font-size: 30px;
+  }
+
+  .popular-heading p {
+    font-size: 14px;
+  }
+
+  /* -------------------------------
+     TOP
+  ------------------------------- */
+
+  .popular-top {
+    min-height: 47px;
+  }
+
+  .popular-icon {
+    width: 47px;
+    height: 47px;
+    flex-basis: 47px;
+  }
+
+  .popular-icon svg {
+    width: 21px;
+    height: 21px;
+  }
+
+  .popular-top > span {
+    padding: 7px 9px;
+    font-size: 12px;
+  }
+
+  /* -------------------------------
+     CONTENT
+  ------------------------------- */
 
   .popular-main {
     grid-template-columns: minmax(0, 1fr) 105px;
+
+    gap: 7px;
   }
 
   .popular-copy h3 {
-    font-size: 17px;
+    font-size: 20px;
   }
 
   .popular-copy p {
-    font-size: 10.5px;
+    font-size: 13px;
+    line-height: 1.5;
   }
 
+  /* -------------------------------
+     IMAGE
+  ------------------------------- */
+
   .popular-image {
-    height: 90px;
+    height: 95px;
   }
 
   .popular-image img {
     max-width: 105px;
-
-    height: 88px;
+    height: 92px;
   }
+
+  /* -------------------------------
+     META
+  ------------------------------- */
 
   .popular-meta {
-    gap: 4px;
-  }
-
-  .popular-meta span {
-    min-height: 36px;
-
-    font-size: 8.5px;
-  }
-
-  .popular-meta svg {
-    width: 11px;
-    height: 11px;
-  }
-
-  .popular-actions {
     gap: 5px;
   }
 
-  .popular-actions a {
-    height: 38px;
+  .popular-meta span {
+    min-height: 40px;
 
-    font-size: 10px;
+    padding: 0 3px;
+
+    gap: 3px;
+
+    font-size: 10.5px;
   }
 
-  .popular-actions a svg {
+  .popular-meta svg {
     width: 12px;
     height: 12px;
+  }
+
+  /* -------------------------------
+     BUTTONS
+  ------------------------------- */
+
+  .popular-actions {
+    gap: 6px;
+  }
+
+  .popular-actions a {
+    height: 42px;
+
+    padding: 0 5px;
+
+    font-size: 11.5px;
+
+    gap: 4px;
+  }
+
+  .popular-actions svg {
+    width: 13px;
+    height: 13px;
   }
 }
