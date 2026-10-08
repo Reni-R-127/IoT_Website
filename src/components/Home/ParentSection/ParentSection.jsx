@@ -117,7 +117,7 @@ export default function ParentSection() {
           </div>
         </div>
 
-        <div className="testimonial-dots">
+        {/* <div className="testimonial-dots">
           {Array.from({ length: Math.min(5, testimonials.length) }).map(
             (_, i) => (
               <button
@@ -128,7 +128,7 @@ export default function ParentSection() {
               />
             ),
           )}
-        </div>
+        </div> */}
       </div>
     </section>
   );
