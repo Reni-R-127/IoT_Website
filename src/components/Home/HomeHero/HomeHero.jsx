@@ -53,6 +53,21 @@ export default function HomeHero() {
     <section className="home-hero">
 
       {/* =========================================
+          HERO EDGE DECORATIONS
+      ========================================= */}
+
+      <div
+        className="hero-edge-circle hero-blue-circle"
+        aria-hidden="true"
+      ></div>
+
+      <div
+        className="hero-edge-circle hero-violet-circle"
+        aria-hidden="true"
+      ></div>
+
+
+      {/* =========================================
           HERO CONTENT
       ========================================= */}
 
@@ -165,7 +180,9 @@ export default function HomeHero() {
         </div>
 
 
-        {/* FLOATING ICONS */}
+        {/* =========================================
+            FLOATING ICONS
+        ========================================= */}
 
         <div className="floating-chip chip-one">
           <Bot size={23} />
@@ -182,7 +199,9 @@ export default function HomeHero() {
         </div>
 
 
-        {/* CAPTION */}
+        {/* =========================================
+            HERO CAPTION
+        ========================================= */}
 
         <div className="hero-caption">
           <Sparkles size={16} />
@@ -193,7 +212,7 @@ export default function HomeHero() {
 
 
       {/* =========================================
-          HIGHLIGHT CARDS
+          HERO HIGHLIGHTS
       ========================================= */}
 
       <div className="hero-highlights">
