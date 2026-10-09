@@ -9,7 +9,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 import AboutHero from "../../components/About/AboutHero/AboutHero.jsx";
 // import SectionTitle from "../../components/SectionTitle/SectionTitle.jsx";
