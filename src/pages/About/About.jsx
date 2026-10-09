@@ -12,7 +12,7 @@ import {
 import { Link } from "react-router-dom";
 
 import AboutHero from "../../components/About/AboutHero/AboutHero.jsx";
-import SectionTitle from "../../components/SectionTitle/SectionTitle.jsx";
+// import SectionTitle from "../../components/SectionTitle/SectionTitle.jsx";
 import CTASection from "../../components/CTASection/CTASection.jsx";
 import WhoWeAre from "../../components/About/WhoWeAre/WhoWeAre.jsx";
 import VisionMissionGoal from "../../components/About/VisionMissionGoal/VisionMissionGoal.jsx";

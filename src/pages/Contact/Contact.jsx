@@ -1,11 +1,11 @@
 import { useState } from "react";
-import { Clock3, Contact2Icon, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
+// import { Clock3, Contact2Icon, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 import {
   buildWhatsAppMessage,
   siteConfig,
   whatsappUrl,
 } from "../../config/site.js";
-import PageHero from "../../components/PageHero/PageHero.jsx";
+// import PageHero from "../../components/PageHero/PageHero.jsx";
 import "./Contact.css";
 import ContactHero from "../../components/Contact/ContactHero/ContactHero.jsx";
 import ContactForm from "../../components/Contact/ContactForm/ContactForm.jsx";

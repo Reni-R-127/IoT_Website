@@ -1,8 +1,8 @@
 import { useParams } from "react-router-dom";
 import { blogPosts } from "../../data/content.js";
-import PageHero from "../../components/PageHero/PageHero.jsx";
-import SectionTitle from "../../components/SectionTitle/SectionTitle.jsx";
-import BlogCard from "../../components/BlogCard/BlogCard.jsx";
+// import PageHero from "../../components/PageHero/PageHero.jsx";
+// import SectionTitle from "../../components/SectionTitle/SectionTitle.jsx";
+// import BlogCard from "../../components/BlogCard/BlogCard.jsx";
 import CTASection from "../../components/CTASection/CTASection.jsx";
 import "./Blog.css";
 import BlogHero from "../../components/Blog/BlogHero/BlogHero.jsx";

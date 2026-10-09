@@ -1,7 +1,7 @@
-import { faqs } from "../../data/content.js";
+// import { faqs } from "../../data/content.js";
 // import PageHero from "../../components/PageHero/PageHero.jsx";
-import SectionTitle from "../../components/SectionTitle/SectionTitle.jsx";
-import FAQAccordion from "../../components/FAQAccordion/FAQAccordion.jsx";
+// import SectionTitle from "../../components/SectionTitle/SectionTitle.jsx";
+// import FAQAccordion from "../../components/FAQAccordion/FAQAccordion.jsx";
 import CTASection from "../../components/CTASection/CTASection.jsx";
 import "./FAQs.css";
 import FAQHero from "../../components/FAQ/FAQHero/FAQHero.jsx";
