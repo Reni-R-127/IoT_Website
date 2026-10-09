@@ -1,468 +1,383 @@
-/* =========================================================
-   WHY TECHNOLOGY
-========================================================= */
+/* =========================================
+   WHY TECHNOLOGY SECTION
+========================================= */
 
 .why-technology {
   position: relative;
+  isolation: isolate;
   width: 100%;
+  padding: 32px 0 34px;
   overflow: hidden;
-
-  padding: 58px 0 62px;
-
-  background:
-    linear-gradient(
-      135deg,
-      #f7fbff 0%,
-      #ffffff 50%,
-      #f8fbff 100%
-    );
+  background: linear-gradient(
+    135deg,
+    #f7fbff 0%,
+    #ffffff 50%,
+    #f8faff 100%
+  );
+  box-sizing: border-box;
 }
-
-
-/* =========================================================
-   DECORATION
-========================================================= */
-
-.why-tech-decoration {
-  position: absolute;
-
-  pointer-events: none;
-
-  border-radius: 50%;
-
-  z-index: 0;
-}
-
-.why-tech-decoration-left {
-  width: 260px;
-  height: 260px;
-
-  top: -165px;
-  left: -120px;
-
-  background: rgba(72, 174, 244, 0.10);
-}
-
-.why-tech-decoration-right {
-  width: 280px;
-  height: 280px;
-
-  right: -125px;
-  bottom: -175px;
-
-  background: rgba(114, 151, 255, 0.08);
-}
-
-
-/* =========================================================
-   CONTAINER
-========================================================= */
 
 .why-tech-container {
   position: relative;
   z-index: 2;
-
-  width: min(
-    1360px,
-    calc(100% - 90px)
-  );
-
+  width: min(1360px, calc(100% - 64px));
   margin: 0 auto;
-
   display: grid;
-
-  grid-template-columns:
-    minmax(520px, 0.93fr)
-    minmax(580px, 1.07fr);
-
+  grid-template-columns: minmax(0, 0.96fr) minmax(0, 1.04fr);
   align-items: center;
-
-  gap: 45px;
+  gap: 32px;
 }
-
-
-/* =========================================================
-   CONTENT
-========================================================= */
 
 .why-tech-content {
   min-width: 0;
 }
 
-.why-tech-eyebrow {
-  display: block;
+/* =========================================
+   DECORATIONS
+========================================= */
 
-  margin-bottom: 17px;
-
-  color: #2789df;
-
-  font-size: 17px;
-
-  font-weight: 900;
-
-  letter-spacing: 0.08em;
-
-  line-height: 1.2;
+.why-tech-decoration {
+  position: absolute;
+  z-index: -1;
+  border-radius: 50%;
+  pointer-events: none;
 }
 
+.why-tech-decoration-left {
+  width: 220px;
+  height: 220px;
+  top: -145px;
+  left: -100px;
+  background: rgba(72, 174, 244, 0.11);
+}
 
-/* =========================================================
+.why-tech-decoration-right {
+  width: 240px;
+  height: 240px;
+  right: -115px;
+  bottom: -150px;
+  background: rgba(140, 110, 255, 0.09);
+}
+
+/* =========================================
    HEADING
-========================================================= */
+========================================= */
+
+.why-tech-eyebrow {
+  display: block;
+  margin: 0 0 13px;
+  color: #2789df;
+  font-size: 16px;
+  font-weight: 900;
+  letter-spacing: 0.09em;
+  line-height: 1.3;
+}
 
 .why-tech-content h2 {
   max-width: 650px;
-
   margin: 0;
-
   color: #08245c;
-
-  font-size:
-    clamp(
-      48px,
-      4.25vw,
-      68px
-    );
-
+  font-size: clamp(42px, 4.2vw, 64px);
   font-weight: 900;
-
-  line-height: 1.03;
-
+  line-height: 1.04;
   letter-spacing: -0.045em;
+  overflow-wrap: break-word;
 }
-
-
-/* =========================================================
-   DESCRIPTION
-========================================================= */
 
 .why-tech-description {
-  max-width: 690px;
-
-  margin: 14px 0 25px;
-
+  max-width: 650px;
+  margin: 14px 0 20px;
   color: #61738e;
-
   font-size: 18px;
-
   font-weight: 500;
-
-  line-height: 1.48;
+  line-height: 1.55;
 }
 
-
-/* =========================================================
-   SKILLS
-========================================================= */
+/* =========================================
+   SKILL GRID
+========================================= */
 
 .why-tech-skills {
-  width: 100%;
-
-  max-width: 700px;
-
   display: grid;
-
-  grid-template-columns:
-    repeat(3, minmax(0, 1fr));
-
-  gap: 12px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  width: 100%;
+  max-width: 700px;
 }
 
 .why-tech-skill {
-  min-width: 0;
-
-  min-height: 61px;
-
+  position: relative;
   display: flex;
-
   align-items: center;
-
-  gap: 12px;
-
-  padding: 8px 13px;
-
+  gap: 10px;
+  min-width: 0;
+  min-height: 60px;
+  padding: 8px 11px;
   box-sizing: border-box;
-
-  border: 1px solid rgba(
-    205,
-    221,
-    239,
-    0.78
-  );
-
-  border-radius: 12px;
-
-  background: rgba(
-    255,
-    255,
-    255,
-    0.62
-  );
-
-  box-shadow:
-    0 4px 12px
-    rgba(
-      35,
-      81,
-      129,
-      0.035
-    );
-
+  border: 1px solid #d8e6f5;
+  border-radius: 13px;
+  background: rgba(255, 255, 255, 0.86);
+  box-shadow: 0 4px 12px rgba(35, 81, 129, 0.04);
   transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease;
+    transform 0.28s ease,
+    background-color 0.28s ease,
+    border-color 0.28s ease,
+    box-shadow 0.28s ease;
 }
 
 .why-tech-skill:hover {
-  transform: translateY(-2px);
-
-  box-shadow:
-    0 8px 18px
-    rgba(
-      35,
-      81,
-      129,
-      0.08
-    );
+  transform: translateY(-4px);
+  border-color: #2789df;
+  background: #e6f3ff;
+  box-shadow: 0 10px 22px rgba(22, 92, 160, 0.18);
 }
-
-
-/* =========================================================
-   SKILL ICON
-========================================================= */
 
 .why-tech-skill-icon {
-  width: 42px;
-  height: 42px;
-
-  flex: 0 0 42px;
-
   display: flex;
-
+  flex: 0 0 40px;
   align-items: center;
   justify-content: center;
-
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
 }
 
-
-/* Icon colors */
-
-.why-tech-purple .why-tech-skill-icon {
-  color: #9b43ef;
-  background: #f5eaff;
+.why-tech-skill:hover .why-tech-skill-icon {
+  transform: scale(1.06);
+  background: rgba(255, 255, 255, 0.95);
 }
-
-.why-tech-pink .why-tech-skill-icon {
-  color: #ed438d;
-  background: #ffe8f2;
-}
-
-.why-tech-blue .why-tech-skill-icon {
-  color: #148ee0;
-  background: #e5f5ff;
-}
-
-.why-tech-green .why-tech-skill-icon {
-  color: #12b875;
-  background: #e6fff2;
-}
-
-.why-tech-yellow .why-tech-skill-icon {
-  color: #eea900;
-  background: #fff4d4;
-}
-
-.why-tech-cyan .why-tech-skill-icon {
-  color: #2588e2;
-  background: #e6f3ff;
-}
-
-
-/* =========================================================
-   SKILL TEXT
-========================================================= */
 
 .why-tech-skill-title {
   min-width: 0;
-
   color: #102d62;
-
   font-size: 14px;
-
   font-weight: 800;
-
-  line-height: 1.2;
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+  transition: color 0.25s ease;
 }
 
+.why-tech-skill:hover .why-tech-skill-title {
+  color: #071c46;
+}
 
-/* =========================================================
-   BUTTON
-========================================================= */
+/* =========================================
+   INDIVIDUAL SKILL COLORS
+========================================= */
+
+.why-tech-purple .why-tech-skill-icon {
+  color: #9637e8;
+  background: #f2e5ff;
+}
+
+.why-tech-purple:hover {
+  border-color: #a855f7;
+  background: #f0e3ff;
+}
+
+.why-tech-pink .why-tech-skill-icon {
+  color: #e73583;
+  background: #ffe4f0;
+}
+
+.why-tech-pink:hover {
+  border-color: #ed438d;
+  background: #ffe5ef;
+}
+
+.why-tech-blue .why-tech-skill-icon {
+  color: #1485d6;
+  background: #e0f2ff;
+}
+
+.why-tech-blue:hover {
+  border-color: #168fe0;
+  background: #e0f1ff;
+}
+
+.why-tech-green .why-tech-skill-icon {
+  color: #0eae70;
+  background: #e0ffef;
+}
+
+.why-tech-green:hover {
+  border-color: #10b981;
+  background: #ddf9e9;
+}
+
+.why-tech-yellow .why-tech-skill-icon {
+  color: #df9b00;
+  background: #fff0c5;
+}
+
+.why-tech-yellow:hover {
+  border-color: #e8ad0b;
+  background: #fff2ce;
+}
+
+.why-tech-cyan .why-tech-skill-icon {
+  color: #1688dc;
+  background: #e2f2ff;
+}
+
+.why-tech-cyan:hover {
+  border-color: #279fe5;
+  background: #e2f3ff;
+}
+
+/* =========================================
+   EXPLORE COURSES BUTTON
+========================================= */
 
 .why-tech-button {
-  width: fit-content;
-
-  min-height: 48px;
-
-  margin-top: 26px;
-
-  padding: 0 20px;
-
   display: inline-flex;
-
   align-items: center;
   justify-content: center;
-
   gap: 10px;
-
+  width: fit-content;
+  min-height: 48px;
+  margin-top: 21px;
+  padding: 0 20px;
   box-sizing: border-box;
-
-  border-radius: 11px;
-
-  color: #2187dc;
-
-  background:
-    linear-gradient(
-      135deg,
-      #eaf6ff,
-      #e1f1ff
-    );
-
+  border: 1px solid transparent;
+  border-radius: 12px;
+  color: #167bd0;
+  background: linear-gradient(135deg, #eaf6ff, #deefff);
   text-decoration: none;
-
-  font-size: 15px;
-
+  font-size: 16px;
   font-weight: 800;
-
-  box-shadow:
-    0 7px 18px
-    rgba(
-      40,
-      135,
-      220,
-      0.08
-    );
-
+  box-shadow: 0 7px 18px rgba(40, 135, 220, 0.09);
   transition:
     transform 0.25s ease,
+    color 0.25s ease,
+    background-color 0.25s ease,
     box-shadow 0.25s ease;
 }
 
 .why-tech-button:hover {
-  transform: translateY(-2px);
-
-  box-shadow:
-    0 10px 22px
-    rgba(
-      40,
-      135,
-      220,
-      0.13
-    );
+  transform: translateY(-3px);
+  color: #ffffff;
+  background: #167bd0;
+  box-shadow: 0 12px 24px rgba(22, 123, 208, 0.25);
 }
 
+.why-tech-button:focus-visible,
+.why-tech-skill:focus-visible {
+  outline: 3px solid #168fe0;
+  outline-offset: 3px;
+}
 
-/* =========================================================
-   VISUAL
-========================================================= */
+/* =========================================
+   IMAGE
+========================================= */
 
 .why-tech-visual {
-  position: relative;
-
-  min-width: 0;
-
   display: flex;
-
   align-items: center;
   justify-content: center;
+  min-width: 0;
 }
 
 .why-tech-image {
   display: block;
-
   width: 100%;
-
   max-width: 730px;
-
   height: auto;
-
   object-fit: contain;
+  filter: drop-shadow(0 18px 28px rgba(32, 81, 132, 0.08));
+  transition: transform 0.4s ease;
+}
 
-  filter:
-    drop-shadow(
-      0 18px 28px
-      rgba(
-        32,
-        81,
-        132,
-        0.08
-      )
-    );
+.why-tech-visual:hover .why-tech-image {
+  transform: translateY(-4px) scale(1.015);
+}
 
+/* =========================================
+   SCROLL REVEAL ANIMATION
+========================================= */
+
+.why-reveal {
+  opacity: 0;
+  transform: translateY(22px);
   transition:
-    transform 0.35s ease;
+    opacity 0.65s ease,
+    transform 0.65s ease;
 }
 
-.why-tech-image:hover {
-  transform: translateY(-3px);
+.why-tech-visual.why-reveal {
+  transform: translateX(28px) scale(0.98);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
 }
 
+.why-technology.is-visible .why-reveal {
+  opacity: 1;
+  transform: translate(0, 0) scale(1);
+}
 
-/* =========================================================
-   LARGE LAPTOP
-========================================================= */
+.why-tech-content > .why-reveal:nth-child(1) {
+  transition-delay: 0ms;
+}
+
+.why-tech-content > .why-reveal:nth-child(2) {
+  transition-delay: 100ms;
+}
+
+.why-tech-content > .why-reveal:nth-child(3) {
+  transition-delay: 180ms;
+}
+
+.why-tech-content > .why-reveal.why-tech-button {
+  transition-delay: 650ms;
+}
+
+/* =========================================
+   LAPTOP
+========================================= */
 
 @media (max-width: 1200px) {
-
   .why-technology {
-    padding:
-      50px
-      0
-      54px;
+    padding: 28px 0 30px;
   }
 
   .why-tech-container {
-    width:
-      min(
-        1100px,
-        calc(100% - 54px)
-      );
-
-    grid-template-columns:
-      minmax(440px, 0.92fr)
-      minmax(480px, 1.08fr);
-
-    gap: 25px;
+    width: calc(100% - 48px);
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+    gap: 22px;
   }
 
   .why-tech-content h2 {
-    font-size:
-      clamp(
-        44px,
-        4.8vw,
-        60px
-      );
+    font-size: clamp(40px, 4.6vw, 56px);
   }
 
   .why-tech-description {
     font-size: 16px;
+    margin-bottom: 17px;
   }
 
   .why-tech-skills {
-    gap: 9px;
+    gap: 8px;
   }
 
   .why-tech-skill {
-    min-height: 57px;
-    padding: 7px 10px;
-    gap: 9px;
+    gap: 8px;
+    padding: 7px 9px;
   }
 
   .why-tech-skill-icon {
-    width: 38px;
-    height: 38px;
-    flex-basis: 38px;
+    flex-basis: 35px;
+    width: 35px;
+    height: 35px;
+  }
+
+  .why-tech-skill-icon svg {
+    width: 21px;
+    height: 21px;
   }
 
   .why-tech-skill-title {
@@ -470,79 +385,52 @@
   }
 }
 
-
-/* =========================================================
+/* =========================================
    TABLET
-========================================================= */
+========================================= */
 
 @media (max-width: 900px) {
-
   .why-technology {
-    padding:
-      42px
-      0
-      48px;
+    padding: 28px 0 30px;
   }
 
   .why-tech-container {
-    width:
-      min(
-        700px,
-        calc(100% - 36px)
-      );
-
-    grid-template-columns: 1fr;
-
-    gap: 30px;
-
-    text-align: center;
+    width: min(720px, calc(100% - 36px));
+    grid-template-columns: minmax(0, 1fr);
+    gap: 22px;
   }
 
   .why-tech-content {
     display: flex;
-
     flex-direction: column;
-
     align-items: center;
+    text-align: center;
   }
 
   .why-tech-eyebrow {
-    margin-bottom: 12px;
-
+    margin-bottom: 10px;
     font-size: 15px;
   }
 
   .why-tech-content h2 {
     max-width: 650px;
-
-    font-size:
-      clamp(
-        40px,
-        7vw,
-        54px
-      );
-
-    line-height: 1.05;
+    font-size: clamp(38px, 6vw, 52px);
+    line-height: 1.08;
   }
 
   .why-tech-description {
     max-width: 620px;
-
-    margin-top: 12px;
-
+    margin: 12px 0 18px;
     font-size: 16px;
-
-    line-height: 1.45;
   }
 
   .why-tech-skills {
     max-width: 650px;
-
     text-align: left;
   }
 
   .why-tech-button {
-    margin-top: 22px;
+    margin-top: 19px;
   }
 
   .why-tech-visual {
@@ -550,70 +438,47 @@
   }
 
   .why-tech-image {
-    width: min(
-      100%,
-      650px
-    );
+    width: min(100%, 610px);
   }
 }
 
-
-/* =========================================================
+/* =========================================
    MOBILE
-========================================================= */
+========================================= */
 
 @media (max-width: 600px) {
-
   .why-technology {
-    padding:
-      34px
-      0
-      40px;
+    padding: 23px 0 25px;
   }
 
   .why-tech-container {
-    width:
-      calc(100% - 26px);
-
-    gap: 24px;
+    width: calc(100% - 26px);
+    gap: 18px;
   }
 
   .why-tech-decoration-left {
-    width: 170px;
-    height: 170px;
-
-    top: -115px;
-    left: -80px;
+    width: 150px;
+    height: 150px;
+    top: -105px;
+    left: -75px;
   }
 
   .why-tech-decoration-right {
-    width: 190px;
-    height: 190px;
-
-    right: -95px;
-    bottom: -120px;
+    width: 160px;
+    height: 160px;
+    right: -80px;
+    bottom: -100px;
   }
 
   .why-tech-eyebrow {
-    margin-bottom: 11px;
-
+    margin-bottom: 9px;
     font-size: 13px;
-
-    letter-spacing: 0.07em;
   }
 
   .why-tech-content h2 {
-    max-width: 430px;
-
-    font-size:
-      clamp(
-        34px,
-        9vw,
-        43px
-      );
-
-    line-height: 1.07;
-
+    max-width: 450px;
+    font-size: clamp(32px, 8.2vw, 42px);
+    line-height: 1.08;
     letter-spacing: -0.04em;
   }
 
@@ -622,43 +487,28 @@
   }
 
   .why-tech-description {
-    max-width: 430px;
-
-    margin:
-      12px auto
-      20px;
-
-    font-size: 14px;
-
-    line-height: 1.45;
+    max-width: 450px;
+    margin: 11px auto 16px;
+    font-size: 15px;
+    line-height: 1.5;
   }
 
   .why-tech-skills {
-    width: 100%;
-
-    grid-template-columns:
-      repeat(2, minmax(0, 1fr));
-
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 9px;
   }
 
   .why-tech-skill {
-    min-height: 55px;
-
-    padding:
-      7px
-      8px;
-
-    gap: 7px;
-
-    border-radius: 11px;
+    min-height: 54px;
+    padding: 7px 9px;
+    gap: 8px;
+    border-radius: 12px;
   }
 
   .why-tech-skill-icon {
-    width: 34px;
-    height: 34px;
-
-    flex-basis: 34px;
+    flex-basis: 32px;
+    width: 32px;
+    height: 32px;
   }
 
   .why-tech-skill-icon svg {
@@ -668,60 +518,49 @@
 
   .why-tech-skill-title {
     font-size: 12px;
-
-    line-height: 1.15;
+    line-height: 1.25;
   }
 
   .why-tech-button {
     min-height: 46px;
-
-    margin-top: 19px;
-
-    padding:
-      0
-      18px;
-
-    font-size: 14px;
+    margin-top: 17px;
+    padding: 0 17px;
+    font-size: 15px;
   }
 
   .why-tech-image {
-    width: 100%;
+    max-width: 500px;
+  }
 
-    max-width: 520px;
+  .why-tech-visual.why-reveal {
+    transform: translateY(20px) scale(0.98);
+  }
+
+  .why-technology.is-visible .why-tech-visual.why-reveal {
+    transform: translateY(0) scale(1);
   }
 }
 
-
-/* =========================================================
+/* =========================================
    SMALL MOBILE
-========================================================= */
+========================================= */
 
-@media (max-width: 400px) {
-
+@media (max-width: 380px) {
   .why-technology {
-    padding:
-      29px
-      0
-      34px;
+    padding: 20px 0 22px;
   }
 
   .why-tech-container {
-    width:
-      calc(100% - 18px);
-
-    gap: 21px;
-  }
-
-  .why-tech-eyebrow {
-    font-size: 12px;
+    width: calc(100% - 20px);
+    gap: 16px;
   }
 
   .why-tech-content h2 {
-    font-size: 32px;
+    font-size: 31px;
   }
 
   .why-tech-description {
-    font-size: 13px;
+    font-size: 14px;
   }
 
   .why-tech-skills {
@@ -729,18 +568,15 @@
   }
 
   .why-tech-skill {
-    min-height: 51px;
-
-    padding:
-      6px
-      7px;
+    min-height: 50px;
+    padding: 6px 7px;
+    gap: 6px;
   }
 
   .why-tech-skill-icon {
-    width: 31px;
-    height: 31px;
-
-    flex-basis: 31px;
+    flex-basis: 29px;
+    width: 29px;
+    height: 29px;
   }
 
   .why-tech-skill-icon svg {
@@ -751,28 +587,20 @@
   .why-tech-skill-title {
     font-size: 11px;
   }
-
-  .why-tech-button {
-    min-height: 44px;
-
-    padding:
-      0
-      16px;
-
-    font-size: 13px;
-  }
 }
 
-
-/* =========================================================
+/* =========================================
    REDUCED MOTION
-========================================================= */
+========================================= */
 
 @media (prefers-reduced-motion: reduce) {
-
+  .why-reveal,
   .why-tech-skill,
+  .why-tech-skill-icon,
   .why-tech-button,
   .why-tech-image {
+    opacity: 1;
+    transform: none;
     transition: none;
   }
 }

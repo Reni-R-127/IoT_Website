@@ -5,18 +5,22 @@ import SectionTitle from "../../components/SectionTitle/SectionTitle.jsx";
 import BlogCard from "../../components/BlogCard/BlogCard.jsx";
 import CTASection from "../../components/CTASection/CTASection.jsx";
 import "./Blog.css";
+import BlogHero from "../../components/Blog/BlogHero/BlogHero.jsx";
+import Blogs from "../../components/Blog/Blogs/Blogs.jsx";
 
 const slugs = ["what-is-iot","5-fun-iot-projects-kids-can-build","how-do-smart-homes-work","what-is-arduino","why-should-kids-learn-coding"];
 
 export function Blog() {
   return (
     <>
-      <PageHero eyebrow="Blog" title="Simple technology ideas for curious minds." text="Short, practical articles about IoT, robotics, coding, electronics, AI and STEM education." />
-      <main className="blog-page">
+      {/* <PageHero eyebrow="Blog" title="Simple technology ideas for curious minds." text="Short, practical articles about IoT, robotics, coding, electronics, AI and STEM education." /> */}
+      <BlogHero />
+      <Blogs />
+      {/* <main className="blog-page">
         <SectionTitle eyebrow="Technology education" title="Explore the blog" />
         <div className="category-row">{["All","IoT","Robotics","Coding","Electronics","AI","Kids Projects","STEM Education"].map((x,i) => <span className={i === 0 ? "selected" : ""} key={x}>{x}</span>)}</div>
         <div className="blog-grid">{blogPosts.map((post,i) => <BlogCard key={post[1]} post={post} slug={slugs[i]} index={i}/>)}</div>
-      </main>
+      </main> */}
       <CTASection />
     </>
   );

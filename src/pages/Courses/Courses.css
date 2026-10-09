@@ -1,4 +1,4 @@
-.courses-page { width: min(1180px, calc(100% - 36px)); margin: 80px auto 0; }
+/* .courses-page { width: min(1180px, calc(100% - 36px)); margin: 80px auto 0; }
 .all-courses-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 17px; }
 .course-detail-page { width: min(1000px, calc(100% - 36px)); margin: 65px auto; }
 .back-link { display: inline-flex; align-items: center; gap: 6px; color: #4D96FF; text-decoration: none; font-size: 12px; font-weight: 900; }
@@ -19,4 +19,4 @@
   .course-detail-grid { grid-template-columns: 1fr; }
   .course-detail-art { min-height: 300px; }
 }
-@media (max-width: 540px) { .all-courses-grid { grid-template-columns: 1fr; } .detail-stats { grid-template-columns: 1fr; } }
+@media (max-width: 540px) { .all-courses-grid { grid-template-columns: 1fr; } .detail-stats { grid-template-columns: 1fr; } } */

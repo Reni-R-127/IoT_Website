@@ -10,14 +10,14 @@ import {
   Users,
 } from "lucide-react";
 
-import problemSolvingImage from "../../../assets/Skill/problem-solving.png";
-import creativityImage from "../../../assets/Skill/creativity.png";
-import handsOnBuildingImage from "../../../assets/Skill/hands-on-building.png";
-import programmingSkillsImage from "../../../assets/Skill/programming-skills.png";
-import automationRoboticsImage from "../../../assets/Skill/automation-robotics.png";
-import experimentationImage from "../../../assets/Skill/experimentation.png";
-import innovationMindsetImage from "../../../assets/Skill/innovation-mindset.png";
-import teamworkCollaborationImage from "../../../assets/Skill/teamwork-collaboration.png";
+import problemSolvingImage from "../../../assets/About/Skill/problem-solving.png";
+import creativityImage from "../../../assets/About/Skill/creativity.png";
+import handsOnBuildingImage from "../../../assets/About/Skill/hands-on-building.png";
+import programmingSkillsImage from "../../../assets/About/Skill/programming-skills.png";
+import automationRoboticsImage from "../../../assets/About/Skill/automation-robotics.png";
+import experimentationImage from "../../../assets/About/Skill/experimentation.png";
+import innovationMindsetImage from "../../../assets/About/Skill/innovation-mindset.png";
+import teamworkCollaborationImage from "../../../assets/About/Skill/teamwork-collaboration.png";
 
 import "./Skill.css";
 

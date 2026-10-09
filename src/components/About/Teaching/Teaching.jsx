@@ -12,14 +12,14 @@ import {
 
 import "./Teaching.css";
 
-import iotImage from "../../../assets/Teaching/iot.png";
-import electronicsImage from "../../../assets/Teaching/electronics.png";
-import microcontrollersImage from "../../../assets/Teaching/microcontrollers.png";
-import sensorsImage from "../../../assets/Teaching/sensors.png";
-import actuatorsImage from "../../../assets/Teaching/actuators.png";
-import roboticsImage from "../../../assets/Teaching/robotics.png";
-import codingImage from "../../../assets/Teaching/coding.png";
-import aiImage from "../../../assets/Teaching/artificial-intelligence.png";
+import iotImage from "../../../assets/About/Teaching/iot.png";
+import electronicsImage from "../../../assets/About/Teaching/electronics.png";
+import microcontrollersImage from "../../../assets/About/Teaching/microcontrollers.png";
+import sensorsImage from "../../../assets/About/Teaching/sensors.png";
+import actuatorsImage from "../../../assets/About/Teaching/actuators.png";
+import roboticsImage from "../../../assets/About/Teaching/robotics.png";
+import codingImage from "../../../assets/About/Teaching/coding.png";
+import aiImage from "../../../assets/About/Teaching/artificial-intelligence.png";
 
 
 const topics = [

@@ -1151,3 +1151,132 @@
     transition: none;
   }
 }
+
+/* =========================================
+   CARD BORDER AND HOVER EFFECT
+========================================= */
+
+.learning-card {
+  border: 1px solid #c8dff4;
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    filter 0.3s ease;
+}
+
+.learning-card:hover {
+  transform: translateY(-6px);
+  border-color: #168fe0;
+  box-shadow: 0 16px 32px rgba(21, 105, 180, 0.2);
+}
+
+/* Purple card border */
+.learning-purple:hover {
+  border-color: #8c3cf0;
+  box-shadow: 0 16px 32px rgba(124, 58, 237, 0.2);
+}
+
+/* Cyan card border */
+.learning-cyan:hover {
+  border-color: #08bbb6;
+  box-shadow: 0 16px 32px rgba(8, 187, 182, 0.2);
+}
+
+/* Yellow card border */
+.learning-yellow:hover {
+  border-color: #f0ad00;
+  box-shadow: 0 16px 32px rgba(240, 173, 0, 0.2);
+}
+
+/* =========================================
+   IMAGE BORDER AND DARKER HOVER
+========================================= */
+
+.learning-image-wrapper {
+  border: 1px solid rgba(150, 180, 210, 0.35);
+  box-sizing: border-box;
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.learning-image {
+  filter: brightness(1);
+  transition:
+    transform 0.35s ease,
+    filter 0.35s ease;
+}
+
+/* Darken the image on hover */
+.learning-card:hover .learning-image {
+  transform: scale(1.04);
+  filter: brightness(0.78) contrast(1.05);
+}
+
+.learning-card:hover .learning-image-wrapper {
+  border-color: rgba(30, 105, 180, 0.6);
+  box-shadow: inset 0 0 0 1px rgba(30, 105, 180, 0.15);
+}
+
+/* =========================================
+   NUMBER BADGE HOVER
+========================================= */
+
+.learning-number {
+  border: 2px solid rgba(255, 255, 255, 0.75);
+  transition:
+    transform 0.3s ease,
+    filter 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.learning-card:hover .learning-number {
+  transform: scale(1.08);
+  filter: brightness(0.82) saturate(1.15);
+  box-shadow: 0 8px 18px rgba(20, 50, 90, 0.24);
+}
+
+/* Darken the top-right icon slightly */
+.learning-icon {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background-color 0.3s ease;
+}
+
+.learning-card:hover .learning-icon {
+  transform: scale(1.06);
+  background-color: #ffffff;
+  box-shadow: 0 7px 16px rgba(30, 70, 120, 0.15);
+}
+
+/* =========================================
+   ACCESSIBILITY AND MOBILE
+========================================= */
+
+@media (hover: none) {
+  .learning-card:hover {
+    transform: none;
+  }
+
+  .learning-card:hover .learning-image {
+    transform: none;
+    filter: brightness(1);
+  }
+
+  .learning-card:hover .learning-number {
+    transform: none;
+    filter: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .learning-card,
+  .learning-image,
+  .learning-number,
+  .learning-icon,
+  .learning-image-wrapper {
+    transition: none;
+  }
+}

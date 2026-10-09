@@ -6,10 +6,10 @@ import {
   Rocket,
 } from "lucide-react";
 
-import learnImage from "../../../assets/LearningApproach/learn.png";
-import exploreImage from "../../../assets/LearningApproach/explore.png";
-import buildImage from "../../../assets/LearningApproach/build.png";
-import createImage from "../../../assets/LearningApproach/create.png";
+import learnImage from "../../../assets/About/LearningApproach/learn.png";
+import exploreImage from "../../../assets/About/LearningApproach/explore.png";
+import buildImage from "../../../assets/About/LearningApproach/build.png";
+import createImage from "../../../assets/About/LearningApproach/create.png";
 
 import "./LearningApproach.css";
 

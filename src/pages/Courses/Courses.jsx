@@ -3,21 +3,23 @@ import { ArrowLeft, MessageCircle } from "lucide-react";
 import { Link } from "react-router-dom";
 import { courses } from "../../data/content.js";
 import { whatsappUrl } from "../../config/site.js";
-import PageHero from "../../components/PageHero/PageHero.jsx";
-import SectionTitle from "../../components/SectionTitle/SectionTitle.jsx";
+// import PageHero from "../../components/PageHero/PageHero.jsx";
+// import SectionTitle from "../../components/SectionTitle/SectionTitle.jsx";
 // import CourseCard from "../../components/CourseCard/CourseCard.jsx";
 import CTASection from "../../components/CTASection/CTASection.jsx";
 import "./Courses.css";
 import PopularLearning from "../../components/Home/PopularLearning/PopularLearning.jsx";
+import CourseHero from "../../components/Courses/CourseHero/CourseHero.jsx";
+import WhyLearn from "../../components/Courses/WhyLearn/WhyLearn.jsx";
 
 export function Courses() {
   return (
     <>
-      <PageHero
+      {/* <PageHero
         eyebrow="Courses"
         title="Learn technology by building with it."
         text="Explore practical courses across IoT, electronics, Arduino, robotics, coding and AI."
-      />
+      /> */}
       {/* <main className="courses-page"> */}
         {/* <SectionTitle
           eyebrow="Course library"
@@ -32,6 +34,8 @@ export function Courses() {
 
         
       {/* </main> */}
+      <CourseHero />
+      <WhyLearn />
       <PopularLearning />
       <CTASection />
     </>

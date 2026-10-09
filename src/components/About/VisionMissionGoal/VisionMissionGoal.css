@@ -1655,3 +1655,197 @@
     transition: none;
   }
 }
+
+/* =========================================
+   REDUCE GAP ABOVE THE CAROUSEL
+========================================= */
+
+.vision-mission-goal {
+  padding: 8px 0 16px;
+}
+
+.vmg-wrapper {
+  margin-top: 0;
+}
+
+/* =========================================
+   REDUCE GAP INSIDE THE CAROUSEL
+========================================= */
+
+.vmg-content {
+  padding-top: 18px;
+  padding-bottom: 18px;
+}
+
+/* Keep the heading closer to its label */
+.vmg-label {
+  margin-bottom: 10px;
+}
+
+/* Reduce space below the heading */
+.vmg-content h2 {
+  margin-bottom: 10px;
+}
+
+/* Bring the description closer to the heading */
+.vmg-description {
+  line-height: 1.4;
+}
+
+/* Bring highlighted cards closer to the description */
+.vmg-feature-grid {
+  margin-top: 14px;
+}
+
+/* =========================================
+   HIGHLIGHTED CARD HOVER EFFECTS
+========================================= */
+
+.vmg-feature {
+  position: relative;
+  overflow: hidden;
+  cursor: default;
+  border: 1px solid rgba(255, 255, 255, 0.95);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.vmg-feature:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(35, 70, 120, 0.15);
+  border-color: rgba(255, 255, 255, 1);
+}
+
+.vmg-feature-icon {
+  transition:
+    transform 0.25s ease,
+    background-color 0.25s ease;
+}
+
+.vmg-feature:hover .vmg-feature-icon {
+  transform: scale(1.08);
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+/* Blue card */
+.vmg-feature.mission-blue:hover,
+.vmg-feature.goal-blue:hover {
+  box-shadow: 0 12px 25px rgba(25, 141, 233, 0.2);
+}
+
+/* Yellow card */
+.vmg-feature.vision-yellow:hover,
+.vmg-feature.goal-yellow:hover {
+  box-shadow: 0 12px 25px rgba(239, 176, 0, 0.2);
+}
+
+/* Purple card */
+.vmg-feature.vision-purple:hover,
+.vmg-feature.goal-purple:hover {
+  box-shadow: 0 12px 25px rgba(140, 61, 229, 0.2);
+}
+
+/* Green card */
+.vmg-feature.vision-green:hover {
+  box-shadow: 0 12px 25px rgba(21, 185, 130, 0.2);
+}
+
+/* Cyan card */
+.vmg-feature.mission-cyan:hover {
+  box-shadow: 0 12px 25px rgba(11, 158, 210, 0.2);
+}
+
+/* Orange card */
+.vmg-feature.mission-orange:hover {
+  box-shadow: 0 12px 25px rgba(236, 145, 36, 0.2);
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+  .vision-mission-goal {
+    padding: 10px 0 14px;
+  }
+
+  .vmg-content {
+    padding-top: 16px;
+    padding-bottom: 8px;
+  }
+
+  .vmg-label {
+    margin-bottom: 8px;
+  }
+
+  .vmg-feature-grid {
+    margin-top: 12px;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+  .vision-mission-goal {
+    padding: 6px 0 10px;
+  }
+
+  .vmg-content {
+    padding: 12px 12px 4px;
+  }
+
+  .vmg-label {
+    margin-bottom: 7px;
+  }
+
+  .vmg-content h2 {
+    margin-bottom: 8px;
+  }
+
+  .vmg-feature-grid {
+    margin-top: 10px;
+  }
+
+  .vmg-feature:hover {
+    transform: none;
+  }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 420px) {
+  .vision-mission-goal {
+    padding: 5px 0 8px;
+  }
+
+  .vmg-content {
+    padding: 10px 9px 3px;
+  }
+
+  .vmg-feature-grid {
+    margin-top: 8px;
+  }
+}
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .vmg-feature,
+  .vmg-feature-icon {
+    transition: none;
+  }
+
+  .vmg-feature:hover,
+  .vmg-feature:hover .vmg-feature-icon {
+    transform: none;
+  }
+}
