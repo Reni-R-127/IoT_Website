@@ -1,7 +1,7 @@
-import { pricingPlans } from "../../data/content.js";
-import PricingCard from "../../components/PricingCard/PricingCard.jsx";
-import PageHero from "../../components/PageHero/PageHero.jsx";
-import SectionTitle from "../../components/SectionTitle/SectionTitle.jsx";
+// import { pricingPlans } from "../../data/content.js";
+// import PricingCard from "../../components/PricingCard/PricingCard.jsx";
+// import PageHero from "../../components/PageHero/PageHero.jsx";
+// import SectionTitle from "../../components/SectionTitle/SectionTitle.jsx";
 import CTASection from "../../components/CTASection/CTASection.jsx";
 import "./Pricing.css";
 import PricingHero from "../../components/Pricing/PricingHero/PricingHero.jsx";
