@@ -146,13 +146,13 @@ export function CourseDetails() {
   return (
     <main className="course-detail-page">
       {/* Breadcrumb */}
-      <div className="course-detail-breadcrumb">
+      {/* <div className="course-detail-breadcrumb">
         <Link to="/">Home</Link>
         <span>/</span>
         <Link to="/courses">Courses</Link>
         <span>/</span>
         <span className="course-breadcrumb-current">{course.name}</span>
-      </div>
+      </div> */}
 
       {/* Hero */}
       <section className="course-detail-hero">
@@ -212,8 +212,8 @@ export function CourseDetails() {
           </div>
 
           <div className="course-detail-hero-art">
-            <div className="course-art-orbit course-art-orbit-one" />
-            <div className="course-art-orbit course-art-orbit-two" />
+            {/* <div className="course-art-orbit course-art-orbit-one" /> */}
+            {/* <div className="course-art-orbit course-art-orbit-two" /> */}
 
             <div className="course-art-label course-art-label-top">
               <span className="course-art-label-icon">
