@@ -1,3 +1,4 @@
+
 import { useEffect, useRef, useState } from "react";
 import {
   ArrowRight,
@@ -15,6 +16,7 @@ import {
   Star,
 } from "lucide-react";
 import { Link } from "react-router-dom";
+
 import courseHeroImage from "../../../assets/Courses/CourseHero/course-hero.png";
 import "./CourseHero.css";
 
@@ -28,10 +30,35 @@ const floatingTopics = [
 ];
 
 const stats = [
-  { value: 6, suffix: "+", label: "Learning Areas", icon: BookOpen, tone: "purple" },
-  { value: 20, suffix: "+", label: "Practical Projects", icon: Settings, tone: "blue" },
-  { value: 100, suffix: "+", label: "Students Trained", icon: Users, tone: "green" },
-  { value: null, suffix: "", label: "Mentor Support", display: "Expert", icon: Star, tone: "yellow" },
+  {
+    value: 6,
+    suffix: "+",
+    label: "Learning Areas",
+    icon: BookOpen,
+    tone: "purple",
+  },
+  {
+    value: 20,
+    suffix: "+",
+    label: "Practical Projects",
+    icon: Settings,
+    tone: "blue",
+  },
+  {
+    value: 100,
+    suffix: "+",
+    label: "Students Trained",
+    icon: Users,
+    tone: "green",
+  },
+  {
+    value: null,
+    suffix: "",
+    label: "Mentor Support",
+    display: "Expert",
+    icon: Star,
+    tone: "yellow",
+  },
 ];
 
 function useCountUp(target, active, duration = 1200) {
@@ -43,19 +70,33 @@ function useCountUp(target, active, duration = 1200) {
       return undefined;
     }
 
-    let frameId;
-    const startTime = performance.now();
-    setCount(0);
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      setCount(target);
+      return undefined;
+    }
 
-    const tick = (now) => {
-      const progress = Math.min((now - startTime) / duration, 1);
+    let frameId;
+    let startTime;
+
+    const animate = (timestamp) => {
+      if (startTime === undefined) startTime = timestamp;
+
+      const progress = Math.min(
+        (timestamp - startTime) / duration,
+        1
+      );
+
       const eased = 1 - Math.pow(1 - progress, 3);
+
       setCount(Math.round(target * eased));
 
-      if (progress < 1) frameId = requestAnimationFrame(tick);
+      if (progress < 1) {
+        frameId = requestAnimationFrame(animate);
+      }
     };
 
-    frameId = requestAnimationFrame(tick);
+    frameId = requestAnimationFrame(animate);
+
     return () => cancelAnimationFrame(frameId);
   }, [target, active, duration]);
 
@@ -63,16 +104,23 @@ function useCountUp(target, active, duration = 1200) {
 }
 
 function StatCard({ stat, active }) {
-  const count = useCountUp(stat.value, active);
   const Icon = stat.icon;
+  const count = useCountUp(stat.value, active);
 
   return (
     <article className={`course-stat-card course-stat-${stat.tone}`}>
       <span className="course-stat-icon">
-        <Icon size={25} strokeWidth={2.3} aria-hidden="true" />
+        <Icon
+          size={26}
+          strokeWidth={2.3}
+          aria-hidden="true"
+        />
       </span>
+
       <div className="course-stat-copy">
-        <strong>{stat.display ?? `${count}${stat.suffix}`}</strong>
+        <strong>
+          {stat.display ?? `${count}${stat.suffix}`}
+        </strong>
         <span>{stat.label}</span>
       </div>
     </article>
@@ -82,49 +130,61 @@ function StatCard({ stat, active }) {
 export default function CourseHero() {
   const sectionRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
-  const [counterRun, setCounterRun] = useState(0);
 
   useEffect(() => {
     const section = sectionRef.current;
     if (!section) return undefined;
 
-    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (reducedMotion) {
-      setIsVisible(true);
-      setCounterRun((run) => run + 1);
+    const revealSection = () => setIsVisible(true);
+
+    if (
+      typeof IntersectionObserver === "undefined" ||
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    ) {
+      revealSection();
       return undefined;
     }
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          setCounterRun((run) => run + 1);
-        } else {
-          setIsVisible(false);
-        }
+        setIsVisible(entry.isIntersecting);
       },
-      { threshold: 0.18, rootMargin: "0px 0px -20px 0px" }
+      {
+        threshold: 0.08,
+        rootMargin: "0px 0px -15px 0px",
+      }
     );
 
     observer.observe(section);
+
     return () => observer.disconnect();
   }, []);
 
   return (
     <section
       ref={sectionRef}
-      className={`course-hero ${isVisible ? "course-hero-visible" : ""}`}
+      className={`course-hero ${
+        isVisible ? "course-hero-visible" : ""
+      }`}
       aria-labelledby="course-hero-title"
     >
-      <div className="course-hero-decoration course-hero-decoration-left" aria-hidden="true" />
-      <div className="course-hero-decoration course-hero-decoration-right" aria-hidden="true" />
+      <div
+        className="course-hero-decoration course-hero-decoration-left"
+        aria-hidden="true"
+      />
+
+      <div
+        className="course-hero-decoration course-hero-decoration-right"
+        aria-hidden="true"
+      />
 
       <div className="course-hero-container">
         <div className="course-hero-content">
           <div className="course-hero-eyebrow course-reveal">
-            <span>EXPLORE</span><span className="course-hero-dot">•</span>
-            <span>LEARN</span><span className="course-hero-dot">•</span>
+            <span>EXPLORE</span>
+            <span className="course-hero-dot">•</span>
+            <span>LEARN</span>
+            <span className="course-hero-dot">•</span>
             <span>BUILD</span>
           </div>
 
@@ -135,26 +195,36 @@ export default function CourseHero() {
           </h1>
 
           <p className="course-hero-description course-reveal">
-            Learn IoT, electronics, robotics, coding and AI through practical,
-            project-based courses designed for curious young learners.
+            Learn IoT, electronics, robotics, coding and AI through
+            practical, project-based courses designed for curious
+            young learners.
           </p>
 
           <div className="course-hero-actions course-reveal">
             <Link to="/courses" className="course-hero-primary">
-              <GraduationCap size={22} strokeWidth={2.2} />
+              <GraduationCap size={23} strokeWidth={2.2} />
               <span>Explore Courses</span>
               <ArrowRight size={20} strokeWidth={2.5} />
             </Link>
 
-            <a href="#course-learning" className="course-hero-secondary">
-              <span className="course-hero-play"><Play size={15} fill="currentColor" /></span>
+            <a
+              href="#course-learning"
+              className="course-hero-secondary"
+            >
+              <span className="course-hero-play">
+                <Play size={15} fill="currentColor" />
+              </span>
               <span>Discover Learning</span>
             </a>
           </div>
         </div>
 
         <div className="course-hero-visual course-reveal">
-          <div className="course-hero-visual-glow" aria-hidden="true" />
+          <div
+            className="course-hero-visual-glow"
+            aria-hidden="true"
+          />
+
           <img
             src={courseHeroImage}
             alt="Robotics rover, coding laptop, friendly robot and electronics learning equipment"
@@ -164,24 +234,36 @@ export default function CourseHero() {
 
           {floatingTopics.map((topic, index) => {
             const Icon = topic.icon;
+
             return (
               <div
                 key={topic.label}
                 className={`course-topic ${topic.className}`}
                 style={{ "--topic-delay": `${index * 0.3}s` }}
               >
-                <span className="course-topic-icon"><Icon size={25} strokeWidth={2.3} /></span>
-                <span className="course-topic-label">{topic.label}</span>
+                <span className="course-topic-icon">
+                  <Icon
+                    size={25}
+                    strokeWidth={2.3}
+                    aria-hidden="true"
+                  />
+                </span>
+
+                <span className="course-topic-label">
+                  {topic.label}
+                </span>
               </div>
             );
           })}
         </div>
       </div>
 
-      <div className="course-hero-stats" key={counterRun}>
+      <div className="course-hero-stats">
         {stats.map((stat, index) => (
           <div
-            className={`course-stat-reveal ${isVisible ? "stat-visible" : ""}`}
+            className={`course-stat-reveal ${
+              isVisible ? "stat-visible" : ""
+            }`}
             style={{ "--stat-delay": `${index * 100}ms` }}
             key={stat.label}
           >

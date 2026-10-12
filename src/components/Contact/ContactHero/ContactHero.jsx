@@ -13,7 +13,14 @@ export default function ContactHero() {
 
     if (!section) return undefined;
 
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+
+    if (
+      prefersReducedMotion ||
+      typeof IntersectionObserver === "undefined"
+    ) {
       setVisible(true);
       return undefined;
     }
@@ -25,7 +32,10 @@ export default function ContactHero() {
           observer.unobserve(entry.target);
         }
       },
-      { threshold: 0.12 }
+      {
+        threshold: 0.08,
+        rootMargin: "0px 0px -20px 0px",
+      }
     );
 
     observer.observe(section);
@@ -58,11 +68,14 @@ export default function ContactHero() {
       />
 
       <div className="contact-hero-container">
-        {/* Left content */}
+        {/* Heading and description */}
         <div className="contact-hero-content">
           <div className="contact-hero-eyebrow">
             <span>CONTACT</span>
-            <span className="contact-hero-eyebrow-line" />
+            <span
+              className="contact-hero-eyebrow-line"
+              aria-hidden="true"
+            />
           </div>
 
           <h1 id="contact-hero-title">
@@ -72,12 +85,11 @@ export default function ContactHero() {
 
           <p className="contact-hero-description">
             Talk to our team. For the fastest response,
-            <br className="contact-hero-desktop-break" />
-            {" "}use WhatsApp.
+            <br className="contact-hero-desktop-break" /> use WhatsApp.
           </p>
         </div>
 
-        {/* Right illustration */}
+        {/* Hero illustration */}
         <div className="contact-hero-visual">
           <div
             className="contact-hero-image-glow"
@@ -86,7 +98,7 @@ export default function ContactHero() {
 
           <img
             src={contactHeroImage}
-            alt="Friendly robot ready to help with course enquiries, alongside books, a laptop, and contact icons"
+            alt="Friendly robot with books, a laptop, and contact icons"
             className="contact-hero-image"
             fetchPriority="high"
           />

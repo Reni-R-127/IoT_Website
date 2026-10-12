@@ -58,6 +58,7 @@ const stats = [
   },
 ];
 
+
 const trustItems = [
   {
     value: 4.9,
@@ -83,7 +84,32 @@ const trustItems = [
     icon: BadgeCheck,
     className: "who-trust-certified",
   },
+  {
+    value: 6,
+    suffix: "+",
+    label: "Learning Areas",
+    type: "learning",
+    icon: BookOpen,
+    className: "who-trust-learning",
+  },
+  {
+    value: 20,
+    suffix: "+",
+    label: "Practical Projects",
+    type: "projects",
+    icon: Box,
+    className: "who-trust-projects",
+  },
+  {
+    value: 100,
+    suffix: "%",
+    label: "Hands-on Learning",
+    type: "hands-on",
+    icon: Cpu,
+    className: "who-trust-hands-on",
+  },
 ];
+
 
 function useCountUp(target, active, decimals = 0) {
   const [count, setCount] = useState(0);

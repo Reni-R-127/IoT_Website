@@ -9,11 +9,12 @@ import About from "./pages/About/About.jsx";
 import Pricing from "./pages/Pricing/Pricing.jsx";
 import FAQs from "./pages/FAQs/FAQs.jsx";
 import Contact from "./pages/Contact/Contact.jsx";
+
 import { Courses, CourseDetails } from "./pages/Courses/Courses.jsx";
 import { Blog, BlogDetails } from "./pages/Blog/Blog.jsx";
 import { Privacy, Terms } from "./pages/Legal/Legal.jsx";
 
-function App() {
+function ScrollToTop() {
   const { pathname } = useLocation();
 
   useEffect(() => {
@@ -24,10 +25,14 @@ function App() {
     });
   }, [pathname]);
 
+  return null;
+}
+
+function ScrollAnimations() {
+  const { pathname } = useLocation();
+
   useEffect(() => {
     const elements = document.querySelectorAll("[data-animate]");
-
-    if (!elements.length) return undefined;
 
     if (typeof IntersectionObserver === "undefined") {
       elements.forEach((element) => {
@@ -48,7 +53,7 @@ function App() {
       {
         threshold: 0.12,
         rootMargin: "0px 0px -35px 0px",
-      }
+      },
     );
 
     elements.forEach((element) => observer.observe(element));
@@ -56,8 +61,15 @@ function App() {
     return () => observer.disconnect();
   }, [pathname]);
 
+  return null;
+}
+
+function App() {
   return (
     <div className="app">
+      <ScrollToTop />
+      <ScrollAnimations />
+
       <Navbar />
 
       <Routes>
@@ -71,8 +83,8 @@ function App() {
         <Route path="/faqs" element={<FAQs />} />
 
         <Route path="/blog" element={<Blog />} />
-        <Route path="/blog/:slug" element={<BlogDetails />} />
-
+        <Route path="/blog/:id" element={<BlogDetails />} />
+        
         <Route path="/contact" element={<Contact />} />
 
         <Route path="/privacy" element={<Privacy />} />

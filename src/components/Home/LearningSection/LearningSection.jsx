@@ -110,9 +110,9 @@ export default function LearningSection() {
 
             </div>
 
-            <div className="learning-arrow">
+            {/* <div className="learning-arrow">
               <ArrowRight size={20} />
-            </div>
+            </div> */}
 
           </div>
 

@@ -1388,3 +1388,241 @@
     bottom: -67px;
   }
 }
+
+
+/* =========================================
+   FINAL MOBILE HOME HERO FIX
+   Correct content order:
+   Heading → Description → Image → Buttons → Cards
+========================================= */
+
+@media (max-width: 600px) {
+  .home-hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto auto auto auto auto;
+    align-content: start;
+    align-items: start;
+    gap: 15px;
+    padding: 92px 16px 24px;
+    overflow: hidden;
+  }
+
+  /* IMPORTANT: removes the content wrapper from grid layout */
+  .home-hero .hero-content {
+    display: contents !important;
+    transform: none;
+  }
+
+  .home-hero .hero-kicker {
+    grid-column: 1;
+    grid-row: 1;
+    width: 100%;
+    margin: 0;
+    font-size: clamp(16px, 4.5vw, 20px);
+    line-height: 1.4;
+    letter-spacing: 0.07em;
+    text-align: center;
+  }
+
+  .home-hero .hero-content h1 {
+    grid-column: 1;
+    grid-row: 2;
+    width: 100%;
+    max-width: 560px;
+    margin: 0 auto;
+    font-size: clamp(35px, 8.5vw, 45px);
+    line-height: 1.12;
+    letter-spacing: -0.04em;
+    text-align: center;
+    overflow-wrap: break-word;
+  }
+
+  .home-hero .hero-content > p {
+    grid-column: 1;
+    grid-row: 3;
+    width: 100%;
+    max-width: 540px;
+    margin: 0 auto;
+    font-size: clamp(16px, 4.2vw, 18px);
+    line-height: 1.6;
+    text-align: center;
+  }
+
+  /* Image is placed BEFORE the buttons */
+  .home-hero .hero-visual {
+    grid-column: 1;
+    grid-row: 4;
+    width: 100%;
+    max-width: 540px;
+    min-height: clamp(245px, 67vw, 330px);
+    margin: 0 auto;
+    border-radius: 22px;
+  }
+
+  .home-hero .hero-device {
+    transform: scale(0.68);
+  }
+
+  .home-hero .orbit-one {
+    width: min(72vw, 290px);
+    height: min(72vw, 290px);
+  }
+
+  .home-hero .orbit-two {
+    width: min(56vw, 225px);
+    height: min(56vw, 225px);
+  }
+
+  .home-hero .floating-chip {
+    width: 43px;
+    height: 43px;
+    border-radius: 12px;
+  }
+
+  .home-hero .floating-chip svg {
+    width: 19px;
+    height: 19px;
+  }
+
+  .home-hero .hero-caption {
+    right: 3%;
+    bottom: 5%;
+    max-width: 75%;
+    padding: 7px 9px;
+    font-size: 9px;
+    white-space: normal;
+  }
+
+  /* Buttons now come after the illustration */
+  .home-hero .hero-actions {
+    grid-column: 1;
+    grid-row: 5;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 0 auto;
+  }
+
+  .home-hero .primary-btn,
+  .home-hero .secondary-btn {
+    min-height: 50px;
+    padding: 0 17px;
+    font-size: 15px;
+    border-radius: 12px;
+    flex-shrink: 0;
+  }
+
+  /* Highlights remain below the buttons */
+  .home-hero .hero-highlights {
+    grid-column: 1;
+    grid-row: 6;
+    width: 100%;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 11px;
+    margin: 0;
+  }
+
+  .home-hero .hero-highlight-card {
+    width: 100%;
+    min-width: 0;
+    min-height: 76px;
+    padding: 11px;
+    gap: 11px;
+    overflow: visible;
+  }
+
+  .home-hero .hero-highlight-icon {
+    flex: 0 0 43px;
+    width: 43px;
+    height: 43px;
+  }
+
+  .home-hero .hero-highlight-content {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .home-hero .hero-highlight-content h3 {
+    margin: 0 0 4px;
+    font-size: 15px;
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+  }
+
+  .home-hero .hero-highlight-content p {
+    font-size: 13px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+  }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 420px) {
+  .home-hero {
+    padding: 88px 12px 20px;
+    gap: 13px;
+  }
+
+  .home-hero .hero-kicker {
+    font-size: 16px;
+    letter-spacing: 0.06em;
+  }
+
+  .home-hero .hero-content h1 {
+    font-size: clamp(33px, 8.8vw, 37px);
+    line-height: 1.14;
+  }
+
+  .home-hero .hero-content > p {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .home-hero .hero-visual {
+    min-height: 235px;
+    border-radius: 18px;
+  }
+
+  .home-hero .hero-device {
+    transform: scale(0.56);
+  }
+
+  .home-hero .hero-actions {
+    gap: 8px;
+  }
+
+  .home-hero .primary-btn,
+  .home-hero .secondary-btn {
+    min-height: 47px;
+    padding: 0 13px;
+    font-size: 13px;
+  }
+
+  .home-hero .hero-highlight-card {
+    min-height: 70px;
+    padding: 9px;
+    gap: 9px;
+  }
+
+  .home-hero .hero-highlight-icon {
+    flex-basis: 39px;
+    width: 39px;
+    height: 39px;
+  }
+
+  .home-hero .hero-highlight-content h3 {
+    font-size: 14px;
+  }
+
+  .home-hero .hero-highlight-content p {
+    font-size: 12px;
+  }
+}
