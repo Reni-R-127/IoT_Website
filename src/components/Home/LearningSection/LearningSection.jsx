@@ -1,7 +1,5 @@
-import {
-  ArrowRight,
-  Sprout,
-} from "lucide-react";
+import { ArrowRight, Sprout } from "lucide-react";
+import { Link } from "react-router-dom";
 
 import LearningCard1 from "../../../assets/Home/LearningSection/LearningCard_1.png";
 import LearningCard2 from "../../../assets/Home/LearningSection/LearningCard_2.png";
@@ -47,24 +45,24 @@ const learningSteps = [
 export default function LearningSection() {
   return (
     <section className="learning-section">
-
+      {/* Decorative character images */}
       <img
         src={LearningSection1}
         alt=""
         className="learning-section-image learning-section-image-left"
+        aria-hidden="true"
       />
 
       <img
         src={LearningSection2}
         alt=""
         className="learning-section-image learning-section-image-right"
+        aria-hidden="true"
       />
 
+      {/* Section heading */}
       <div className="learning-header">
-
-        <span className="learning-eyebrow">
-          LEARN BY DOING
-        </span>
+        <span className="learning-eyebrow">LEARN BY DOING</span>
 
         <h2>
           Technology made practical
@@ -73,73 +71,45 @@ export default function LearningSection() {
         </h2>
 
         <p>
-          A simple path from understanding the idea to building something kids
-          can see, test and improve.
+          A simple path from understanding the idea to building something
+          kids can see, test and improve.
         </p>
-
       </div>
 
-
+      {/* Learning cards */}
       <div className="learning-cards">
-
         {learningSteps.map((step) => (
-
-          <div
-            key={step.title}
+          <article
+            key={step.number}
             className={`learning-card ${step.className}`}
           >
-
-            <div className="learning-number">
-              {step.number}
-            </div>
+            <div className="learning-number">{step.number}</div>
 
             <div className="learning-illustration">
-
-              <img
-                src={step.image}
-                alt={step.title}
-              />
-
+              <img src={step.image} alt={step.title} loading="lazy" />
             </div>
 
             <div className="learning-card-content">
-
               <h3>{step.title}</h3>
-
               <p>{step.text}</p>
-
             </div>
-
-            {/* <div className="learning-arrow">
-              <ArrowRight size={20} />
-            </div> */}
-
-          </div>
-
+          </article>
         ))}
-
       </div>
 
-
+      {/* Courses call-to-action */}
       <div className="learning-cta">
-
         <div className="learning-cta-title">
+          <Sprout size={25} aria-hidden="true" />
 
-          <Sprout size={25} />
-
-          <span>
-            Ready to build your first project?
-          </span>
-
+          <span>Ready to build your first project?</span>
         </div>
 
-        <a href="/courses">
+        <Link to="/courses" className="learning-cta-button">
           Explore Our Courses
-          <ArrowRight size={18} />
-        </a>
-
+          <ArrowRight size={18} aria-hidden="true" />
+        </Link>
       </div>
-
     </section>
   );
 }

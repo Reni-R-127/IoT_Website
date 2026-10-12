@@ -53,6 +53,15 @@
   right: 0;
 }
 
+.learning-cta-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 /* =========================================
    DECORATIVE HALF CIRCLES
 ========================================= */
@@ -911,6 +920,8 @@
   .learning-cta {
     animation: none;
   }
+
+
 
   .learning-card,
   .learning-card:hover,
