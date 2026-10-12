@@ -869,3 +869,15 @@
     scale: 0.94 !important;
   }
 }
+
+@media (max-width: 950px) {
+  .home-hero {
+    padding-top: 54px;
+  }
+}
+
+@media (max-width: 600px) {
+  .home-hero {
+    padding-top: 48px;
+  }
+}
