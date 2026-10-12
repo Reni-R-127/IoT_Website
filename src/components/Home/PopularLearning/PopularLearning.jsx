@@ -20,7 +20,8 @@ import courseIot from "../../../assets/course-iot.png";
 import courseRobotics from "../../../assets/course-robotics.png";
 import courseElectronics from "../../../assets/course-electronics.png";
 import courseCoding from "../../../assets/course-coding.png";
-import courseSmartHome from "../../../assets/course-smart-home.png";
+//import courseSmartHome from "../../../assets/course-smart-home.png";
+import courseAI from "../../../assets/course-ai.png";
 import "./PopularLearning.css";
 
 const icons = {
@@ -38,7 +39,7 @@ const images = {
   robotics: courseRobotics,
   electronics: courseElectronics,
   coding: courseCoding,
-  ai: courseRobotics,
+  ai: courseAI,
   "iot-robotics": courseArduino,
 };
 const tones = {
