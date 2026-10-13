@@ -1,4 +1,3 @@
-
 import { useEffect, useRef, useState } from "react";
 import {
   ArrowRight,
@@ -81,10 +80,7 @@ function useCountUp(target, active, duration = 1200) {
     const animate = (timestamp) => {
       if (startTime === undefined) startTime = timestamp;
 
-      const progress = Math.min(
-        (timestamp - startTime) / duration,
-        1
-      );
+      const progress = Math.min((timestamp - startTime) / duration, 1);
 
       const eased = 1 - Math.pow(1 - progress, 3);
 
@@ -110,17 +106,11 @@ function StatCard({ stat, active }) {
   return (
     <article className={`course-stat-card course-stat-${stat.tone}`}>
       <span className="course-stat-icon">
-        <Icon
-          size={26}
-          strokeWidth={2.3}
-          aria-hidden="true"
-        />
+        <Icon size={26} strokeWidth={2.3} aria-hidden="true" />
       </span>
 
       <div className="course-stat-copy">
-        <strong>
-          {stat.display ?? `${count}${stat.suffix}`}
-        </strong>
+        <strong>{stat.display ?? `${count}${stat.suffix}`}</strong>
         <span>{stat.label}</span>
       </div>
     </article>
@@ -152,7 +142,7 @@ export default function CourseHero() {
       {
         threshold: 0.08,
         rootMargin: "0px 0px -15px 0px",
-      }
+      },
     );
 
     observer.observe(section);
@@ -163,9 +153,7 @@ export default function CourseHero() {
   return (
     <section
       ref={sectionRef}
-      className={`course-hero ${
-        isVisible ? "course-hero-visible" : ""
-      }`}
+      className={`course-hero ${isVisible ? "course-hero-visible" : ""}`}
       aria-labelledby="course-hero-title"
     >
       <div
@@ -195,22 +183,21 @@ export default function CourseHero() {
           </h1>
 
           <p className="course-hero-description course-reveal">
-            Learn IoT, electronics, robotics, coding and AI through
-            practical, project-based courses designed for curious
-            young learners.
+            Learn IoT, electronics, robotics, coding and AI through practical,
+            project-based courses designed for curious young learners.
           </p>
 
           <div className="course-hero-actions course-reveal">
-            <Link to="/courses" className="course-hero-primary">
+            <Link
+              to="/courses#popular-learning"
+              className="course-hero-primary"
+            >
               <GraduationCap size={23} strokeWidth={2.2} />
               <span>Explore Courses</span>
               <ArrowRight size={20} strokeWidth={2.5} />
             </Link>
 
-            <a
-              href="#course-learning"
-              className="course-hero-secondary"
-            >
+            <a href="#course-learning" className="course-hero-secondary">
               <span className="course-hero-play">
                 <Play size={15} fill="currentColor" />
               </span>
@@ -220,10 +207,7 @@ export default function CourseHero() {
         </div>
 
         <div className="course-hero-visual course-reveal">
-          <div
-            className="course-hero-visual-glow"
-            aria-hidden="true"
-          />
+          <div className="course-hero-visual-glow" aria-hidden="true" />
 
           <img
             src={courseHeroImage}
@@ -242,16 +226,10 @@ export default function CourseHero() {
                 style={{ "--topic-delay": `${index * 0.3}s` }}
               >
                 <span className="course-topic-icon">
-                  <Icon
-                    size={25}
-                    strokeWidth={2.3}
-                    aria-hidden="true"
-                  />
+                  <Icon size={25} strokeWidth={2.3} aria-hidden="true" />
                 </span>
 
-                <span className="course-topic-label">
-                  {topic.label}
-                </span>
+                <span className="course-topic-label">{topic.label}</span>
               </div>
             );
           })}
@@ -261,9 +239,7 @@ export default function CourseHero() {
       <div className="course-hero-stats">
         {stats.map((stat, index) => (
           <div
-            className={`course-stat-reveal ${
-              isVisible ? "stat-visible" : ""
-            }`}
+            className={`course-stat-reveal ${isVisible ? "stat-visible" : ""}`}
             style={{ "--stat-delay": `${index * 100}ms` }}
             key={stat.label}
           >

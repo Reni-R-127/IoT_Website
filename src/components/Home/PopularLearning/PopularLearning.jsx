@@ -54,7 +54,7 @@ const tones = {
 
 export default function PopularLearning() {
   return (
-    <section className="popular-learning">
+    <section id="popular-learning" className="popular-learning" >
       <div className="popular-blob blob-one" />
       <div className="popular-blob blob-two" />
       <div className="popular-container">

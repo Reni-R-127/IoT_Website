@@ -1057,3 +1057,7 @@
     height: 13px;
   }
 }
+
+#popular-learning {
+  scroll-margin-top: 100px;
+}
