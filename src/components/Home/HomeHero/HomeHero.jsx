@@ -1,3 +1,5 @@
+
+import { useEffect, useRef, useState } from "react";
 import {
   ArrowRight,
   Bot,
@@ -13,10 +15,6 @@ import { Link } from "react-router-dom";
 import { whatsappUrl } from "../../../config/site.js";
 
 import "./HomeHero.css";
-
-/* =========================================
-   HERO HIGHLIGHTS
-========================================= */
 
 const highlights = [
   {
@@ -45,10 +43,6 @@ const highlights = [
   },
 ];
 
-/* =========================================
-   HERO BUTTONS
-========================================= */
-
 function HeroActions({ mobile = false }) {
   return (
     <div
@@ -73,10 +67,36 @@ function HeroActions({ mobile = false }) {
 }
 
 export default function HomeHero() {
-  return (
-    <section className="home-hero">
-      {/* HERO EDGE DECORATIONS */}
+  const heroRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
 
+  useEffect(() => {
+    const section = heroRef.current;
+
+    if (!section || !("IntersectionObserver" in window)) {
+      setIsVisible(true);
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+      },
+      {
+        threshold: 0.12,
+      }
+    );
+
+    observer.observe(section);
+
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <section
+      ref={heroRef}
+      className={`home-hero${isVisible ? " hero-in-view" : ""}`}
+    >
       <div
         className="hero-edge-circle hero-blue-circle"
         aria-hidden="true"
@@ -86,8 +106,6 @@ export default function HomeHero() {
         className="hero-edge-circle hero-violet-circle"
         aria-hidden="true"
       />
-
-      {/* HERO CONTENT */}
 
       <div className="hero-content" data-animate="fade-left">
         <span
@@ -99,7 +117,7 @@ export default function HomeHero() {
         </span>
 
         <h1 data-animate="fade-up" data-delay="2">
-          Where Kids <em>Learn, Build</em> & Create with Technology
+          Where Kids <em>Learn, Build</em> &amp; Create with Technology
         </h1>
 
         <p data-animate="fade-up" data-delay="3">
@@ -108,13 +126,10 @@ export default function HomeHero() {
           practical projects.
         </p>
 
-        {/* Desktop buttons: retain the original position */}
         <div className="hero-actions-desktop">
           <HeroActions />
         </div>
       </div>
-
-      {/* HERO VISUAL */}
 
       <div
         className="hero-visual"
@@ -123,8 +138,6 @@ export default function HomeHero() {
       >
         <div className="hero-orbit orbit-one" />
         <div className="hero-orbit orbit-two" />
-
-        {/* DEVICE */}
 
         <div className="hero-device">
           <div className="device-top">
@@ -146,8 +159,6 @@ export default function HomeHero() {
           <div className="device-base" />
         </div>
 
-        {/* FLOATING ICONS */}
-
         <div className="floating-chip chip-one">
           <Bot size={23} />
         </div>
@@ -160,21 +171,15 @@ export default function HomeHero() {
           <Lightbulb size={21} />
         </div>
 
-        {/* HERO CAPTION */}
-
         <div className="hero-caption">
           <Sparkles size={16} />
           Build a real project
         </div>
       </div>
 
-      {/* Tablet and mobile buttons: below the visual */}
-
       <div className="hero-actions-below-visual">
         <HeroActions mobile />
       </div>
-
-      {/* HERO HIGHLIGHTS */}
 
       <div className="hero-highlights">
         {highlights.map((item, index) => {
@@ -184,8 +189,7 @@ export default function HomeHero() {
             <div
               key={item.title}
               className={`hero-highlight-card ${item.className}`}
-              data-animate="pop"
-              data-delay={index + 1}
+              style={{ "--card-index": index }}
             >
               <div className="hero-highlight-icon">
                 <Icon size={23} />
