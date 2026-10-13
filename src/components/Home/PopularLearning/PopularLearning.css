@@ -1061,3 +1061,80 @@
 #popular-learning {
   scroll-margin-top: 100px;
 }
+
+
+/* =========================================
+   REVEAL EVERY TIME SECTION ENTERS VIEW
+========================================= */
+
+.popular-learning .popular-heading,
+.popular-learning .popular-grid > * {
+  opacity: 0;
+}
+
+/* Reveal heading */
+.popular-learning.popular-in-view .popular-heading {
+  animation: popularHeadingReveal 0.7s ease both;
+}
+
+/* Reveal course cards one by one */
+.popular-learning.popular-in-view .popular-grid > * {
+  animation: popularCardReveal 0.65s ease both;
+}
+
+.popular-learning.popular-in-view .popular-grid > *:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.popular-learning.popular-in-view .popular-grid > *:nth-child(2) {
+  animation-delay: 0.18s;
+}
+
+.popular-learning.popular-in-view .popular-grid > *:nth-child(3) {
+  animation-delay: 0.26s;
+}
+
+.popular-learning.popular-in-view .popular-grid > *:nth-child(4) {
+  animation-delay: 0.34s;
+}
+
+.popular-learning.popular-in-view .popular-grid > *:nth-child(5) {
+  animation-delay: 0.42s;
+}
+
+.popular-learning.popular-in-view .popular-grid > *:nth-child(6) {
+  animation-delay: 0.5s;
+}
+
+@keyframes popularHeadingReveal {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes popularCardReveal {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .popular-learning.popular-in-view .popular-heading,
+  .popular-learning.popular-in-view .popular-grid > * {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}

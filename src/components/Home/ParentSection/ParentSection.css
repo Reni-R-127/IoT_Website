@@ -11,7 +11,6 @@
   background: #ffffff;
 }
 
-
 /* =========================================================
    DECORATIVE BACKGROUND
 ========================================================= */
@@ -46,7 +45,6 @@
   background: #f3eaff;
 }
 
-
 /* =========================================================
    CONTAINER
 ========================================================= */
@@ -59,7 +57,6 @@
 
   margin: 0 auto;
 }
-
 
 /* =========================================================
    MAIN HEADING
@@ -117,7 +114,6 @@
   line-height: 1.65;
 }
 
-
 /* =========================================================
    TRUST CARDS
 ========================================================= */
@@ -143,8 +139,7 @@
 
   background: #ffffff;
 
-  box-shadow:
-    0 9px 26px rgba(40, 93, 140, 0.05);
+  box-shadow: 0 9px 26px rgba(40, 93, 140, 0.05);
 
   transition:
     transform 0.3s ease,
@@ -154,10 +149,8 @@
 .trust-home-card:hover {
   transform: translateY(-7px);
 
-  box-shadow:
-    0 18px 35px rgba(40, 93, 140, 0.1);
+  box-shadow: 0 18px 35px rgba(40, 93, 140, 0.1);
 }
-
 
 /* =========================================================
    TRUST ICON
@@ -176,15 +169,13 @@
 
   background: #e8f3ff;
 
-  box-shadow:
-    0 9px 20px rgba(77, 150, 255, 0.12);
+  box-shadow: 0 9px 20px rgba(77, 150, 255, 0.12);
 }
 
 .trust-icon svg {
   width: 31px;
   height: 31px;
 }
-
 
 /* =========================================================
    TRUST COLORS
@@ -209,7 +200,6 @@
   color: #7545db;
   background: #f1eaff;
 }
-
 
 /* =========================================================
    TRUST CARD TEXT
@@ -242,7 +232,6 @@
 
   line-height: 1.6;
 }
-
 
 /* =========================================================
    VOICES HEADING
@@ -280,7 +269,6 @@
   line-height: 1.55;
 }
 
-
 /* =========================================================
    TESTIMONIAL CAROUSEL
 ========================================================= */
@@ -312,7 +300,6 @@
   );
 }
 
-
 /* =========================================================
    TESTIMONIAL TRACK
 ========================================================= */
@@ -328,12 +315,10 @@
     Continuous movement.
     Lower value = faster.
   */
-  animation:
-    testimonialScroll 30s linear infinite;
+  animation: testimonialScroll 30s linear infinite;
 
   will-change: transform;
 }
-
 
 /* =========================================================
    PAUSE ONLY ON DESKTOP HOVER
@@ -342,7 +327,6 @@
 .testimonial-carousel:hover .testimonial-track {
   animation-play-state: paused;
 }
-
 
 /* =========================================================
    TESTIMONIAL CARD
@@ -363,8 +347,7 @@
 
   background: #ffffff;
 
-  box-shadow:
-    0 9px 26px rgba(40, 93, 140, 0.06);
+  box-shadow: 0 9px 26px rgba(40, 93, 140, 0.06);
 
   transition:
     transform 0.3s ease,
@@ -374,10 +357,8 @@
 .testimonial-home-card:hover {
   transform: translateY(-5px);
 
-  box-shadow:
-    0 18px 35px rgba(40, 93, 140, 0.1);
+  box-shadow: 0 18px 35px rgba(40, 93, 140, 0.1);
 }
-
 
 /* =========================================================
    TESTIMONIAL TOP
@@ -408,7 +389,6 @@
   line-height: 1;
 }
 
-
 /* =========================================================
    TESTIMONIAL MESSAGE
 ========================================================= */
@@ -427,7 +407,6 @@
   line-height: 1.65;
 }
 
-
 /* =========================================================
    PERSON
 ========================================================= */
@@ -439,7 +418,6 @@
 
   gap: 12px;
 }
-
 
 /* =========================================================
    AVATAR
@@ -462,32 +440,16 @@
 
   font-weight: 900;
 
-  background:
-    linear-gradient(
-      135deg,
-      #4d96ff,
-      #8e5eea
-    );
+  background: linear-gradient(135deg, #4d96ff, #8e5eea);
 }
 
 .avatar-1 {
-  background:
-    linear-gradient(
-      135deg,
-      #ef6cf5,
-      #8e5eea
-    );
+  background: linear-gradient(135deg, #ef6cf5, #8e5eea);
 }
 
 .avatar-2 {
-  background:
-    linear-gradient(
-      135deg,
-      #31b77a,
-      #4d96ff
-    );
+  background: linear-gradient(135deg, #31b77a, #4d96ff);
 }
-
 
 /* =========================================================
    PERSON NAME
@@ -519,25 +481,19 @@
   line-height: 1.3;
 }
 
-
 /* =========================================================
    CONTINUOUS RIGHT → LEFT ANIMATION
 ========================================================= */
 
 @keyframes testimonialScroll {
-
   0% {
     transform: translateX(0);
   }
 
   100% {
-    transform: translateX(
-      calc(-50% - 10px)
-    );
+    transform: translateX(calc(-50% - 10px));
   }
-
 }
-
 
 /* =========================================================
    DOTS
@@ -580,13 +536,11 @@
   transform: scale(1.25);
 }
 
-
 /* =========================================================
    TABLET
 ========================================================= */
 
 @media (max-width: 1000px) {
-
   .parent-section {
     padding: 58px 0 65px;
   }
@@ -649,13 +603,11 @@
   }
 }
 
-
 /* =========================================================
    MOBILE
 ========================================================= */
 
 @media (max-width: 650px) {
-
   .parent-section {
     padding: 48px 0 52px;
   }
@@ -663,7 +615,6 @@
   .parent-container {
     width: calc(100% - 28px);
   }
-
 
   /* -----------------------------------------
      HEADING
@@ -697,7 +648,6 @@
   .desktop-break {
     display: none;
   }
-
 
   /* -----------------------------------------
      TRUST CARDS
@@ -745,7 +695,6 @@
     line-height: 1.6;
   }
 
-
   /* -----------------------------------------
      VOICES
   ----------------------------------------- */
@@ -763,7 +712,6 @@
 
     line-height: 1.55;
   }
-
 
   /* -----------------------------------------
      CAROUSEL
@@ -794,7 +742,6 @@
   }
 
   .testimonial-track {
-
     /*
       Faster mobile movement
     */
@@ -850,13 +797,11 @@
   }
 }
 
-
 /* =========================================================
    SMALL MOBILE
 ========================================================= */
 
 @media (max-width: 480px) {
-
   .parent-section {
     padding: 43px 0 48px;
   }
@@ -864,7 +809,6 @@
   .parent-container {
     width: calc(100% - 22px);
   }
-
 
   /* -----------------------------------------
      HEADING
@@ -883,7 +827,6 @@
     font-size: 15px;
   }
 
-
   /* -----------------------------------------
      TRUST CARDS
   ----------------------------------------- */
@@ -900,7 +843,6 @@
     font-size: 15px;
   }
 
-
   /* -----------------------------------------
      VOICES
   ----------------------------------------- */
@@ -916,7 +858,6 @@
   .voices-heading p {
     font-size: 15px;
   }
-
 
   /* -----------------------------------------
      FASTER CONTINUOUS CAROUSEL
@@ -962,13 +903,11 @@
   }
 }
 
-
 /* =========================================================
    VERY SMALL MOBILE
 ========================================================= */
 
 @media (max-width: 360px) {
-
   .parent-container {
     width: calc(100% - 18px);
   }
@@ -1039,5 +978,80 @@
 
   .testimonial-person span {
     font-size: 12px;
+  }
+}
+
+/* =========================================
+   REVEAL ON EVERY SECTION VISIT
+========================================= */
+
+.parent-section .parent-heading,
+.parent-section .trust-home-card,
+.parent-section .voices-heading {
+  opacity: 0;
+}
+
+/* Main heading */
+.parent-section.parent-in-view .parent-heading {
+  animation: parentHeadingReveal 0.7s ease both;
+}
+
+/* Trust cards */
+.parent-section.parent-in-view .trust-home-card {
+  animation: parentCardReveal 0.65s ease both;
+}
+
+.parent-section.parent-in-view .trust-home-grid .trust-home-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.parent-section.parent-in-view .trust-home-grid .trust-home-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.parent-section.parent-in-view .trust-home-grid .trust-home-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.parent-section.parent-in-view .trust-home-grid .trust-home-card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+/* Testimonial heading */
+.parent-section.parent-in-view .voices-heading {
+  animation: parentHeadingReveal 0.7s ease 0.15s both;
+}
+
+@keyframes parentHeadingReveal {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes parentCardReveal {
+  from {
+    opacity: 0;
+    transform: translateY(28px) scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .parent-section.parent-in-view .parent-heading,
+  .parent-section.parent-in-view .trust-home-card,
+  .parent-section.parent-in-view .voices-heading {
+    animation: none;
+    opacity: 1;
+    transform: none;
   }
 }

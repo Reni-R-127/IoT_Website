@@ -1,3 +1,5 @@
+import { useEffect, useRef, useState } from "react";
+
 import {
   ArrowRight,
   FolderOpen,
@@ -25,7 +27,6 @@ import projectSensor from "../../../assets/project-sensor.png";
 
 import "./ProjectLab.css";
 
-
 /* =========================================
    PROJECT IMAGES
 ========================================= */
@@ -40,7 +41,6 @@ const art = [
   projectHome,
   projectSensor,
 ];
-
 
 /* =========================================
    PROJECT ICONS
@@ -57,7 +57,6 @@ const icons = [
   Cpu,
 ];
 
-
 /* =========================================
    PROJECT FILTERS
 ========================================= */
@@ -71,33 +70,60 @@ const filters = [
   "Smart Home",
 ];
 
+/* =========================================
+   PROJECT LAB COMPONENT
+========================================= */
 
 export default function ProjectLab() {
-  return (
-    <section className="project-lab">
+  const sectionRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
 
-      {/* =========================================
-          DECORATION
-      ========================================= */}
+  /* =========================================
+     REPLAY ANIMATION WHEN SECTION RE-ENTERS
+     THE VIEWPORT
+  ========================================= */
+
+  useEffect(() => {
+    const section = sectionRef.current;
+
+    if (!section || !("IntersectionObserver" in window)) {
+      setIsVisible(true);
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+      },
+      {
+        threshold: 0.15,
+      }
+    );
+
+    observer.observe(section);
+
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <section
+      ref={sectionRef}
+      className={`project-lab ${
+        isVisible ? "project-in-view" : ""
+      }`}
+    >
+      {/* DECORATION */}
 
       <div className="project-decor decor-left"></div>
 
       <div className="project-decor decor-right"></div>
 
-
       <div className="project-container">
-
-        {/* =========================================
-            SECTION HEADING
-        ========================================= */}
+        {/* SECTION HEADING */}
 
         <Reveal>
-
           <header className="project-heading">
-
-            <span>
-              PROJECT LAB
-            </span>
+            <span>PROJECT LAB</span>
 
             <h2>
               What kids can <strong>build</strong>
@@ -107,127 +133,88 @@ export default function ProjectLab() {
               Hands-on projects help children connect coding,
               sensors, electronics and real-world problems.
             </p>
-
           </header>
-
         </Reveal>
 
-
-        {/* =========================================
-            FILTERS
-        ========================================= */}
+        {/* PROJECT FILTERS */}
 
         <div className="project-filters">
-
           {filters.map((filter, index) => (
-
             <button
+              type="button"
               key={filter}
               className={index === 0 ? "active" : ""}
             >
               {filter}
             </button>
-
           ))}
-
         </div>
 
-
-        {/* =========================================
-            PROJECT GRID
-        ========================================= */}
+        {/* PROJECT GRID */}
 
         <div className="project-grid-home">
-
           {projects.map((project, index) => {
-
             const Icon = icons[index] || Cpu;
+            const projectImage = art[index];
 
             return (
-
               <Reveal
                 key={project[0]}
                 delay={index * 70}
               >
-
                 <article className="project-home-card">
-
                   {/* PROJECT IMAGE */}
 
                   <div
                     className={`project-home-art art-${index}`}
                   >
-
-                    <img
-                      src={art[index]}
-                      alt={project[0]}
-                    />
+                    {projectImage && (
+                      <img
+                        src={projectImage}
+                        alt={project[0]}
+                        loading="lazy"
+                      />
+                    )}
 
                     <Icon
                       className="project-art-icon"
                       size={28}
                     />
-
                   </div>
-
 
                   {/* PROJECT CONTENT */}
 
-                  <h3>
-                    {project[0]}
-                  </h3>
+                  <h3>{project[0]}</h3>
 
-                  <p>
-                    {project[1]}
-                  </p>
-
+                  <p>{project[1]}</p>
 
                   {/* PROJECT LINK */}
 
                   <Link to="/courses">
-
                     View Project
-
                     <ArrowRight size={17} />
-
                   </Link>
-
                 </article>
-
               </Reveal>
-
             );
           })}
-
         </div>
 
-
-        {/* =========================================
-            VIEW ALL PROJECTS
-        ========================================= */}
+        {/* VIEW ALL PROJECTS */}
 
         <Reveal
           direction="zoom"
           className="all-projects-wrap"
         >
-
-          <Link
-            className="all-projects"
-            to="/courses"
-          >
-
+          <Link className="all-projects" to="/courses">
             <FolderOpen size={19} />
 
             View All Projects
 
             <ArrowRight size={18} />
-
           </Link>
-
         </Reveal>
-
       </div>
-
     </section>
   );
 }

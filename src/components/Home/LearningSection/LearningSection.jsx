@@ -1,3 +1,5 @@
+
+import { useEffect, useRef, useState } from "react";
 import { ArrowRight, Sprout } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -43,8 +45,36 @@ const learningSteps = [
 ];
 
 export default function LearningSection() {
+  const sectionRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+
+    if (!section || !("IntersectionObserver" in window)) {
+      setIsVisible(true);
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+      },
+      {
+        threshold: 0.12,
+      }
+    );
+
+    observer.observe(section);
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section className="learning-section">
+    <section
+      ref={sectionRef}
+      className={`learning-section${isVisible ? " learning-in-view" : ""}`}
+    >
       {/* Decorative character images */}
       <img
         src={LearningSection1}
@@ -101,7 +131,6 @@ export default function LearningSection() {
       <div className="learning-cta">
         <div className="learning-cta-title">
           <Sprout size={25} aria-hidden="true" />
-
           <span>Ready to build your first project?</span>
         </div>
 
