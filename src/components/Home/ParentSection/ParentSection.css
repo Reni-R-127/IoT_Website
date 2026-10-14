@@ -1055,3 +1055,34 @@
     transform: none;
   }
 }
+
+/* Perfectly round testimonial avatars */
+.parent-section .testimonial-person .avatar {
+  width: 52px;
+  height: 52px;
+  min-width: 52px;
+  min-height: 52px;
+  flex: 0 0 52px;
+
+  display: grid;
+  place-items: center;
+
+  box-sizing: border-box;
+  border-radius: 50%;
+  overflow: hidden;
+
+  color: #ffffff;
+  font-size: 19px;
+  font-weight: 900;
+  line-height: 1;
+
+  background: linear-gradient(135deg, #4d96ff, #8e5eea);
+}
+
+.parent-section .testimonial-person .avatar-1 {
+  background: linear-gradient(135deg, #ef6cf5, #8e5eea);
+}
+
+.parent-section .testimonial-person .avatar-2 {
+  background: linear-gradient(135deg, #31b77a, #4d96ff);
+}
