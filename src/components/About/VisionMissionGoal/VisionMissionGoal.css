@@ -1849,3 +1849,102 @@
     transform: none;
   }
 }
+
+/* Keep category buttons visible when project cards change */
+.project-showcase .project-filter-row,
+.project-showcase .project-filter-row .project-filter {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+  animation: none !important;
+}
+
+.project-showcase .project-filter-row {
+  display: flex !important;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 2;
+}
+
+.project-showcase .project-filter-row .project-filter {
+  display: inline-flex !important;
+}
+
+/* Keep filtered project cards visible */
+.project-showcase .project-grid .project-card {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none;
+  animation: none !important;
+}
+
+/* Preserve hover interaction */
+.project-showcase .project-grid .project-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Prevent global scroll animations from hiding the filter row */
+.project-showcase .project-filter-row [data-animate] {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+  animation: none !important;
+}
+
+@media (max-width: 650px) {
+  .project-showcase .project-filter-row {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    justify-content: flex-start;
+  }
+}
+/* Keep carousel navigation and numbers permanently visible */
+.vision-mission-goal .vmg-navigation {
+  position: relative;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.vision-mission-goal .vmg-indicators {
+  position: relative;
+  z-index: 21;
+  display: flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.vision-mission-goal .vmg-indicator {
+  position: relative;
+  z-index: 22;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  visibility: visible !important;
+  opacity: 1 !important;
+  color: #8996a8;
+}
+
+.vision-mission-goal .vmg-indicator strong {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  color: inherit;
+  font-size: 22px;
+  line-height: 1.2;
+}
+
+.vision-mission-goal .vmg-indicator span {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  color: inherit;
+}
+
+.vision-mission-goal .vmg-indicator.active {
+  color: #1768e7;
+}
