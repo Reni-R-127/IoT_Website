@@ -20,9 +20,9 @@
   color: #102044;
 }
 
-.course-detail-page \\*,
-.course-detail-page \\*::before,
-.course-detail-page \\*::after {
+.course-detail-page,
+.course-detail-page::before,
+.course-detail-page::after {
   box-sizing: border-box;
 }
 
@@ -2678,9 +2678,9 @@
 /* Respect reduced-motion preferences */
 
 @media (prefers-reduced-motion: reduce) {
-  .course-detail-page *,
-  .course-detail-page *::before,
-  .course-detail-page *::after {
+  .course-detail-page ,
+  .course-detail-page ::before,
+  .course-detail-page ::after {
     animation-duration: 0.01ms !important;
 
     animation-iteration-count: 1 !important;

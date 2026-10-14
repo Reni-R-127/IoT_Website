@@ -56,7 +56,6 @@ function prepareRevealElements() {
     let delayIndex = 0;
 
     candidates.forEach((element) => {
-<<<<<<< HEAD
       // Keep filter controls permanently visible; global reveal animations can hide them
       // when the observer removes the visible class after a filter click.
       if (
@@ -67,9 +66,7 @@ function prepareRevealElements() {
         return;
       }
 
-=======
->>>>>>> c4124cf39645ad10e177842858903a93062d57fb
-      // Keep existing hand-authored animation settings intact.
+ // Keep existing hand-authored animation settings intact.
       if (element.hasAttribute("data-animate")) return;
 
       // Avoid nested hidden elements inside a card or manually animated wrapper.
