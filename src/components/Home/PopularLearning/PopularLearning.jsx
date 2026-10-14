@@ -1,4 +1,3 @@
-
 import { useEffect, useRef, useState } from "react";
 import {
   ArrowRight,
@@ -12,8 +11,8 @@ import {
   Zap,
   Clock3,
 } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
 
-import { Link } from "react-router-dom";
 import { courses } from "../../../data/content.js";
 import { whatsappUrl } from "../../../config/site.js";
 import Reveal from "../Reveal.jsx";
@@ -60,28 +59,47 @@ const tones = {
 export default function PopularLearning() {
   const sectionRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
+  const location = useLocation();
 
+  // Reveal the section and cards when they enter the viewport.
   useEffect(() => {
     const section = sectionRef.current;
 
-    if (!section || !("IntersectionObserver" in window)) {
+    if (!section || typeof IntersectionObserver === "undefined") {
       setIsVisible(true);
-      return;
+      return undefined;
     }
 
     const observer = new IntersectionObserver(
       ([entry]) => {
         setIsVisible(entry.isIntersecting);
       },
-      {
-        threshold: 0.1,
-      }
+      { threshold: 0.1 }
     );
 
     observer.observe(section);
 
     return () => observer.disconnect();
   }, []);
+
+  // Handle navigation to /courses#popular-learning.
+  useEffect(() => {
+    if (
+      location.pathname !== "/courses" ||
+      location.hash !== "#popular-learning"
+    ) {
+      return undefined;
+    }
+
+    const frameId = requestAnimationFrame(() => {
+      sectionRef.current?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    });
+
+    return () => cancelAnimationFrame(frameId);
+  }, [location.pathname, location.hash]);
 
   return (
     <section
@@ -90,16 +108,17 @@ export default function PopularLearning() {
       className={`popular-learning${
         isVisible ? " popular-in-view" : ""
       }`}
+      aria-labelledby="popular-learning-title"
     >
-      <div className="popular-blob blob-one" />
-      <div className="popular-blob blob-two" />
+      <div className="popular-blob blob-one" aria-hidden="true" />
+      <div className="popular-blob blob-two" aria-hidden="true" />
 
       <div className="popular-container">
         <Reveal>
           <header className="popular-heading">
             <span>POPULAR LEARNING</span>
 
-            <h2>
+            <h2 id="popular-learning-title">
               Courses built around <strong>making</strong>
             </h2>
 
@@ -112,17 +131,15 @@ export default function PopularLearning() {
         <div className="popular-grid">
           {courses.slice(0, 6).map((course, index) => {
             const Icon = icons[course.icon] || Cpu;
+            const courseImage = images[course.id] || courseArduino;
+            const courseTone = tones[course.id] || "blue";
 
             return (
               <Reveal key={course.id} delay={index * 80}>
-                <article
-                  className={`popular-card ${
-                    tones[course.id] || "blue"
-                  }`}
-                >
+                <article className={`popular-card ${courseTone}`}>
                   <div className="popular-top">
                     <div className="popular-icon">
-                      <Icon size={25} />
+                      <Icon size={25} aria-hidden="true" />
                     </div>
 
                     <span>{course.level}</span>
@@ -141,43 +158,48 @@ export default function PopularLearning() {
 
                     <div className="popular-image">
                       <img
-                        src={images[course.id] || courseArduino}
+                        src={courseImage}
                         alt={course.name}
                         loading="lazy"
+                        decoding="async"
                       />
                     </div>
                   </div>
 
                   <div className="popular-meta">
-                    <span>
-                      <UserRound size={17} />
+                    <span title={course.age}>
+                      <UserRound size={17} aria-hidden="true" />
                       {course.age}
                     </span>
 
-                    <span>
-                      <Clock3 size={17} />
+                    <span title={course.duration}>
+                      <Clock3 size={17} aria-hidden="true" />
                       {course.duration}
                     </span>
 
-                    <span>
-                      <Tag size={17} />
+                    <span title={course.price}>
+                      <Tag size={17} aria-hidden="true" />
                       {course.price}
                     </span>
                   </div>
 
                   <div className="popular-actions">
-                    <Link to={`/courses/${course.id}`}>
-                      View Details
-                      <ArrowRight size={16} />
+                    <Link
+                      to={`/courses/${course.id}`}
+                      aria-label={`View details for ${course.name}`}
+                    >
+                      <span>View Details</span>
+                      <ArrowRight size={16} aria-hidden="true" />
                     </Link>
 
                     <a
                       href={whatsappUrl}
                       target="_blank"
-                      rel="noreferrer"
+                      rel="noopener noreferrer"
+                      aria-label={`Enroll in ${course.name} through WhatsApp`}
                     >
-                      <MessageCircle size={17} />
-                      Enroll
+                      <MessageCircle size={17} aria-hidden="true" />
+                      <span>Enroll</span>
                     </a>
                   </div>
                 </article>

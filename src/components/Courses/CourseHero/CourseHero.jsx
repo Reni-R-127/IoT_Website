@@ -14,7 +14,7 @@ import {
   Users,
   Star,
 } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 import courseHeroImage from "../../../assets/Courses/CourseHero/course-hero.png";
 import "./CourseHero.css";
@@ -81,7 +81,6 @@ function useCountUp(target, active, duration = 1200) {
       if (startTime === undefined) startTime = timestamp;
 
       const progress = Math.min((timestamp - startTime) / duration, 1);
-
       const eased = 1 - Math.pow(1 - progress, 3);
 
       setCount(Math.round(target * eased));
@@ -120,6 +119,7 @@ function StatCard({ stat, active }) {
 export default function CourseHero() {
   const sectionRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const section = sectionRef.current;
@@ -142,7 +142,7 @@ export default function CourseHero() {
       {
         threshold: 0.08,
         rootMargin: "0px 0px -15px 0px",
-      },
+      }
     );
 
     observer.observe(section);
@@ -150,10 +150,54 @@ export default function CourseHero() {
     return () => observer.disconnect();
   }, []);
 
+  // Scroll to Popular Learning if this hero is rendered on the Courses page.
+  useEffect(() => {
+    if (
+      location.pathname !== "/courses" ||
+      location.hash !== "#popular-learning"
+    ) {
+      return undefined;
+    }
+
+    const frameId = requestAnimationFrame(() => {
+      document.getElementById("popular-learning")?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    });
+
+    return () => cancelAnimationFrame(frameId);
+  }, [location.pathname, location.hash]);
+
+  const handleExploreClick = (event) => {
+    // If already on the Courses page, scroll immediately instead of
+    // relying on a route change to the same URL.
+    if (location.pathname === "/courses") {
+      const target = document.getElementById("popular-learning");
+
+      if (target) {
+        event.preventDefault();
+
+        window.history.replaceState(
+          null,
+          "",
+          `${location.pathname}${location.search}#popular-learning`
+        );
+
+        target.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
+    }
+  };
+
   return (
     <section
       ref={sectionRef}
-      className={`course-hero ${isVisible ? "course-hero-visible" : ""}`}
+      className={`course-hero ${
+        isVisible ? "course-hero-visible" : ""
+      }`}
       aria-labelledby="course-hero-title"
     >
       <div
@@ -190,7 +234,9 @@ export default function CourseHero() {
           <div className="course-hero-actions course-reveal">
             <Link
               to="/courses#popular-learning"
+              onClick={handleExploreClick}
               className="course-hero-primary"
+              aria-label="Explore courses and go to Popular Learning"
             >
               <GraduationCap size={23} strokeWidth={2.2} />
               <span>Explore Courses</span>
@@ -239,7 +285,9 @@ export default function CourseHero() {
       <div className="course-hero-stats">
         {stats.map((stat, index) => (
           <div
-            className={`course-stat-reveal ${isVisible ? "stat-visible" : ""}`}
+            className={`course-stat-reveal ${
+              isVisible ? "stat-visible" : ""
+            }`}
             style={{ "--stat-delay": `${index * 100}ms` }}
             key={stat.label}
           >
