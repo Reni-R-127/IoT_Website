@@ -1,5 +1,6 @@
-
 import { useMemo, useState } from "react";
+import { Link } from "react-router-dom";
+
 import {
   ArrowRight,
   ArrowUpRight,
@@ -134,20 +135,22 @@ const categories = [
   { label: "Innovative Ideas", icon: Lightbulb },
 ];
 
+const WHATSAPP_MESSAGE =
+  "Hello ProJenius, I want to explore your IoT kits for a project. Please guide me.";
+
 export default function ProjectShowcase() {
   const [active, setActive] = useState("All Projects");
 
-  const shown = useMemo(() => {
-    return active === "All Projects"
-      ? projects
-      : projects.filter((project) => project.category === active);
-  }, [active]);
-
-  const message =
-    "Hello ProJenius, I want to explore your IoT kits for a project. Please guide me.";
+  const shown = useMemo(
+    () =>
+      active === "All Projects"
+        ? projects
+        : projects.filter((project) => project.category === active),
+    [active]
+  );
 
   const whatsappUrl = `https://wa.me/${wphone}?text=${encodeURIComponent(
-    message
+    WHATSAPP_MESSAGE
   )}`;
 
   return (
@@ -173,7 +176,6 @@ export default function ProjectShowcase() {
         </p>
       </div>
 
-      {/* The category buttons stay mounted when a filter is selected. */}
       <div
         className="project-filter-row"
         role="group"
@@ -195,7 +197,6 @@ export default function ProjectShowcase() {
         ))}
       </div>
 
-      {/* Only this grid changes when the category changes. */}
       <div className="project-grid" aria-live="polite">
         {shown.map((project) => {
           const Icon = project.icon;
@@ -246,20 +247,14 @@ export default function ProjectShowcase() {
           </p>
         </div>
 
-        <a
-          href={whatsappUrl}
-          target="_blank"
-          rel="noopener noreferrer"
+        <Link
+          to="/#project-lab"
           className="products-btn products-btn-primary"
         >
           <Cpu size={20} aria-hidden="true" />
           Explore Our Kits
           <ArrowRight size={19} aria-hidden="true" />
-        </a>
-
-        <span className="project-cta-doodle" aria-hidden="true">
-          〰
-        </span>
+        </Link>
       </div>
     </section>
   );

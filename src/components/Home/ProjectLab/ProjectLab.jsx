@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 import {
   ArrowRight,
@@ -10,10 +11,7 @@ import {
   Wifi,
 } from "lucide-react";
 
-import { Link } from "react-router-dom";
-
 import { projects } from "../../../data/content.js";
-
 import Reveal from "../Reveal.jsx";
 
 import projectDustbin from "../../../assets/project-dustbin.png";
@@ -27,10 +25,6 @@ import projectSensor from "../../../assets/project-sensor.png";
 
 import "./ProjectLab.css";
 
-/* =========================================
-   PROJECT IMAGES
-========================================= */
-
 const art = [
   projectDustbin,
   projectPlant,
@@ -41,10 +35,6 @@ const art = [
   projectHome,
   projectSensor,
 ];
-
-/* =========================================
-   PROJECT ICONS
-========================================= */
 
 const icons = [
   Leaf,
@@ -57,10 +47,6 @@ const icons = [
   Cpu,
 ];
 
-/* =========================================
-   PROJECT FILTERS
-========================================= */
-
 const filters = [
   "All",
   "IoT",
@@ -70,25 +56,18 @@ const filters = [
   "Smart Home",
 ];
 
-/* =========================================
-   PROJECT LAB COMPONENT
-========================================= */
-
 export default function ProjectLab() {
   const sectionRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
+  const location = useLocation();
 
-  /* =========================================
-     REPLAY ANIMATION WHEN SECTION RE-ENTERS
-     THE VIEWPORT
-  ========================================= */
-
+  // Reveal the section as it enters or leaves the viewport.
   useEffect(() => {
     const section = sectionRef.current;
 
-    if (!section || !("IntersectionObserver" in window)) {
+    if (!section || typeof IntersectionObserver === "undefined") {
       setIsVisible(true);
-      return;
+      return undefined;
     }
 
     const observer = new IntersectionObserver(
@@ -105,40 +84,65 @@ export default function ProjectLab() {
     return () => observer.disconnect();
   }, []);
 
+  // Scroll to Project Lab when navigating to /#project-lab.
+  useEffect(() => {
+    if (
+      location.pathname !== "/" ||
+      location.hash !== "#project-lab"
+    ) {
+      return undefined;
+    }
+
+    const frameId = requestAnimationFrame(() => {
+      sectionRef.current?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    });
+
+    return () => cancelAnimationFrame(frameId);
+  }, [location.pathname, location.hash]);
+
   return (
     <section
       ref={sectionRef}
+      id="project-lab"
       className={`project-lab ${
         isVisible ? "project-in-view" : ""
       }`}
+      aria-labelledby="project-lab-title"
     >
-      {/* DECORATION */}
+      <div
+        className="project-decor decor-left"
+        aria-hidden="true"
+      />
 
-      <div className="project-decor decor-left"></div>
-
-      <div className="project-decor decor-right"></div>
+      <div
+        className="project-decor decor-right"
+        aria-hidden="true"
+      />
 
       <div className="project-container">
-        {/* SECTION HEADING */}
-
         <Reveal>
           <header className="project-heading">
             <span>PROJECT LAB</span>
 
-            <h2>
+            <h2 id="project-lab-title">
               What kids can <strong>build</strong>
             </h2>
 
             <p>
-              Hands-on projects help children connect coding,
-              sensors, electronics and real-world problems.
+              Hands-on projects help children connect coding, sensors,
+              electronics and real-world problems.
             </p>
           </header>
         </Reveal>
 
-        {/* PROJECT FILTERS */}
-
-        <div className="project-filters">
+        <div
+          className="project-filters"
+          role="group"
+          aria-label="Project categories"
+        >
           {filters.map((filter, index) => (
             <button
               type="button"
@@ -150,49 +154,38 @@ export default function ProjectLab() {
           ))}
         </div>
 
-        {/* PROJECT GRID */}
-
         <div className="project-grid-home">
           {projects.map((project, index) => {
             const Icon = icons[index] || Cpu;
             const projectImage = art[index];
 
             return (
-              <Reveal
-                key={project[0]}
-                delay={index * 70}
-              >
+              <Reveal key={project[0]} delay={index * 70}>
                 <article className="project-home-card">
-                  {/* PROJECT IMAGE */}
-
-                  <div
-                    className={`project-home-art art-${index}`}
-                  >
+                  <div className={`project-home-art art-${index}`}>
                     {projectImage && (
                       <img
                         src={projectImage}
                         alt={project[0]}
                         loading="lazy"
+                        decoding="async"
                       />
                     )}
 
                     <Icon
                       className="project-art-icon"
                       size={28}
+                      aria-hidden="true"
                     />
                   </div>
-
-                  {/* PROJECT CONTENT */}
 
                   <h3>{project[0]}</h3>
 
                   <p>{project[1]}</p>
 
-                  {/* PROJECT LINK */}
-
                   <Link to="/courses">
                     View Project
-                    <ArrowRight size={17} />
+                    <ArrowRight size={17} aria-hidden="true" />
                   </Link>
                 </article>
               </Reveal>
@@ -200,18 +193,11 @@ export default function ProjectLab() {
           })}
         </div>
 
-        {/* VIEW ALL PROJECTS */}
-
-        <Reveal
-          direction="zoom"
-          className="all-projects-wrap"
-        >
+        <Reveal direction="zoom" className="all-projects-wrap">
           <Link className="all-projects" to="/courses">
-            <FolderOpen size={19} />
-
+            <FolderOpen size={19} aria-hidden="true" />
             View All Projects
-
-            <ArrowRight size={18} />
+            <ArrowRight size={18} aria-hidden="true" />
           </Link>
         </Reveal>
       </div>
