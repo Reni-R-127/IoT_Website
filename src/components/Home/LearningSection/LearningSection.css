@@ -33,7 +33,9 @@
   /* Remove the visible white rectangle */
   mix-blend-mode: multiply;
 
-  filter: contrast(1.08) saturate(1.08);
+  filter:
+    contrast(1.08)
+    saturate(1.08);
 
   opacity: 0.98;
 
@@ -301,7 +303,7 @@
 }
 
 .learning-card-content p {
-  margin: 0;
+   margin: 0;
 
   color: #61708b;
 
@@ -919,6 +921,8 @@
     animation: none;
   }
 
+
+
   .learning-card,
   .learning-card:hover,
   .learning-illustration img,
@@ -927,93 +931,6 @@
   .learning-arrow,
   .learning-cta {
     transition: none;
-    transform: none;
-  }
-}
-
-/* =========================================
-   REVEAL WHEN SECTION ENTERS VIEWPORT
-========================================= */
-
-.learning-section {
-  animation: none;
-}
-
-.learning-section .learning-header,
-.learning-section .learning-eyebrow,
-.learning-section .learning-section-image-left,
-.learning-section .learning-section-image-right,
-.learning-section .learning-card,
-.learning-section .learning-cta {
-  animation: none;
-}
-
-/* Hide content before the section enters view */
-.learning-section:not(.learning-in-view) .learning-header,
-.learning-section:not(.learning-in-view) .learning-eyebrow,
-.learning-section:not(.learning-in-view) .learning-card,
-.learning-section:not(.learning-in-view) .learning-cta {
-  opacity: 0;
-}
-
-/* Heading reveal */
-.learning-section.learning-in-view .learning-header {
-  animation: learningHeaderReveal 0.8s ease both;
-}
-
-.learning-section.learning-in-view .learning-eyebrow {
-  animation: eyebrowReveal 0.7s ease 0.15s both;
-}
-
-/* Character illustrations reveal */
-.learning-section.learning-in-view .learning-section-image-left {
-  animation:
-    characterEntrance 0.8s ease both,
-    characterFloat 4s ease-in-out 0.9s infinite;
-}
-
-.learning-section.learning-in-view .learning-section-image-right {
-  animation:
-    characterEntrance 0.8s ease both,
-    characterFloat 4s ease-in-out 0.9s infinite;
-}
-
-/* Cards reveal one after another */
-.learning-section.learning-in-view .learning-card {
-  animation: cardReveal 0.65s ease both;
-}
-
-.learning-section.learning-in-view .learning-card:nth-child(1) {
-  animation-delay: 0.1s;
-}
-
-.learning-section.learning-in-view .learning-card:nth-child(2) {
-  animation-delay: 0.22s;
-}
-
-.learning-section.learning-in-view .learning-card:nth-child(3) {
-  animation-delay: 0.34s;
-}
-
-.learning-section.learning-in-view .learning-card:nth-child(4) {
-  animation-delay: 0.46s;
-}
-
-/* CTA appears last */
-.learning-section.learning-in-view .learning-cta {
-  animation: ctaReveal 0.7s ease 0.55s both;
-}
-
-/* Accessibility */
-@media (prefers-reduced-motion: reduce) {
-  .learning-section.learning-in-view .learning-header,
-  .learning-section.learning-in-view .learning-eyebrow,
-  .learning-section.learning-in-view .learning-section-image-left,
-  .learning-section.learning-in-view .learning-section-image-right,
-  .learning-section.learning-in-view .learning-card,
-  .learning-section.learning-in-view .learning-cta {
-    animation: none;
-    opacity: 1;
     transform: none;
   }
 }

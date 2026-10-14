@@ -11,6 +11,7 @@ const links = [
   ["/", "Home"],
   ["/about", "About Us"],
   ["/courses", "Courses"],
+  ["/products", "Products"],
   ["/pricing", "Pricing"],
   ["/faqs", "FAQs"],
   ["/blog", "Blog"],
@@ -147,7 +148,7 @@ export default function Navbar() {
             <strong>{siteConfig.companyName}</strong>
 
             <small>
-              Learn · Build · Create
+              Innovate · Build · Deliver
             </small>
           </span>
         </Link>
