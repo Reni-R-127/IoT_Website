@@ -135,6 +135,10 @@ export default function ProductCatalog() {
         className="product-filter-row"
         role="group"
         aria-label="Filter product kits"
+<<<<<<< HEAD
+=======
+        data-animate="fade-up"
+>>>>>>> c4124cf39645ad10e177842858903a93062d57fb
       >
         {filters.map(({ label, value, icon: Icon }) => (
           <button
