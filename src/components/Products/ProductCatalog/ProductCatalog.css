@@ -1720,3 +1720,105 @@ html.has-scroll-animations .products-page .gallery-filter {
     grid-template-columns: 1fr;
   }
 }
+
+/*
+ * ProductCatalog heading standardization
+ * Append this patch to the END of ProductCatalog.css.
+ * Only the section heading / eyebrow are affected.
+ */
+
+.products-page .product-catalog .products-section-heading {
+  width: min(100%, 1000px);
+  max-width: 1000px;
+  margin: 0 auto 28px;
+  padding-inline: 12px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.products-page .product-catalog .section-kicker {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  gap: 18px;
+  margin: 0 0 14px;
+  color: #1679d7;
+  font-size: 19px;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.products-page .product-catalog .section-kicker i {
+  display: block;
+  flex: 0 0 42px;
+  width: 42px;
+  height: 2px;
+  border: 0;
+  border-radius: 0;
+  background: #a9cdec;
+}
+
+.products-page .product-catalog .products-section-heading h2 {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2px 0 5px;
+  color: #09245c;
+  font-size: clamp(38px, 4vw, 57px);
+  font-weight: 900;
+  line-height: 1.04;
+  letter-spacing: -0.045em;
+  text-align: center;
+  overflow-wrap: break-word;
+  text-wrap: balance;
+}
+
+.products-page .product-catalog .products-section-heading h2 em {
+  color: #1599df;
+  font-style: normal;
+  font-weight: 900;
+  background: none;
+  -webkit-text-fill-color: currentColor;
+}
+
+@media (max-width: 760px) {
+  .products-page .product-catalog .products-section-heading {
+    margin-bottom: 24px;
+    padding-inline: 8px;
+  }
+
+  .products-page .product-catalog .section-kicker {
+    gap: 14px;
+    font-size: clamp(14px, 2.5vw, 17px);
+  }
+
+  .products-page .product-catalog .section-kicker i {
+    flex-basis: 34px;
+    width: 34px;
+  }
+
+  .products-page .product-catalog .products-section-heading h2 {
+    font-size: clamp(36px, 6vw, 48px);
+    line-height: 1.08;
+  }
+}
+
+@media (max-width: 420px) {
+  .products-page .product-catalog .section-kicker {
+    gap: 10px;
+    font-size: 13px;
+    letter-spacing: 0.13em;
+  }
+
+  .products-page .product-catalog .section-kicker i {
+    flex-basis: 24px;
+    width: 24px;
+  }
+
+  .products-page .product-catalog .products-section-heading h2 {
+    font-size: clamp(34px, 9vw, 38px);
+    letter-spacing: -0.04em;
+  }
+}

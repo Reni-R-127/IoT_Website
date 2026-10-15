@@ -92,6 +92,7 @@ const products = [
     projects: "15+",
   },
 ];
+
 const filters = [
   { label: "All Kits", value: "All Kits", icon: ShoppingCart },
   { label: "Beginner Kits", value: "Beginner Kits", icon: GraduationCap },
@@ -99,18 +100,23 @@ const filters = [
   { label: "Robotics Kits", value: "Robotics Kits", icon: Wrench },
   { label: "Advanced Kits", value: "Advanced Kits", icon: Settings },
 ];
+
 const wa = (name) =>
-  `https://wa.me/${wphone}?text=${encodeURIComponent(`Hello ProJenius, I would like to know more about the ${name}. Please share pricing and availability.`)}`;
+  `https://wa.me/${wphone}?text=${encodeURIComponent(
+    `Hello ProJenius, I would like to know more about the ${name}. Please share pricing and availability.`
+  )}`;
 
 export default function ProductCatalog() {
   const [active, setActive] = useState("All Kits");
+
   const shown = useMemo(
     () =>
       active === "All Kits"
         ? products
-        : products.filter((p) => p.category === active),
-    [active],
+        : products.filter((product) => product.category === active),
+    [active]
   );
+
   return (
     <section
       className="product-catalog products-shell"
@@ -119,11 +125,15 @@ export default function ProductCatalog() {
     >
       <div className="products-section-heading" data-animate="fade-up">
         <span className="section-kicker">
-          <i /> Our Products <i />
+          <i aria-hidden="true" />
+          <span>Our Products</span>
+          <i aria-hidden="true" />
         </span>
+
         <h2 id="catalog-title">
           Explore Our <em>Kits</em>
         </h2>
+
         <p>
           Hands-on learning kits for curious minds — from school students to
           college innovators.
@@ -131,11 +141,11 @@ export default function ProductCatalog() {
           skills. Turn ideas into solutions.
         </p>
       </div>
+
       <div
         className="product-filter-row"
         role="group"
         aria-label="Filter product kits"
-
         data-animate="fade-up"
       >
         {filters.map(({ label, value, icon: Icon }) => (
@@ -151,6 +161,7 @@ export default function ProductCatalog() {
           </button>
         ))}
       </div>
+
       <div
         className={`product-card-grid ${shown.length < 4 ? "filtered-grid" : ""}`}
       >
@@ -186,6 +197,7 @@ export default function ProductCatalog() {
             <div className="kit-card-body">
               <h3>{product.name}</h3>
               <p className="kit-description">{product.description}</p>
+
               <ul className="kit-features">
                 {product.features.map((feature) => (
                   <li key={feature}>
@@ -194,6 +206,7 @@ export default function ProductCatalog() {
                   </li>
                 ))}
               </ul>
+
               <div className="kit-meta">
                 <div>
                   <UsersIcon tone={product.tone} />
@@ -207,6 +220,7 @@ export default function ProductCatalog() {
                   </span>
                 </div>
               </div>
+
               <div className="kit-actions">
                 <a
                   className="kit-view-btn"
@@ -229,6 +243,7 @@ export default function ProductCatalog() {
           </article>
         ))}
       </div>
+
       <div className="catalog-benefits" data-animate="fade-up">
         <div>
           <span>
@@ -274,12 +289,15 @@ export default function ProductCatalog() {
     </section>
   );
 }
+
 function UsersIcon({ tone }) {
   return <GraduationCap className={`meta-${tone}`} size={23} />;
 }
+
 function PackageIcon() {
   return <ShoppingCart size={23} />;
 }
+
 function MessageIcon() {
   return <ArrowRight size={23} />;
 }

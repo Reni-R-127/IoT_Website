@@ -61,7 +61,6 @@ export default function ProjectLab() {
   const [isVisible, setIsVisible] = useState(false);
   const location = useLocation();
 
-  // Reveal the section as it enters or leaves the viewport.
   useEffect(() => {
     const section = sectionRef.current;
 
@@ -84,7 +83,6 @@ export default function ProjectLab() {
     return () => observer.disconnect();
   }, []);
 
-  // Scroll to Project Lab when navigating to /#project-lab.
   useEffect(() => {
     if (
       location.pathname !== "/" ||
@@ -107,9 +105,7 @@ export default function ProjectLab() {
     <section
       ref={sectionRef}
       id="project-lab"
-      className={`project-lab ${
-        isVisible ? "project-in-view" : ""
-      }`}
+      className={`project-lab ${isVisible ? "project-in-view" : ""}`}
       aria-labelledby="project-lab-title"
     >
       <div
@@ -125,7 +121,11 @@ export default function ProjectLab() {
       <div className="project-container">
         <Reveal>
           <header className="project-heading">
-            <span>PROJECT LAB</span>
+            <div className="project-eyebrow">
+              <span className="project-eyebrow-line" aria-hidden="true" />
+              <span>PROJECT LAB</span>
+              <span className="project-eyebrow-line" aria-hidden="true" />
+            </div>
 
             <h2 id="project-lab-title">
               What kids can <strong>build</strong>

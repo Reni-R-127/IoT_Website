@@ -161,9 +161,9 @@ export default function ProjectShowcase() {
     >
       <div className="products-section-heading">
         <span className="section-kicker">
-          <i />
-          Project Showcase
-          <i />
+          <i aria-hidden="true" />
+          <span>Project Showcase</span>
+          <i aria-hidden="true" />
         </span>
 
         <h2 id="project-title">

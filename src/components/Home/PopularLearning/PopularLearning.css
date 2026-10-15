@@ -1142,3 +1142,126 @@
 #popular-learning {
   scroll-margin-top: 100px;
 }
+
+/* =========================================
+   POPULAR LEARNING SECTION HEADING
+   Match the WHAT WE TEACH reference.
+   Add this block at the END of PopularLearning.css.
+========================================= */
+
+.popular-heading {
+  margin-bottom: 34px;
+  text-align: center;
+}
+
+.popular-heading .popular-eyebrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  margin: 0 0 14px;
+  color: #1679d7;
+  font-size: 19px;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.popular-heading .popular-eyebrow-line {
+  display: block;
+  flex: 0 0 42px;
+  width: 42px;
+  height: 2px;
+  border-radius: 10px;
+  background: #a9cdec;
+}
+
+.popular-heading h2 {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  color: #09245c;
+  font-size: clamp(38px, 4vw, 57px);
+  font-weight: 900;
+  line-height: 1.04;
+  letter-spacing: -0.045em;
+  text-align: center;
+  overflow-wrap: break-word;
+}
+
+.popular-heading h2 strong {
+  color: #1599df;
+  font-weight: 900;
+}
+
+.popular-heading p {
+  margin: 14px auto 0;
+  color: #687994;
+  font-size: 18px;
+  line-height: 1.55;
+}
+
+/* Tablet: retain the reference style while fitting narrower screens. */
+@media (max-width: 1000px) {
+  .popular-heading h2 {
+    font-size: clamp(34px, 5vw, 46px);
+  }
+
+  .popular-heading p {
+    font-size: 17px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  .popular-heading {
+    margin-bottom: 26px;
+  }
+
+  .popular-heading .popular-eyebrow {
+    gap: 10px;
+    font-size: 13px;
+    letter-spacing: 0.12em;
+  }
+
+  .popular-heading .popular-eyebrow-line {
+    flex-basis: 25px;
+    width: 25px;
+  }
+
+  .popular-heading h2 {
+    margin: 0 auto;
+    font-size: clamp(30px, 7.8vw, 39px);
+    line-height: 1.08;
+    letter-spacing: -0.04em;
+  }
+
+  .popular-heading p {
+    margin-top: 12px;
+    font-size: 15px;
+    line-height: 1.55;
+  }
+}
+
+/* Very narrow phones */
+@media (max-width: 360px) {
+  .popular-heading .popular-eyebrow {
+    gap: 7px;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+  }
+
+  .popular-heading .popular-eyebrow-line {
+    flex-basis: 18px;
+    width: 18px;
+  }
+
+  .popular-heading h2 {
+    font-size: 30px;
+  }
+
+  .popular-heading p {
+    font-size: 14px;
+  }
+}

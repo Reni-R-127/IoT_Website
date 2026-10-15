@@ -142,7 +142,7 @@ export default function CourseHero() {
       {
         threshold: 0.08,
         rootMargin: "0px 0px -15px 0px",
-      }
+      },
     );
 
     observer.observe(section);
@@ -181,7 +181,7 @@ export default function CourseHero() {
         window.history.replaceState(
           null,
           "",
-          `${location.pathname}${location.search}#popular-learning`
+          `${location.pathname}${location.search}#popular-learning`,
         );
 
         target.scrollIntoView({
@@ -195,9 +195,7 @@ export default function CourseHero() {
   return (
     <section
       ref={sectionRef}
-      className={`course-hero ${
-        isVisible ? "course-hero-visible" : ""
-      }`}
+      className={`course-hero ${isVisible ? "course-hero-visible" : ""}`}
       aria-labelledby="course-hero-title"
     >
       <div
@@ -211,6 +209,7 @@ export default function CourseHero() {
       />
 
       <div className="course-hero-container">
+        {/* Heading and description */}
         <div className="course-hero-content">
           <div className="course-hero-eyebrow course-reveal">
             <span>EXPLORE</span>
@@ -230,28 +229,9 @@ export default function CourseHero() {
             Learn IoT, electronics, robotics, coding and AI through practical,
             project-based courses designed for curious young learners.
           </p>
-
-          <div className="course-hero-actions course-reveal">
-            <Link
-              to="/courses#popular-learning"
-              onClick={handleExploreClick}
-              className="course-hero-primary"
-              aria-label="Explore courses and go to Popular Learning"
-            >
-              <GraduationCap size={23} strokeWidth={2.2} />
-              <span>Explore Courses</span>
-              <ArrowRight size={20} strokeWidth={2.5} />
-            </Link>
-
-            <a href="#course-learning" className="course-hero-secondary">
-              <span className="course-hero-play">
-                <Play size={15} fill="currentColor" />
-              </span>
-              <span>Discover Learning</span>
-            </a>
-          </div>
         </div>
 
+        {/* Hero image */}
         <div className="course-hero-visual course-reveal">
           <div className="course-hero-visual-glow" aria-hidden="true" />
 
@@ -274,20 +254,38 @@ export default function CourseHero() {
                 <span className="course-topic-icon">
                   <Icon size={25} strokeWidth={2.3} aria-hidden="true" />
                 </span>
-
                 <span className="course-topic-label">{topic.label}</span>
               </div>
             );
           })}
+        </div>
+
+        {/* Buttons: below image on tablet and mobile */}
+        <div className="course-hero-actions course-reveal">
+          <Link
+            to="/courses#popular-learning"
+            onClick={handleExploreClick}
+            className="course-hero-primary"
+            aria-label="Explore courses and go to Popular Learning"
+          >
+            <GraduationCap size={23} strokeWidth={2.2} />
+            <span>Explore Courses</span>
+            <ArrowRight size={20} strokeWidth={2.5} />
+          </Link>
+
+          <a href="#course-learning" className="course-hero-secondary">
+            <span className="course-hero-play">
+              <Play size={15} fill="currentColor" />
+            </span>
+            <span>Discover Learning</span>
+          </a>
         </div>
       </div>
 
       <div className="course-hero-stats">
         {stats.map((stat, index) => (
           <div
-            className={`course-stat-reveal ${
-              isVisible ? "stat-visible" : ""
-            }`}
+            className={`course-stat-reveal ${isVisible ? "stat-visible" : ""}`}
             style={{ "--stat-delay": `${index * 100}ms` }}
             key={stat.label}
           >

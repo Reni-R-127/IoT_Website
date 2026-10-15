@@ -52,6 +52,11 @@ export default function PricingHero() {
       return undefined;
     }
 
+    if (typeof IntersectionObserver === "undefined") {
+      setVisible(true);
+      return undefined;
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -59,7 +64,7 @@ export default function PricingHero() {
           observer.unobserve(entry.target);
         }
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     );
 
     observer.observe(section);
@@ -91,50 +96,27 @@ export default function PricingHero() {
       />
 
       <div className="pricing-hero-container">
+        {/* Heading and description */}
         <div className="pricing-hero-content">
           <div className="pricing-hero-eyebrow">
+            <span className="pricing-hero-eyebrow-line" aria-hidden="true" />
             <span>PRICING</span>
-            <span className="pricing-hero-eyebrow-line" />
+            <span className="pricing-hero-eyebrow-line" aria-hidden="true" />
           </div>
 
           <h1 id="pricing-hero-title">
             Simple plans for
-            <br className="pricing-desktop-break" />
-            {" "}every stage of
-            <br className="pricing-desktop-break" />
-            {" "}<span>learning.</span>
+            <br className="pricing-desktop-break" /> every stage of
+            <br className="pricing-desktop-break" /> <span>learning.</span>
           </h1>
 
           <p className="pricing-hero-description">
-            Keep pricing easy to understand. Replace the placeholders
-            with your actual course and program prices.
+            Keep pricing easy to understand. Replace the placeholders with your
+            actual course and program prices.
           </p>
-
-          <div className="pricing-hero-benefits">
-            {benefits.map(({ title, subtitle, Icon, theme }, index) => (
-              <div
-                className={`pricing-benefit pricing-benefit-${theme}`}
-                key={title}
-                style={{ "--benefit-delay": `${index * 100}ms` }}
-              >
-                <div className="pricing-benefit-icon">
-                  <Icon size={29} strokeWidth={1.8} />
-                </div>
-
-                <p>
-                  <span>{title}</span>
-                  <span>{subtitle}</span>
-                </p>
-              </div>
-            ))}
-          </div>
-
-          <Link to="/courses" className="pricing-hero-cta">
-            Explore Courses
-            <ArrowRight size={18} />
-          </Link>
         </div>
 
+        {/* Illustration */}
         <div className="pricing-hero-visual">
           <div className="pricing-hero-image-glow" aria-hidden="true" />
 
@@ -145,6 +127,32 @@ export default function PricingHero() {
             fetchPriority="high"
           />
         </div>
+
+        {/* Benefits cards */}
+        <div className="pricing-hero-benefits">
+          {benefits.map(({ title, subtitle, Icon, theme }, index) => (
+            <div
+              className={`pricing-benefit pricing-benefit-${theme}`}
+              key={title}
+              style={{ "--benefit-delay": `${index * 100}ms` }}
+            >
+              <div className="pricing-benefit-icon">
+                <Icon size={29} strokeWidth={1.8} aria-hidden="true" />
+              </div>
+
+              <p>
+                <span>{title}</span>
+                <span>{subtitle}</span>
+              </p>
+            </div>
+          ))}
+        </div>
+
+        {/* CTA */}
+        <Link to="/courses" className="pricing-hero-cta">
+          Explore Courses
+          <ArrowRight size={18} />
+        </Link>
       </div>
     </section>
   );

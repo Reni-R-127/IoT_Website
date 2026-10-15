@@ -1,3 +1,4 @@
+
 import { useEffect, useRef, useState } from "react";
 import {
   ArrowRight,
@@ -31,7 +32,10 @@ export default function WhyTechnology() {
 
     if (!section) return undefined;
 
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    const reduceMotion =
+      window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
+
+    if (reduceMotion || typeof IntersectionObserver === "undefined") {
       setIsVisible(true);
       return undefined;
     }
@@ -57,7 +61,7 @@ export default function WhyTechnology() {
   return (
     <section
       ref={sectionRef}
-      className={`why-technology ${isVisible ? "is-visible" : ""}`}
+      className={`why-technology${isVisible ? " is-visible" : ""}`}
       aria-labelledby="why-tech-heading"
     >
       <div
@@ -71,71 +75,67 @@ export default function WhyTechnology() {
       />
 
       <div className="why-tech-container">
-        <div className="why-tech-content">
-          <span className="why-tech-eyebrow why-reveal">
-            WHY TECHNOLOGY?
-          </span>
+        {/* Heading */}
+        <header className="why-tech-heading why-reveal">
+          <div className="why-tech-eyebrow">
+            <span className="why-tech-line" aria-hidden="true" />
+            <span>WHY TECHNOLOGY?</span>
+            <span className="why-tech-line" aria-hidden="true" />
+          </div>
 
-          <h2
-            id="why-tech-heading"
-            className="why-reveal"
-          >
+          <h2 id="why-tech-heading">
             Skills that go beyond
             <br className="why-tech-desktop-break" /> the classroom
           </h2>
+        </header>
 
-          <p className="why-tech-description why-reveal">
-            Technology projects encourage children to think, test,
-            make mistakes, solve problems and explain what they build.
-          </p>
+        {/* Description */}
+        <p className="why-tech-description why-reveal">
+          Technology projects encourage children to think, test, make
+          mistakes, solve problems and explain what they build.
+        </p>
 
-          <div className="why-tech-skills">
-            {strengths.map((item, index) => {
-              const Icon = item.icon;
-
-              return (
-                <article
-                  key={item.title}
-                  className={`why-tech-skill why-tech-${item.tone} why-reveal`}
-                  style={{
-                    transitionDelay: isVisible
-                      ? `${index * 90}ms`
-                      : "0ms",
-                  }}
-                >
-                  <span className="why-tech-skill-icon">
-                    <Icon
-                      size={23}
-                      strokeWidth={2.4}
-                      aria-hidden="true"
-                    />
-                  </span>
-
-                  <span className="why-tech-skill-title">
-                    {item.title}
-                  </span>
-                </article>
-              );
-            })}
-          </div>
-
-          <Link
-            to="/courses"
-            className="why-tech-button why-reveal"
-          >
-            <span>Explore Courses</span>
-            <ArrowRight size={19} strokeWidth={2.6} aria-hidden="true" />
-          </Link>
-        </div>
-
+        {/* Image: right on desktop, above cards on tablet/mobile */}
         <div className="why-tech-visual why-reveal">
           <img
             src={whyTechnologyImage}
             alt="Children learning technology through robotics, coding and electronics"
             className="why-tech-image"
             loading="lazy"
+            decoding="async"
           />
         </div>
+
+        {/* Skill cards */}
+        <div className="why-tech-skills">
+          {strengths.map((item, index) => {
+            const Icon = item.icon;
+
+            return (
+              <article
+                key={item.title}
+                className={`why-tech-skill why-tech-${item.tone} why-reveal`}
+                style={{
+                  transitionDelay: isVisible ? `${index * 70}ms` : "0ms",
+                }}
+              >
+                <span className="why-tech-skill-icon" aria-hidden="true">
+                  <Icon size={22} strokeWidth={2.3} />
+                </span>
+
+                <span className="why-tech-skill-title">
+                  {item.title}
+                </span>
+              </article>
+            );
+          })}
+        </div>
+
+        {/* CTA */}
+        <Link to="/courses" className="why-tech-button why-reveal">
+          <span>Explore Courses</span>
+          <ArrowRight size={19} strokeWidth={2.6} aria-hidden="true" />
+        </Link>
       </div>
     </section>
   );

@@ -4,7 +4,6 @@ import {
   Wifi,
   Bot,
   Code2,
-  Gauge,
   Brain,
   Settings,
   Radio,
@@ -20,7 +19,6 @@ import actuatorsImage from "../../../assets/About/Teaching/actuators.png";
 import roboticsImage from "../../../assets/About/Teaching/robotics.png";
 import codingImage from "../../../assets/About/Teaching/coding.png";
 import aiImage from "../../../assets/About/Teaching/artificial-intelligence.png";
-
 
 const topics = [
   {
@@ -73,8 +71,7 @@ const topics = [
   },
   {
     title: "Coding",
-    description:
-      "Learn programming to give life to your ideas.",
+    description: "Learn programming to give life to your ideas.",
     image: codingImage,
     icon: Code2,
     className: "teaching-pink",
@@ -89,60 +86,35 @@ const topics = [
   },
 ];
 
-
 export default function Teaching() {
   return (
-    <section className="teaching-section">
-
-      {/* Decorative background */}
-
+    <section className="teaching-section" aria-labelledby="teaching-title">
       <div
         className="teaching-decoration teaching-decoration-left"
         aria-hidden="true"
       />
-
       <div
         className="teaching-decoration teaching-decoration-right"
         aria-hidden="true"
       />
 
-
       <div className="teaching-container">
-
-        {/* =========================================
-            SECTION HEADING
-        ========================================= */}
-
         <header className="teaching-heading">
-
           <div className="teaching-eyebrow">
-
-            <span className="teaching-eyebrow-line" />
-
+            <span className="teaching-eyebrow-line" aria-hidden="true" />
             <span>WHAT WE TEACH</span>
-
-            <span className="teaching-eyebrow-line" />
-
+            <span className="teaching-eyebrow-line" aria-hidden="true" />
           </div>
 
-
-          <h2>
+          <h2 id="teaching-title">
             Explore the technology behind
-            <br />
+            <br className="teaching-heading-break" />
             <strong>everyday ideas</strong>
           </h2>
-
         </header>
 
-
-        {/* =========================================
-            TOPIC GRID
-        ========================================= */}
-
         <div className="teaching-grid">
-
           {topics.map((topic) => {
-
             const Icon = topic.icon;
 
             return (
@@ -150,62 +122,36 @@ export default function Teaching() {
                 key={topic.title}
                 className={`teaching-card ${topic.className}`}
               >
-
-                {/* Image */}
-
                 <div className="teaching-image-wrap">
-
                   <img
                     src={topic.image}
-                    alt={topic.title}
+                    alt={`${topic.title} learning`}
                     className="teaching-image"
+                    loading="lazy"
+                    decoding="async"
                   />
-
                 </div>
-
-
-                {/* Content */}
 
                 <div className="teaching-card-content">
-
                   <div className="teaching-card-text">
-
-                    <h3>
-                      {topic.title}
-                    </h3>
-
-                    <p>
-                      {topic.description}
-                    </p>
-
+                    <h3>{topic.title}</h3>
+                    <p>{topic.description}</p>
                   </div>
 
-
-                  {/* Arrow */}
-
-                  <button
-                    type="button"
+                  <span
                     className="teaching-arrow"
-                    aria-label={`Learn more about ${topic.title}`}
+                    aria-hidden="true"
+                    title={`${topic.title} topic`}
                   >
-
-                    <ArrowRight
-                      size={22}
-                      strokeWidth={2.8}
-                    />
-
-                  </button>
-
+                    <Icon className="teaching-topic-icon" size={20} strokeWidth={2.2} />
+                    <ArrowRight className="teaching-arrow-icon" size={17} strokeWidth={2.5} />
+                  </span>
                 </div>
-
               </article>
             );
           })}
-
         </div>
-
       </div>
-
     </section>
   );
 }

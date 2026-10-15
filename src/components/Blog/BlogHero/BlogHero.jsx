@@ -8,7 +8,6 @@ export default function BlogHero() {
 
   useEffect(() => {
     const section = sectionRef.current;
-
     if (!section) return undefined;
 
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
@@ -27,7 +26,6 @@ export default function BlogHero() {
     );
 
     observer.observe(section);
-
     return () => observer.disconnect();
   }, []);
 
@@ -37,36 +35,33 @@ export default function BlogHero() {
       className={`blog-hero ${visible ? "blog-hero-visible" : ""}`}
       aria-labelledby="blog-hero-title"
     >
-      {/* Decorative background circles */}
       <div
         className="blog-hero-decoration blog-hero-decoration-one"
         aria-hidden="true"
       />
-
       <div
         className="blog-hero-decoration blog-hero-decoration-two"
         aria-hidden="true"
       />
-
       <div
         className="blog-hero-decoration blog-hero-decoration-three"
         aria-hidden="true"
       />
 
       <div className="blog-hero-container">
-        {/* Left content */}
         <div className="blog-hero-content">
           <div className="blog-hero-eyebrow">
+            <span className="blog-hero-eyebrow-line" aria-hidden="true" />
             <span>BLOG</span>
-            <span className="blog-hero-eyebrow-line" />
+            <span className="blog-hero-eyebrow-line" aria-hidden="true" />
           </div>
 
           <h1 id="blog-hero-title">
             Simple technology
-            <br className="blog-hero-desktop-break" />
-            {" "}ideas for
-            <br className="blog-hero-desktop-break" />
-            {" "}<span>curious minds.</span>
+            <br className="blog-hero-desktop-break" />{" "}
+            ideas for
+            <br className="blog-hero-desktop-break" />{" "}
+            <span>curious minds.</span>
           </h1>
 
           <p className="blog-hero-description">
@@ -75,13 +70,8 @@ export default function BlogHero() {
           </p>
         </div>
 
-        {/* Right illustration */}
         <div className="blog-hero-visual">
-          <div
-            className="blog-hero-image-glow"
-            aria-hidden="true"
-          />
-
+          <div className="blog-hero-image-glow" aria-hidden="true" />
           <img
             src={blogHeroImage}
             alt="Technology blog illustration featuring a laptop, robotics, coding books and a friendly robot"

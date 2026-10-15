@@ -1280,3 +1280,113 @@
     transition: none;
   }
 }
+
+/*
+ * LEARNING APPROACH HEADING — append this patch to the END of
+ * LearningApproach.css. It only overrides section-heading styles.
+ * Existing card, image, connector, background, and animation rules remain.
+ */
+
+.learning-heading {
+  width: 100%;
+  text-align: center;
+}
+
+.learning-eyebrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  margin-bottom: 14px;
+
+  color: #1679d7;
+  font-size: 19px;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.learning-line {
+  display: block;
+  flex: 0 0 42px;
+  width: 42px;
+  height: 2px;
+  border-radius: 10px;
+  background: #a9cdec;
+}
+
+.learning-heading h2 {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+
+  color: #09245c;
+  font-size: clamp(38px, 4vw, 57px);
+  font-weight: 900;
+  line-height: 1.04;
+  letter-spacing: -0.045em;
+  text-align: center;
+  overflow-wrap: break-word;
+}
+
+/* Keep the existing span markup while standardizing highlight color. */
+.learning-heading h2 .learn-word {
+  color: #09245c;
+  font-weight: 900;
+}
+
+.learning-heading h2 .explore-word,
+.learning-heading h2 .build-word,
+.learning-heading h2 .create-word {
+  color: #1599df;
+  font-weight: 900;
+}
+
+@media (max-width: 950px) {
+  .learning-eyebrow {
+    gap: 12px;
+    font-size: 16px;
+  }
+
+  .learning-heading h2 {
+    font-size: clamp(34px, 5vw, 46px);
+  }
+}
+
+@media (max-width: 600px) {
+  .learning-eyebrow {
+    gap: 9px;
+    margin-bottom: 14px;
+    font-size: 12px;
+    letter-spacing: 0.13em;
+  }
+
+  .learning-line {
+    flex-basis: 25px;
+    width: 25px;
+  }
+
+  .learning-heading h2 {
+    font-size: clamp(30px, 7.8vw, 38px);
+    line-height: 1.08;
+    letter-spacing: -0.04em;
+  }
+}
+
+@media (max-width: 400px) {
+  .learning-eyebrow {
+    gap: 7px;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+  }
+
+  .learning-line {
+    flex-basis: 18px;
+    width: 18px;
+  }
+
+  .learning-heading h2 {
+    font-size: clamp(28px, 8vw, 32px);
+  }
+}

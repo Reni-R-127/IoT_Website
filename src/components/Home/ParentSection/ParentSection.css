@@ -1086,3 +1086,121 @@
 .parent-section .testimonial-person .avatar-2 {
   background: linear-gradient(135deg, #31b77a, #4d96ff);
 }
+
+/*
+  ParentSection.css heading-only update
+  Append this block to the END of the existing ParentSection.css file.
+  All card, carousel, background, reveal, and layout styles remain unchanged.
+*/
+
+/* Main section eyebrow: match the Teaching.css reference */
+.parent-heading .parent-eyebrow,
+.voices-heading .voices-eyebrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  margin: 0 0 14px;
+  color: #1679d7;
+  font-size: 19px;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  line-height: 1;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.parent-heading .parent-eyebrow-line,
+.voices-heading .voices-eyebrow-line {
+  display: block;
+  flex: 0 0 42px;
+  width: 42px;
+  height: 2px;
+  border-radius: 10px;
+  background: #a9cdec;
+}
+
+/* Main heading typography */
+.parent-heading h2,
+.voices-heading h2 {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  color: #09245c;
+  font-size: clamp(38px, 4vw, 57px);
+  font-weight: 900;
+  line-height: 1.04;
+  letter-spacing: -0.045em;
+  text-align: center;
+  overflow-wrap: break-word;
+}
+
+.parent-heading h2 strong,
+.voices-heading h2 strong {
+  color: #1599df;
+  font-weight: 900;
+}
+
+/* Keep the original supporting-copy styling and spacing. */
+.parent-heading p,
+.voices-heading p {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* Tablet */
+@media (max-width: 1000px) {
+  .parent-heading h2,
+  .voices-heading h2 {
+    font-size: clamp(34px, 5vw, 46px);
+  }
+
+  .parent-heading .parent-eyebrow,
+  .voices-heading .voices-eyebrow {
+    font-size: 16px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 650px) {
+  .parent-heading .parent-eyebrow,
+  .voices-heading .voices-eyebrow {
+    gap: 10px;
+    font-size: 13px;
+    letter-spacing: 0.12em;
+  }
+
+  .parent-heading .parent-eyebrow-line,
+  .voices-heading .voices-eyebrow-line {
+    flex-basis: 25px;
+    width: 25px;
+  }
+
+  .parent-heading h2,
+  .voices-heading h2 {
+    font-size: clamp(30px, 7.8vw, 38px);
+    line-height: 1.08;
+    letter-spacing: -0.04em;
+  }
+}
+
+/* Very narrow screens */
+@media (max-width: 360px) {
+  .parent-heading .parent-eyebrow,
+  .voices-heading .voices-eyebrow {
+    gap: 7px;
+    font-size: 10px;
+    letter-spacing: 0.08em;
+  }
+
+  .parent-heading .parent-eyebrow-line,
+  .voices-heading .voices-eyebrow-line {
+    flex-basis: 16px;
+    width: 16px;
+  }
+
+  .parent-heading h2,
+  .voices-heading h2 {
+    font-size: 30px;
+  }
+}

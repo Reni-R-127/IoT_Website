@@ -61,7 +61,6 @@ export default function PopularLearning() {
   const [isVisible, setIsVisible] = useState(false);
   const location = useLocation();
 
-  // Reveal the section and cards when they enter the viewport.
   useEffect(() => {
     const section = sectionRef.current;
 
@@ -82,7 +81,6 @@ export default function PopularLearning() {
     return () => observer.disconnect();
   }, []);
 
-  // Handle navigation to /courses#popular-learning.
   useEffect(() => {
     if (
       location.pathname !== "/courses" ||
@@ -105,9 +103,7 @@ export default function PopularLearning() {
     <section
       ref={sectionRef}
       id="popular-learning"
-      className={`popular-learning${
-        isVisible ? " popular-in-view" : ""
-      }`}
+      className={`popular-learning${isVisible ? " popular-in-view" : ""}`}
       aria-labelledby="popular-learning-title"
     >
       <div className="popular-blob blob-one" aria-hidden="true" />
@@ -116,7 +112,11 @@ export default function PopularLearning() {
       <div className="popular-container">
         <Reveal>
           <header className="popular-heading">
-            <span>POPULAR LEARNING</span>
+            <div className="popular-eyebrow">
+              <span className="popular-eyebrow-line" aria-hidden="true" />
+              <span>POPULAR LEARNING</span>
+              <span className="popular-eyebrow-line" aria-hidden="true" />
+            </div>
 
             <h2 id="popular-learning-title">
               Courses built around <strong>making</strong>

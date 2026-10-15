@@ -1,4 +1,3 @@
-
 import { useEffect, useRef, useState } from "react";
 import {
   ArrowRight,
@@ -84,7 +83,7 @@ export default function HomeHero() {
       },
       {
         threshold: 0.12,
-      }
+      },
     );
 
     observer.observe(section);
@@ -97,33 +96,22 @@ export default function HomeHero() {
       ref={heroRef}
       className={`home-hero${isVisible ? " hero-in-view" : ""}`}
     >
-      <div
-        className="hero-edge-circle hero-blue-circle"
-        aria-hidden="true"
-      />
+      <div className="hero-edge-circle hero-blue-circle" aria-hidden="true" />
 
-      <div
-        className="hero-edge-circle hero-violet-circle"
-        aria-hidden="true"
-      />
+      <div className="hero-edge-circle hero-violet-circle" aria-hidden="true" />
 
       <div className="hero-content" data-animate="fade-left">
-        <span
-          className="hero-kicker"
-          data-animate="fade-down"
-          data-delay="1"
-        >
-          Kids • STEM • Technology
-        </span>
+        <span className="hero-kicker-line" aria-hidden="true" />
+        <span className="hero-kicker">Kids • STEM • Technology</span>
+        <span className="hero-kicker-line" aria-hidden="true" />
 
         <h1 data-animate="fade-up" data-delay="2">
           Where Kids <em>Learn, Build</em> &amp; Create with Technology
         </h1>
 
         <p data-animate="fade-up" data-delay="3">
-          Give your child hands-on experience with IoT, electronics,
-          coding, robotics and emerging technologies through fun and
-          practical projects.
+          Give your child hands-on experience with IoT, electronics, coding,
+          robotics and emerging technologies through fun and practical projects.
         </p>
 
         <div className="hero-actions-desktop">

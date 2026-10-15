@@ -5,7 +5,6 @@ import LearningCard1 from "../../../assets/Home/LearningSection/LearningCard_1.p
 import LearningCard2 from "../../../assets/Home/LearningSection/LearningCard_2.png";
 import LearningCard3 from "../../../assets/Home/LearningSection/LearningCard_3.png";
 import LearningCard4 from "../../../assets/Home/LearningSection/LearningCard_4.png";
-
 import LearningSection1 from "../../../assets/Home/LearningSection/LearningSection_1.png";
 import LearningSection2 from "../../../assets/Home/LearningSection/LearningSection_2.png";
 
@@ -45,7 +44,6 @@ const learningSteps = [
 export default function LearningSection() {
   return (
     <section className="learning-section">
-      {/* Decorative character images */}
       <img
         src={LearningSection1}
         alt=""
@@ -60,9 +58,12 @@ export default function LearningSection() {
         aria-hidden="true"
       />
 
-      {/* Section heading */}
-      <div className="learning-header">
-        <span className="learning-eyebrow">LEARN BY DOING</span>
+      <header className="learning-header">
+        <div className="learning-eyebrow">
+          <span className="learning-eyebrow-line" aria-hidden="true" />
+          <span>LEARN BY DOING</span>
+          <span className="learning-eyebrow-line" aria-hidden="true" />
+        </div>
 
         <h2>
           Technology made practical
@@ -74,9 +75,8 @@ export default function LearningSection() {
           A simple path from understanding the idea to building something
           kids can see, test and improve.
         </p>
-      </div>
+      </header>
 
-      {/* Learning cards */}
       <div className="learning-cards">
         {learningSteps.map((step) => (
           <article
@@ -97,11 +97,9 @@ export default function LearningSection() {
         ))}
       </div>
 
-      {/* Courses call-to-action */}
       <div className="learning-cta">
         <div className="learning-cta-title">
           <Sprout size={25} aria-hidden="true" />
-
           <span>Ready to build your first project?</span>
         </div>
 

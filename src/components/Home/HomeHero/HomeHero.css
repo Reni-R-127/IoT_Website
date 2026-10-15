@@ -1248,3 +1248,72 @@
     translate: none;
   }
 }
+
+/* Home Hero eyebrow: match the section-heading reference */
+
+.home-hero .hero-kicker-row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 18px;
+  width: 100%;
+  margin-bottom: 14px;
+}
+
+.home-hero .hero-kicker {
+  display: inline-block;
+  margin: 0;
+  color: #1679d7;
+  font-size: 19px;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.home-hero .hero-kicker-line {
+  flex: 0 0 42px;
+  width: 42px;
+  height: 2px;
+  border-radius: 10px;
+  background: #a9cdec;
+}
+
+@media (max-width: 950px) {
+  .home-hero .hero-kicker-row {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .home-hero .hero-kicker-row {
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+
+  .home-hero .hero-kicker {
+    font-size: 13px;
+    letter-spacing: 0.12em;
+  }
+
+  .home-hero .hero-kicker-line {
+    flex-basis: 24px;
+    width: 24px;
+  }
+}
+
+@media (max-width: 360px) {
+  .home-hero .hero-kicker-row {
+    gap: 7px;
+  }
+
+  .home-hero .hero-kicker {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+  }
+
+  .home-hero .hero-kicker-line {
+    flex-basis: 18px;
+    width: 18px;
+  }
+}

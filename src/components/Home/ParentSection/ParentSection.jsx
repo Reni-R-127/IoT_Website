@@ -1,4 +1,3 @@
-
 import { useEffect, useRef, useState } from "react";
 import {
   Lightbulb,
@@ -76,7 +75,11 @@ export default function ParentSection() {
       <div className="parent-container">
         <Reveal>
           <header className="parent-heading">
-            <span>WHY FAMILIES CHOOSE TECHSPROUT</span>
+            <div className="parent-eyebrow">
+              <span className="parent-eyebrow-line" aria-hidden="true" />
+              <span>WHY FAMILIES CHOOSE TECHSPROUT</span>
+              <span className="parent-eyebrow-line" aria-hidden="true" />
+            </div>
 
             <h2>
               Fun for kids. Meaningful <strong>for parents.</strong>
@@ -107,7 +110,11 @@ export default function ParentSection() {
         </div>
 
         <Reveal className="voices-heading" delay={100}>
-          <span>PARENT &amp; STUDENT VOICES</span>
+          <div className="voices-eyebrow">
+            <span className="voices-eyebrow-line" aria-hidden="true" />
+            <span>PARENT &amp; STUDENT VOICES</span>
+            <span className="voices-eyebrow-line" aria-hidden="true" />
+          </div>
 
           <h2>What learners say</h2>
 

@@ -104,8 +104,10 @@ export default function ProductsHero() {
 
       <div className="products-hero-copy" data-animate="fade-left">
         <div className="products-eyebrow-pill">
-          <Cpu size={19} aria-hidden="true" />
-          <span>IoT · Robotics · Embedded Systems</span>
+          {/* <span className="products-heading-line" aria-hidden="true" /> */}
+          {/* <Cpu size={19} aria-hidden="true" /> */}
+          <span className="products-eyebrow-text">IoT · Robotics · Embedded Systems</span>
+          {/* <span className="products-heading-line" aria-hidden="true" /> */}
         </div>
 
         <h1 id="products-hero-title">
@@ -169,11 +171,6 @@ export default function ProductsHero() {
       </div>
 
       <div className="products-hero-metrics-wrap" data-animate="fade-up">
-        {/* <div className="metrics-heading">
-          <span className="metrics-heading-line" aria-hidden="true" />
-          <span>Learning in numbers</span>
-          <span className="metrics-heading-line" aria-hidden="true" />
-        </div> */}
         <div className="products-hero-metrics" ref={metricsRef} aria-label="ProJenius learning statistics">
           {metrics.map((item, index) => (
             <MetricCard

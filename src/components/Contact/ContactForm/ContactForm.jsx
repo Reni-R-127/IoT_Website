@@ -11,6 +11,13 @@ import {
 import "./ContactForm.css";
 
 const WHATSAPP_NUMBER = "918925450473";
+const COUNTRY_CODE = "+91";
+
+// Replace this with your actual company website URL if needed.
+const COMPANY_WEBSITE = "/";
+
+const GOOGLE_MAPS_URL =
+  "https://www.google.com/maps/search/?api=1&query=Madurai%2C+Tamil+Nadu+625003";
 
 const initialForm = {
   parentName: "",
@@ -28,32 +35,58 @@ const contactDetails = [
     value: "+91 89254 50473",
     icon: Phone,
     tone: "phone",
+    href: "tel:+918925450473",
   },
   {
     label: "Email",
     value: "teamprojenius@gmail.com",
     icon: Mail,
     tone: "email",
+    href: "mailto:teamprojenius@gmail.com",
   },
   {
     label: "Location",
     value: "Madurai, Tamil Nadu 625003",
     icon: MapPin,
     tone: "location",
+    href: GOOGLE_MAPS_URL,
+    external: true,
   },
   {
     label: "Working Hours",
     value: "Mon - Sat, 10:00 AM - 7:00 PM",
     icon: Clock,
     tone: "hours",
+    href: COMPANY_WEBSITE,
   },
+];
+
+const courses = [
+  "IoT",
+  "Robotics",
+  "Arduino",
+  "Electronics",
+  "Coding",
+  "Artificial Intelligence",
+  "Other",
 ];
 
 export default function ContactForm() {
   const [form, setForm] = useState(initialForm);
 
   const handleChange = (event) => {
-    const { name, value } = event.target;
+    const { name } = event.target;
+    let { value } = event.target;
+
+    // Accept exactly 10 digits for an Indian mobile number.
+    if (name === "phone") {
+      value = value.replace(/\D/g, "").slice(0, 10);
+    }
+
+    // Child age: numeric input, maximum two digits.
+    if (name === "childAge") {
+      value = value.replace(/\D/g, "").slice(0, 2);
+    }
 
     setForm((previous) => ({
       ...previous,
@@ -64,42 +97,69 @@ export default function ContactForm() {
   const handleSubmit = (event) => {
     event.preventDefault();
 
+    const phonePattern = /^[6-9]\d{9}$/;
+
+    if (!phonePattern.test(form.phone)) {
+      window.alert(
+        "Please enter a valid 10-digit Indian mobile number starting with 6, 7, 8 or 9."
+      );
+      return;
+    }
+
+    const age = Number(form.childAge);
+
+    if (!Number.isInteger(age) || age < 1 || age > 18) {
+      window.alert("Please enter a child age between 1 and 18.");
+      return;
+    }
+
     const message = [
       "Hello ProJenius! I would like to enquire about your courses.",
       "",
-      `Parent Name: ${form.parentName}`,
-      `Child Name: ${form.childName}`,
-      `Child Age: ${form.childAge}`,
-      `Phone Number: ${form.phone}`,
-      `Email: ${form.email}`,
+      "ENQUIRY DETAILS",
+      "------------------------------",
+      `Parent Name: ${form.parentName.trim()}`,
+      `Child Name: ${form.childName.trim()}`,
+      `Child Age: ${age}`,
+      `Phone Number: ${COUNTRY_CODE} ${form.phone}`,
+      `Email: ${form.email.trim()}`,
       `Interested Course: ${form.course}`,
-      `Message: ${form.message || "No additional message"}`,
+      `Message: ${form.message.trim() || "No additional message"}`,
+      "------------------------------",
     ].join("\n");
 
-    const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
-      message
-    )}`;
+    const whatsappUrl =
+      `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
 
+    // Open WhatsApp with the completed enquiry.
     window.open(whatsappUrl, "_blank", "noopener,noreferrer");
   };
 
   return (
-    <section className="contact-form-section" aria-labelledby="contact-form-title">
+    <section
+      className="contact-form-section"
+      aria-labelledby="contact-form-title"
+    >
       <div className="contact-form-panel">
+        {/* Background decorations */}
         <div
           className="contact-form-decoration contact-form-decoration-one"
           aria-hidden="true"
         />
+
         <div
           className="contact-form-decoration contact-form-decoration-two"
           aria-hidden="true"
         />
 
-        {/* Left contact information */}
+        {/* Left-side contact information */}
         <div className="contact-form-info">
           <div className="contact-form-eyebrow">
             <span>GET IN TOUCH</span>
-            <span />
+            <span
+              className="contact-form-eyebrow-line"
+              aria-hidden="true"
+            />
           </div>
 
           <h2 id="contact-form-title">
@@ -113,39 +173,59 @@ export default function ContactForm() {
             interested in. We’ll get back to you as soon as possible.
           </p>
 
+          {/* Clickable contact details */}
           <div className="contact-form-details">
             {contactDetails.map((item) => {
               const Icon = item.icon;
 
               return (
-                <div className="contact-detail" key={item.label}>
+                <a
+                  className="contact-detail contact-detail-link"
+                  key={item.label}
+                  href={item.href}
+                  target={item.external ? "_blank" : undefined}
+                  rel={
+                    item.external
+                      ? "noopener noreferrer"
+                      : undefined
+                  }
+                  aria-label={`${item.label}: ${item.value}`}
+                >
                   <span className={`contact-detail-icon ${item.tone}`}>
-                    <Icon size={21} strokeWidth={2.4} />
+                    <Icon
+                      size={21}
+                      strokeWidth={2.4}
+                      aria-hidden="true"
+                    />
                   </span>
 
-                  <div className="contact-detail-copy">
+                  <span className="contact-detail-copy">
                     <strong>{item.label}</strong>
                     <span>{item.value}</span>
-                  </div>
-                </div>
+                  </span>
+                </a>
               );
             })}
           </div>
 
+          {/* WhatsApp contact button */}
           <a
             className="contact-whatsapp-button"
             href={`https://wa.me/${WHATSAPP_NUMBER}`}
             target="_blank"
             rel="noopener noreferrer"
           >
-            <MessageCircle size={21} />
+            <MessageCircle size={22} aria-hidden="true" />
             <span>Chat on WhatsApp</span>
-            <ArrowRight size={20} />
+            <ArrowRight size={21} aria-hidden="true" />
           </a>
         </div>
 
-        {/* Decorative illustration */}
-        <div className="contact-form-illustration" aria-hidden="true">
+        {/* Optional decorative illustration */}
+        <div
+          className="contact-form-illustration"
+          aria-hidden="true"
+        >
           <img
             src="/images/contact-form.png"
             alt=""
@@ -157,39 +237,48 @@ export default function ContactForm() {
         <div className="contact-form-card">
           <form onSubmit={handleSubmit}>
             <div className="contact-form-grid">
+              {/* Parent name */}
               <div className="contact-field">
                 <label htmlFor="parentName">Parent Name</label>
                 <input
                   id="parentName"
                   name="parentName"
+                  type="text"
                   value={form.parentName}
                   onChange={handleChange}
                   placeholder="Enter parent name"
                   autoComplete="name"
+                  maxLength={100}
                   required
                 />
               </div>
 
+              {/* Child name */}
               <div className="contact-field">
                 <label htmlFor="childName">Child Name</label>
                 <input
                   id="childName"
                   name="childName"
+                  type="text"
                   value={form.childName}
                   onChange={handleChange}
                   placeholder="Enter child name"
+                  maxLength={100}
                   required
                 />
               </div>
 
+              {/* Child age */}
               <div className="contact-field">
                 <label htmlFor="childAge">Child Age</label>
                 <input
                   id="childAge"
                   name="childAge"
                   type="number"
+                  inputMode="numeric"
                   min="1"
                   max="18"
+                  step="1"
                   value={form.childAge}
                   onChange={handleChange}
                   placeholder="e.g. 10"
@@ -197,22 +286,38 @@ export default function ContactForm() {
                 />
               </div>
 
+              {/* Indian mobile number */}
               <div className="contact-field">
                 <label htmlFor="phone">Phone Number</label>
-                <input
-                  id="phone"
-                  name="phone"
-                  type="tel"
-                  value={form.phone}
-                  onChange={handleChange}
-                  placeholder="Enter phone number"
-                  autoComplete="tel"
-                  pattern="[+]?[0-9 ()-]{8,18}"
-                  title="Enter a valid phone number"
-                  required
-                />
+
+                <div className="contact-phone-input">
+                  <span className="contact-country-code">
+                    {COUNTRY_CODE}
+                  </span>
+
+                  <input
+                    id="phone"
+                    name="phone"
+                    type="tel"
+                    inputMode="numeric"
+                    autoComplete="tel-national"
+                    value={form.phone}
+                    onChange={handleChange}
+                    placeholder="10-digit mobile number"
+                    pattern="[6-9][0-9]{9}"
+                    maxLength={10}
+                    title="Enter a valid 10-digit Indian mobile number starting with 6, 7, 8 or 9."
+                    aria-describedby="phone-help"
+                    required
+                  />
+                </div>
+
+                <small id="phone-help">
+                  Enter 10 digits without the country code.
+                </small>
               </div>
 
+              {/* Email */}
               <div className="contact-field">
                 <label htmlFor="email">Email</label>
                 <input
@@ -223,12 +328,15 @@ export default function ContactForm() {
                   onChange={handleChange}
                   placeholder="Enter email"
                   autoComplete="email"
+                  maxLength={254}
                   required
                 />
               </div>
 
+              {/* Course selection */}
               <div className="contact-field">
                 <label htmlFor="course">Interested Course</label>
+
                 <select
                   id="course"
                   name="course"
@@ -239,20 +347,19 @@ export default function ContactForm() {
                   <option value="" disabled>
                     Select a course
                   </option>
-                  <option value="IoT">IoT</option>
-                  <option value="Robotics">Robotics</option>
-                  <option value="Arduino">Arduino</option>
-                  <option value="Electronics">Electronics</option>
-                  <option value="Coding">Coding</option>
-                  <option value="Artificial Intelligence">
-                    Artificial Intelligence
-                  </option>
-                  <option value="Other">Other</option>
+
+                  {courses.map((course) => (
+                    <option key={course} value={course}>
+                      {course}
+                    </option>
+                  ))}
                 </select>
               </div>
 
+              {/* Additional message */}
               <div className="contact-field contact-field-full">
                 <label htmlFor="message">Message</label>
+
                 <textarea
                   id="message"
                   name="message"
@@ -260,17 +367,23 @@ export default function ContactForm() {
                   onChange={handleChange}
                   placeholder="Tell us what you would like to know"
                   rows={4}
+                  maxLength={2000}
                 />
               </div>
             </div>
 
-            <button className="contact-submit-button" type="submit">
+            {/* Submit enquiry to WhatsApp */}
+            <button
+              className="contact-submit-button"
+              type="submit"
+            >
               <span>Send Enquiry</span>
-              <ArrowRight size={21} strokeWidth={2.4} />
+              <ArrowRight size={22} strokeWidth={2.4} aria-hidden="true" />
             </button>
 
             <p className="contact-form-note">
-              Send Enquiry prepares the entered details as a WhatsApp message.
+              Your enquiry details will be prepared as a WhatsApp message.
+              Review the message and press Send in WhatsApp to submit it.
             </p>
           </form>
         </div>

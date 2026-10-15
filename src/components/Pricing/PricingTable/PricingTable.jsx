@@ -136,9 +136,9 @@ export default function PricingTable() {
       <div className="pricing-table-container">
         <header className="pricing-table-heading">
           <div className="pricing-table-eyebrow">
-            <span />
+            <span className="pricing-table-eyebrow-line" aria-hidden="true" />
             CHOOSE A PLAN
-            <span />
+            <span className="pricing-table-eyebrow-line" aria-hidden="true" />
           </div>
 
           <h2 id="pricing-table-title">

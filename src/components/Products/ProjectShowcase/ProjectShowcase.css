@@ -644,3 +644,114 @@
     transition: none;
   }
 }
+
+/*
+ * ProjectShowcase heading standardization
+ * Append this patch to the END of ProjectShowcase.css.
+ * Only the section heading is adjusted; project filters, cards, CTA, and layout remain unchanged.
+ */
+
+.project-showcase .products-section-heading {
+  text-align: center;
+}
+
+.project-showcase .products-section-heading .section-kicker {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  margin-bottom: 14px;
+  color: #1679d7;
+  font-size: 19px;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.project-showcase .products-section-heading .section-kicker i {
+  display: block;
+  flex: 0 0 42px;
+  width: 42px;
+  height: 2px;
+  background: #a9cdec;
+}
+
+.project-showcase .products-section-heading h2 {
+  max-width: 1000px;
+  margin: 0 auto;
+  color: #09245c;
+  font-size: clamp(38px, 4vw, 57px);
+  font-weight: 900;
+  line-height: 1.04;
+  letter-spacing: -0.045em;
+  overflow-wrap: break-word;
+}
+
+.project-showcase .products-section-heading h2 em {
+  color: #1599df;
+  font-style: normal;
+  font-weight: 900;
+}
+
+.project-showcase .products-section-heading > p {
+  max-width: 850px;
+  margin: 18px auto 0;
+  color: #66758f;
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+@media (max-width: 900px) {
+  .project-showcase .products-section-heading .section-kicker {
+    font-size: 17px;
+    gap: 14px;
+  }
+
+  .project-showcase .products-section-heading h2 {
+    font-size: clamp(36px, 5.5vw, 50px);
+  }
+
+  .project-showcase .products-section-heading > p {
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 650px) {
+  .project-showcase .products-section-heading .section-kicker {
+    gap: 9px;
+    margin-bottom: 13px;
+    font-size: 12px;
+    letter-spacing: 0.14em;
+  }
+
+  .project-showcase .products-section-heading .section-kicker i {
+    flex-basis: 25px;
+    width: 25px;
+  }
+
+  .project-showcase .products-section-heading h2 {
+    margin: 0 auto;
+    font-size: clamp(32px, 8vw, 43px);
+    line-height: 1.08;
+    letter-spacing: -0.04em;
+  }
+
+  .project-showcase .products-section-heading > p {
+    margin-top: 15px;
+    font-size: 15px;
+    line-height: 1.7;
+  }
+}
+
+@media (max-width: 360px) {
+  .project-showcase .products-section-heading .section-kicker {
+    gap: 7px;
+    font-size: 11px;
+  }
+
+  .project-showcase .products-section-heading .section-kicker i {
+    flex-basis: 20px;
+    width: 20px;
+  }
+}

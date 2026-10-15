@@ -187,6 +187,7 @@ export default function WhoWeAre() {
       <div className="who-we-are-container">
         <header className="who-section-heading">
           <div className="who-heading-row">
+            <span className="who-eyebrow-line" aria-hidden="true" />
             <span className="who-eyebrow">WHO WE ARE</span>
             <span className="who-eyebrow-line" aria-hidden="true" />
           </div>

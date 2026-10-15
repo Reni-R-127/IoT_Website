@@ -1,4 +1,3 @@
-
 import { useEffect, useRef, useState } from "react";
 import "./ContactHero.css";
 
@@ -70,8 +69,12 @@ export default function ContactHero() {
       <div className="contact-hero-container">
         {/* Heading and description */}
         <div className="contact-hero-content">
-          <div className="contact-hero-eyebrow">
-            <span>CONTACT</span>
+          <div className="contact-hero-eyebrow" aria-label="Contact">
+            <span
+              className="contact-hero-eyebrow-line"
+              aria-hidden="true"
+            />
+            <span className="contact-hero-eyebrow-text">CONTACT</span>
             <span
               className="contact-hero-eyebrow-line"
               aria-hidden="true"
